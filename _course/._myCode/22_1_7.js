@@ -11,8 +11,6 @@ obj = {
     t: 3
 }
 
-let [x, y] = [1, 2]
-
 {
     const {sin, cos, tan} = Math;
 
@@ -20,9 +18,27 @@ let [x, y] = [1, 2]
     console.log(cos(10))
     console.log(tan(10))
 
-    const {sin:s, cos:c, tan:t} = Math;
+    const {sin: s, cos: c, tan: t} = Math;
 
     console.log(s(10))
     console.log(c(10))
     console.log(t(10))
 }
+
+let map = [];
+for (let x = 0; x < 10; x++) {
+    map.push([])
+    for (let y = 0; y < 10; y++) {
+        map[x].push(x * y);
+    }
+}
+console.log(map)
+
+
+function toPolar(x, y) {
+    return [Math.atan(x / y), Math.sqrt(x * x + y * y)]
+}
+
+let [x, y] = [1, 1]
+let [r, d] = toPolar(x, y);
+console.log(r, d)
