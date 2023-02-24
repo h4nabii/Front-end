@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"\"*.php\"": "\"html\"",
+			"*.tcc": "cpp",
+			"bitset": "cpp",
+			"string": "cpp",
+			"iomanip": "cpp",
+			"ostream": "cpp",
+			"sstream": "cpp",
+			"regex": "cpp",
+			"utility": "cpp"
+		}
+	}
+}

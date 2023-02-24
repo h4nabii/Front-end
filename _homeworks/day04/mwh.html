@@ -1,0 +1,409 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+
+        /* global css */
+
+        body {
+            width: 704px;
+            height: 1054px;
+            border: 1px solid #2c2c2c;
+            background: #ffd8d9;
+        }
+
+        ul, li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none
+        }
+
+        .center {
+            margin: 0 auto;
+        }
+
+        /* main css */
+
+        .banner {
+            height: 122px;
+            border-bottom: 1px solid #808080;
+        }
+
+        .navigator {
+            height: 38px;
+            padding-left: 3px;
+            border-bottom: 1px solid #808080;
+        }
+
+        .navigator ul li {
+            float: left;
+            width: 99px;
+            height: 18px;
+            margin-top: 10px;
+            background: url("img/button1.jpg");
+        }
+
+        .navigator ul li a {
+            margin-left: 24px;
+            color: #630002;
+            font-size: 12px;
+        }
+
+        .content {
+            height: 890px;
+            background-color: white;
+            clear: both;
+        }
+
+        .login {
+            width: 180px;
+            border-right: 1px solid #808080;
+            float: left;
+        }
+
+        .login .login_panel {
+            height: 122px;
+            font-size: 14px;
+        }
+
+        .login .login_panel input {
+            width: 120px;
+        }
+
+        .login .login_panel .buttons {
+            margin-left: 15px;
+        }
+
+        .login .categories div {
+            margin-top: 49px;
+        }
+
+        .login .categories div .cate_title {
+            margin: 0 18px;
+            padding-left: 3px;
+            height: 22px;
+            line-height: 22px;
+            font-size: 14px;
+            font-weight: bold;
+            background: #ffd8d9;
+        }
+
+        .login .categories div ul {
+            margin-left: 15px;
+            margin-right: 64px;
+        }
+
+
+        .login .categories div ul li {
+            height: 23px;
+            line-height: 23px;
+            font-size: 13px;
+            border-bottom: 1px dashed #999999;
+        }
+
+        .login .categories div ul li img {
+            margin-right: 20px;
+        }
+
+        .main {
+            width: 523px;
+            float: left;
+        }
+
+        .main .latest {
+            height: 154px;
+            border-bottom: 1px solid #808080;
+        }
+
+        .main .latest > img {
+            margin-top: 2px;
+        }
+
+        .main .latest ul li {
+            float: left;
+            padding-right: 4px;
+        }
+
+        .main .latest ul li:last-child {
+            padding: 0;
+        }
+
+        .main .recommends {
+            height: 383px;
+            border-bottom: 1px solid #808080;
+        }
+
+        .main .recommends > img {
+            margin-top: 27px;
+        }
+
+        .main .recommends ul li {
+            width: 106px;
+            float: left;
+            margin: 0 12px;
+        }
+
+        .main .recommends p {
+            text-align: center;
+            line-height: 18px;
+            font-size: 12px;
+            color: black;
+        }
+
+        .main .recommends p:nth-child(2) {
+            color: #551a8b;
+        }
+
+        .main .news {
+            height: 203px;
+            border-bottom: 1px solid #808080;
+        }
+
+        .main .news > img {
+            margin-top: 25px;
+        }
+
+        .main .news ul {
+            margin-left: 11px;
+        }
+
+        .main .news ul li {
+            margin-right: 22px;
+            float: left;
+        }
+
+        .main .news p {
+            text-align: center;
+            line-height: 18px;
+            font-size: 12px;
+            color: #551a8b;
+        }
+
+        .main .guide {
+
+        }
+
+        .main .guide > img {
+            margin-top: 20px;
+            margin-bottom: 5px;
+        }
+
+        .main .guide ul {
+            margin-left: 35px;
+        }
+
+        .main .guide ul li {
+            margin-bottom: 4px;
+            float: left;
+            width: 230px;
+        }
+
+        .main .guide ul li img {
+            margin-right: 3px;
+        }
+
+        .main .guide ul li a {
+            color: black;
+            font-size: 12px;
+        }
+
+
+    </style>
+</head>
+<body class="center">
+
+<div class="banner">
+    <img src="img/banner.jpg" alt="banner">
+</div>
+<div class="navigator">
+    <ul>
+        <li><a href="">鲜花礼品</a></li>
+        <li><a href="">自助订花</a></li>
+        <li><a href="">绿色植物</a></li>
+        <li><a href="">花之物语</a></li>
+        <li><a href="">会员中心</a></li>
+        <li><a href="">联系我们</a></li>
+        <li><a href="">支付方式</a></li>
+    </ul>
+</div>
+<div class="content">
+    <div class="login">
+        <div class="login_panel">
+            <img src="img/login.jpg" alt="login">
+            <div class="username">
+                用户：
+                <label><input type="text"></label>
+            </div>
+            <div class="password">
+                密码：
+                <label><input type="text"></label>
+            </div>
+            <div class="buttons">
+                <button>登录</button>
+                <button>注册</button>
+                <a href="">忘记密码</a>
+            </div>
+        </div>
+        <div class="categories">
+            <div class="cate_usages">
+                <div class="cate_title">用途</div>
+                <ul>
+                    <li><img src="img/icon1.gif" alt="icon"><a href="">爱情鲜花</a></li>
+                    <li><img src="img/icon1.gif" alt="icon"><a href="">道歉鲜花</a></li>
+                    <li><img src="img/icon1.gif" alt="icon"><a href="">新年鲜花</a></li>
+                    <li><img src="img/icon1.gif" alt="icon"><a href="">家庭鲜花</a></li>
+                    <li><img src="img/icon1.gif" alt="icon"><a href="">亲情鲜花</a></li>
+                    <li><img src="img/icon1.gif" alt="icon"><a href="">道歉鲜花</a></li>
+                    <li><img src="img/icon1.gif" alt="icon"><a href="">开业鲜花</a></li>
+                    <li><img src="img/icon1.gif" alt="icon"><a href="">会议鲜花</a></li>
+                </ul>
+            </div>
+            <div class="cate_decorations">
+                <div class="cate_title">花饰</div>
+                <ul>
+                    <li><img src="img/icon1.gif" alt="icon"><a href="">玫瑰花</a></li>
+                    <li><img src="img/icon1.gif" alt="icon"><a href="">百合花</a></li>
+                    <li><img src="img/icon1.gif" alt="icon"><a href="">郁金香</a></li>
+                    <li><img src="img/icon1.gif" alt="icon"><a href="">太阳花</a></li>
+                    <li><img src="img/icon1.gif" alt="icon"><a href="">康乃馨</a></li>
+                    <li><img src="img/icon1.gif" alt="icon"><a href="">马蹄莲</a></li>
+                    <li><img src="img/icon1.gif" alt="icon"><a href="">扶朗</a></li>
+                    <li><img src="img/icon1.gif" alt="icon"><a href="">剑兰</a></li>
+                </ul>
+            </div>
+            <div class="cate_prices">
+                <div class="cate_title">价格</div>
+                <ul>
+                    <li><img src="img/icon1.gif" alt="icon"><a href="">100~200</a></li>
+                    <li><img src="img/icon1.gif" alt="icon"><a href="">200~300</a></li>
+                    <li><img src="img/icon1.gif" alt="icon"><a href="">300~400</a></li>
+                    <li><img src="img/icon1.gif" alt="icon"><a href="">400~500</a></li>
+                    <li><img src="img/icon1.gif" alt="icon"><a href="">500~600</a></li>
+                    <li><img src="img/icon1.gif" alt="icon"><a href="">600~700</a></li>
+                    <li><img src="img/icon1.gif" alt="icon"><a href="">800元以上</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="latest">
+            <img src="img/latest.jpg" alt="latest">
+            <div class="latest_list">
+                <ul>
+                    <li><a href=""><img src="img/new1.jpg" alt=""></a></li>
+                    <li><a href=""><img src="img/new2.jpg" alt=""></a></li>
+                    <li><a href=""><img src="img/new3.jpg" alt=""></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="recommends">
+            <img src="img/recommend.jpg" alt="recommends">
+            <div class="recommend_list">
+                <ul>
+                    <li>
+                        <a href=""><img src="img/flower1.jpg" alt="幸福的味道"></a>
+                        <p>幸福的味道</p>
+                        <p>$288</p>
+                    </li>
+                    <li>
+                        <a href=""><img src="img/flower2.jpg" alt="阳光守护你"></a>
+                        <p>阳光守护你</p>
+                        <p>$300</p>
+                    </li>
+                    <li>
+                        <a href=""><img src="img/flower3.jpg" alt="温情永远"></a>
+                        <p>温情永远</p>
+                        <p>$268</p>
+                    </li>
+                    <li>
+                        <a href=""><img src="img/flower4.jpg" alt="爱无界"></a>
+                        <p>爱无界</p>
+                        <p>$318</p>
+                    </li>
+                    <li>
+                        <a href=""><img src="img/flower5.jpg" alt="亲亲宝贝"></a>
+                        <p>亲亲宝贝</p>
+                        <p>$368</p>
+                    </li>
+                    <li>
+                        <a href=""><img src="img/flower6.jpg" alt="相信是缘"></a>
+                        <p>相信是缘</p>
+                        <p>$188</p>
+                    </li>
+                    <li>
+                        <a href=""><img src="img/flower7.jpg" alt="水晶童话"></a>
+                        <p>水晶童话</p>
+                        <p>$198</p>
+                    </li>
+                    <li>
+                        <a href=""><img src="img/flower8.jpg" alt="天使之爱"></a>
+                        <p>天使之爱</p>
+                        <p>$268</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="news">
+            <img src="img/new.jpg" alt="new">
+            <div class="news_list">
+                <ul>
+                    <li><a href="">
+                        <img src="img/flower9.jpg" alt="粉色迷情">
+                        <p>粉色迷情</p>
+                    </a></li>
+                    <li><a href="">
+                        <img src="img/flower10.jpg" alt="海岸的优雅">
+                        <p>海岸的优雅</p>
+                    </a></li>
+                    <li><a href="">
+                        <img src="img/flower11.jpg" alt="百年地中海">
+                        <p>百年地中海</p>
+                    </a></li>
+                    <li><a href="">
+                        <img src="img/flower12.jpg" alt="爱要说出口">
+                        <p>爱要说出口</p>
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="guide">
+            <img src="img/tips.jpg" alt="guide">
+            <div class="guide_list">
+                <ul>
+                    <li><img src=img/icon2.gif alt="icon2"><a href="">各种鲜花所代表的的含义</a></li>
+                </ul>
+                <ul>
+                    <li><img src=img/icon2.gif alt="icon2"><a href="">花的喜怒与人的各种感觉</a></li>
+                </ul>
+                <ul>
+                    <li><img src=img/icon2.gif alt="icon2"><a href="">养花与养生之道</a></li>
+                </ul>
+                <ul>
+                    <li><img src=img/icon2.gif alt="icon2"><a href="">每天清晨的第一缕阳光</a></li>
+                </ul>
+                <ul>
+                    <li><img src=img/icon2.gif alt="icon2"><a href="">花香的味道</a></li>
+                </ul>
+                <ul>
+                    <li><img src=img/icon2.gif alt="icon2"><a href="">世界各地关于送花的习俗</a></li>
+                </ul>
+                <ul>
+                    <li><img src=img/icon2.gif alt="icon2"><a href="">种花与送花</a></li>
+                </ul>
+                <ul>
+                    <li><img src=img/icon2.gif alt="icon2"><a href="">手捧一束鲜花的等待</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

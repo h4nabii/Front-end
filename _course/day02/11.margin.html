@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{padding:0;margin:0;}
+        .box{
+            width:1200px;
+            height: 2000px;
+            border:1px solid red;
+            /*background: orange;*/
+            margin:0 auto;
+        }
+
+        .son{
+            /* 关于超大子元素，居中定位的问题*/
+            width:3000px;height:200px;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+
+   <div class="box" id="box">
+        <div class="son" id="son">
+
+        </div>
+   </div>
+</body>
+</html>
+<script>
+    window.onresize = function(){
+       console.log(window.document.body.offsetWidth)
+    }
+</script>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{margin:0;padding:0;}
+     
+        .box{width:100px;height:100px;background:red;
+         position: absolute;
+         left:-50px;
+         top:-50px;
+         /* 这里box 它的父节点是body，此时调整的位置都是相对于body的左上角（0，0）*/
+        }
+    </style>
+</head>
+<body>
+     <div>1111111111111111</div>
+     <div class="box" id="box"></div>
+     <div>222222222222</div>
+</body>
+</html>
+<script>
+     var oBox = document.getElementById('box');
+     document.onclick = function(){
+        oBox.style.top = oBox.offsetTop +10 + 'px';
+        oBox.style.left = oBox.offsetLeft +10 + 'px';
+     }
+</script>
