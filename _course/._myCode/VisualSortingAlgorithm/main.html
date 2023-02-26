@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Visual Sorting Algorithm</title>
+    <style>
+        #dataPanel {
+            width: 100%;
+            height: 500px;
+            border: 1px solid black;
+            position: relative;
+        }
+
+        .data {
+            width: 50px;
+            height: 400px;
+            position: absolute;
+            transition: all 0.5s;
+        }
+
+        .valueBar {
+            background: red;
+            position: absolute;
+            width: inherit;
+            bottom: 20px;
+            transition: all 0.5s;
+        }
+
+        .valueDisplay {
+            width: inherit;
+            text-align: center;
+            height: 20px;
+            position: absolute;
+            bottom: 0;
+            transition: all 0.2s;
+        }
+    </style>
+</head>
+<body>
+<button id="resetButton">Reset</button>
+<button id="sortButton">Sort</button>
+<div id="dataPanel">
+    <div style="display: none" class="data">
+        <!-- test data -->
+        <div class="valueBar" style="height: 100px"></div>
+        <div class="valueDisplay">
+            100
+        </div>
+    </div>
+</div>
+
+<script>
+    const dataLeftPadding = 10;
+    const dataMargin = 10;
+    const dataWidth = 50;
+    const dataHeight = 300;
+    const maxRandom = 100;
+
+    document.getElementById("resetButton").onclick = resetData;
+
+    function resetData() {
+        console.log("reset");
+        createData(20);
+    }
+
+    function createData(count) {
+        let dataPanel = document.getElementById("dataPanel");
+        dataPanel.textContent = "";
+        // !(typeof count === "number" && count % 1 === 0)
+        // ES6 isInteger()
+        if (!Number.isInteger(count)) {
+            console.error("createData() argument NaN");
+            return;
+        }
+        for (let i = 0; i < count; i++) {
+            let data = document.createElement("div");
+            data.className = "data";
+            data.style.left = 10 + i * dataWidth + (i - 1) * dataMargin + dataLeftPadding + "px"
+            dataPanel.appendChild(data)
+
+            let value = Math.ceil(Math.random() * maxRandom);
+
+            let valueBar = document.createElement("div");
+            valueBar.className = "valueBar";
+            valueBar.style.height = (value / maxRandom) * dataHeight + "px";
+            data.appendChild(valueBar);
+
+            let valueDisplay = document.createElement("div");
+            valueDisplay.className = "valueDisplay"
+            valueDisplay.textContent = value.toString();
+            data.appendChild(valueDisplay);
+        }
+    }
+
+    function reRandom() {
+        let dataPanel = document.getElementById("dataPanel");
+        for (let data of dataPanel.children) {
+            let value = Math.ceil(Math.random() * maxRandom);
+            data.children[0].style.height = value + "px";
+            data.children[1].textContent = value.toString();
+        }
+    }
+
+    document.getElementById("sortButton").onclick = sortData;
+
+    function swapElement(i, j, timeout = 500) {
+        let data = document.getElementById("dataPanel").children;
+
+        let left_temp = data[i].style.left;
+        data[i].style.left = data[j].style.left;
+        data[j].style.left = left_temp;
+
+        let node_temp = data[i].cloneNode(true);
+        setTimeout(() => {
+            data[i].replaceWith(data[j].cloneNode(true));
+            data[j].replaceWith(node_temp);
+        }, timeout);
+    }
+
+    function sortData() {
+        let list = [];
+        for (let data of document.getElementById("dataPanel").children) {
+            list.push(Number.parseInt(data.children[1].textContent));
+        }
+        console.log(list)
+
+        let i = 0, j = 0;
+        let timer = setInterval(() => {
+            if (i !== list.length - 1) {
+                if (j !== list.length - 1 - i && list[j] > list[j + 1]) {
+                    [list[j], list[j + 1]] = [list[j + 1], list[j]];
+                    swapElement(j, j + 1, 200);
+                }
+                if (++j === list.length - 1 - i) {
+                    i++;
+                    j = 0;
+                }
+            } else {
+                clearInterval(timer);
+                console.log(list)
+            }
+        }, 300);
+    }
+</script>
+</body>
+</html>
