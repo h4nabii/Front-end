@@ -4,27 +4,66 @@
     <meta charset="utf-8">
     <title>使用 JavaScript 的示例</title>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            function createParagraph() {
-                let para = document.createElement('p');
-                para.textContent = '你点击了这个按钮！';
-                document.body.appendChild(para);
-            }
-
+        document.addEventListener("DOMContentLoaded", function () {
             const buttons = document.querySelectorAll('button');
 
-            for(let i = 0; i < buttons.length ; i++) {
-                buttons[i].addEventListener('click', createParagraph);
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].addEventListener('click', function () {
+                    let box1 = document.querySelector("#box1");
+                    let box2 = document.querySelector("#box2");
+                    if (box1.classList.contains("pos1")) {
+                        box1.classList.remove("pos1");
+                        box1.classList.add("pos2");
+                    }
+                    else {
+                        box1.classList.remove("pos2");
+                        box1.classList.add("pos1");
+                    }
+                    if (box2.classList.contains("pos2")) {
+                        box2.classList.remove("pos2");
+                        box2.classList.add("pos1");
+                    } else {
+                        box2.classList.remove("pos1");
+                        box2.classList.add("pos2");
+                    }
+                });
             }
         });
 
     </script>
+    <style>
+        #box1 {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+
+        #box2 {
+            width: 100px;
+            height: 100px;
+            background: blue;
+        }
+
+        .pos1 {
+            position: absolute;
+            left: 50px;
+            top: 100px;
+            transition: all 0.5s linear 0.1s;
+        }
+
+        .pos2 {
+            position: absolute;
+            left: 200px;
+            top: 100px;
+            transition: all 0.5s;
+        }
+    </style>
 </head>
 <body>
 <button>点我呀</button>
-<button>点我呀</button>
-<button>点我呀</button>
-<button>点我呀</button>
-<button>点我呀</button>
+<div style="position: relative; margin-top: 100px; border: 1px solid black; height: 300px">
+    <div class="box pos1" id="box1"></div>
+    <div class="box pos2" id="box2"></div>
+</div>
 </body>
 </html>
