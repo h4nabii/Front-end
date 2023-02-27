@@ -12,10 +12,10 @@
         }
 
         .data {
-            width: 2px;
+            width: 50px;
             height: 400px;
             position: absolute;
-            transition: all 0.1s;
+            transition: all 0.5s;
         }
 
         .valueBar {
@@ -23,6 +23,7 @@
             position: absolute;
             width: inherit;
             bottom: 20px;
+            transition: all 0.5s;
         }
 
         .valueDisplay {
@@ -31,6 +32,7 @@
             height: 20px;
             position: absolute;
             bottom: 0;
+            transition: all 0.5s;
         }
     </style>
 </head>
@@ -48,9 +50,15 @@
 </div>
 
 <script>
+
+    function sleep(timeout) {
+        return new Promise((resolve) => setTimeout(resolve, timeout));
+    }
+
+
     const dataLeftPadding = 10;
-    const dataMargin =0;
-    const dataWidth = 2;
+    const dataMargin = 10;
+    const dataWidth = 50;
     const dataHeight = 300;
     const maxRandom = 100;
 
@@ -58,7 +66,8 @@
 
     function resetData() {
         console.log("reset");
-        createData(100);
+
+        createData(10);
     }
 
     function createData(count) {
@@ -90,54 +99,25 @@
         }
     }
 
-    function reRandom() {
-        let dataPanel = document.getElementById("dataPanel");
-        for (let data of dataPanel.children) {
-            let value = Math.ceil(Math.random() * maxRandom);
-            data.children[0].style.height = value + "px";
-            data.children[1].textContent = value.toString();
-        }
-    }
-
     document.getElementById("sortButton").onclick = sortData;
 
-    function swapElement(i, j, timeout = 500) {
-        let data = document.getElementById("dataPanel").children;
+    async function sortData() {
+        let list = document.getElementById("dataPanel").children;
+        for (let i = 0; i < list.length - 1; i++) {
+            for (let j = i + 1; j < list.length; j++) {
+                console.log(list[i].children[0].style.height + " " + list[j].children[0].style.height);
+                if (list[i].children[1].textContent < list[j].children[1].textContent) {
+                    let temp = list[i].children[0].style.height;
+                    list[i].children[0].style.height = list[j].children[0].style.height;
+                    list[j].children[0].style.height = temp;
 
-        let left_temp = data[i].style.left;
-        data[i].style.left = data[j].style.left;
-        data[j].style.left = left_temp;
-
-        let node_temp = data[i].cloneNode(true);
-        setTimeout(() => {
-            data[i].replaceWith(data[j].cloneNode(true));
-            data[j].replaceWith(node_temp);
-        }, timeout);
-    }
-
-    function sortData() {
-        let list = [];
-        for (let data of document.getElementById("dataPanel").children) {
-            list.push(Number.parseInt(data.children[1].textContent));
-        }
-        console.log(list)
-
-        let i = 0, j = 0;
-        let timer = setInterval(() => {
-            if (i !== list.length - 1) {
-                if (j !== list.length - 1 - i && list[j] > list[j + 1]) {
-                    [list[j], list[j + 1]] = [list[j + 1], list[j]];
-                    swapElement(j, j + 1, 5);
+                    temp = list[i].children[1].textContent;
+                    list[i].children[1].textContent = list[j].children[1].textContent;
+                    list[j].children[1].textContent = temp;
                 }
-                if (++j === list.length - 1 - i) {
-                    i++;
-                    j = 0;
-                }
-            } else {
-                clearInterval(timer);
-                console.log(list)
+                await sleep(600);
             }
-        }, 10);
+        }
     }
 </script>
 </body>
