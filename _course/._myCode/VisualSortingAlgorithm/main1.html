@@ -64,10 +64,11 @@
 
     document.getElementById("resetButton").onclick = resetData;
 
-    function resetData() {
+    async function resetData() {
         console.log("reset");
-
         createData(10);
+        await sleep(0)
+        randomData();
     }
 
     function createData(count) {
@@ -89,13 +90,22 @@
 
             let valueBar = document.createElement("div");
             valueBar.className = "valueBar";
-            valueBar.style.height = (value / maxRandom) * dataHeight + "px";
+            valueBar.style.height = "0";
             data.appendChild(valueBar);
 
             let valueDisplay = document.createElement("div");
             valueDisplay.className = "valueDisplay"
-            valueDisplay.textContent = value.toString();
             data.appendChild(valueDisplay);
+        }
+    }
+
+    function randomData() {
+        let data = document.getElementById("dataPanel").children;
+
+        for (let item of data) {
+            let value = Math.ceil(Math.random() * maxRandom);
+            item.children[0].style.height = (value / maxRandom) * dataHeight + "px";
+            item.children[1].textContent = value.toString();
         }
     }
 

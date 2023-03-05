@@ -1,0 +1,200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+  <head>
+  	<title>GMP</title>
+  	<link rel="shortcut icon" href="favicon.ico">	
+  </head>
+
+  <body>
+  	
+  	<script src="gmp-engine.1.7.4.js"></script>
+  	
+    <script>
+
+		G.F.loadMain = function () {
+		
+			this.AI = G.F.mainAI;
+		
+		    G.KB.addKeys('LEFT','RIGHT','F');
+		    
+		    G.setState({ targetCount: 10, targetLetters: ['H','E','L','L','O','W','O','R','L','D'] });
+		    
+		    G.makeGob('viewport', G)
+		     .setVar({x:50, y:50, w:200, h:260})
+		     .setStyle({backgroundColor:"Black"}) 
+		     .turnOn();
+		     
+			G.makeGob('ship', G.O.viewport)
+			 .setVar({x:95, y:220, z: 100, w:26, h:30, AI:G.F.shipAI})
+			 .setSrc("A")
+			 .setStyle({color:"Orange",font : "24px Arial",textAlign : "Center"})
+			 //.setStyle({backgroundColor:"Orange"}) 
+			 .turnOn();
+		     
+		    ///////
+		    // G.makeGob('shipBody', G.O.viewport)
+		     // .setVar({x:87, y:235, z: 100, w:26, h:15, AI:G.F.shipBodyAI})
+		     // .setStyle({backgroundColor:"Orange"}) 
+		     // .turnOn();
+		    ///////
+		    
+		    G.makeGob('bullet',G.O.viewport)
+		     .setVar({x:-100, y:-100, w:4, h:12, AI:G.F.bulletAI})
+		     .setStyle({backgroundColor:'yellow'})
+		     .setState({firing:0})
+		     .turnOn();
+		
+		    G.makeGob('explosion',G.O.viewport)
+		     .setState({frame:0})
+		     .setVar({x:-100, y:-100, w:4, h:12, AI:G.F.explosionAI})
+		     .setStyle({border:'3px solid red'})
+		     .turnOn();
+		
+		    for (var i = 0; i < 10; i++) {
+		
+		        G.makeGob('target'+i, G.O.viewport)
+		         .setVar({x:30+(i%5)*28, y:25+Math.floor(i/5)*40, w:25, h:28})
+		         .setSrc(G.S.targetLetters[i])
+		         .setStyle({color:"white",font : "24px Comic Sans MS",textAlign : "Center"})
+		         .turnOn();
+		    }
+		    
+		
+		}; 
+		
+		G.F.mainAI = function () {
+			var i, target;
+		
+		    // move ship
+		    G.O.ship.AI();
+		    //G.O.shipBody.AI();
+		
+		    // move/fire bullet
+		    G.O.bullet.AI();
+		
+		    // animate explosion
+		    G.O.explosion.AI();
+		
+		    // trigger explosion if the bullet hits a target.
+		    for (i=0; i < 10; i++) {
+		
+		        target=G.O['target' + i];
+		
+		        if (G.O.bullet.checkIntersection(target) ) {
+		
+		            G.O.bullet.setState({firing:0}).setVar({x:-100,y:-100}).draw();
+		            target.turnOff();
+		            G.O.explosion.setVar({x: target.x + 6, y:target.y + 8}).AI('reset').turnOn();
+		            G.S.targetCount--;
+		
+		        }
+		
+		    }
+		
+		    // reset targets after all have been exploded
+		    if (G.S.targetCount < 1 && !G.O.explosion.on) {
+		
+		        for (i=0; i < 10; i++) {
+		
+		            G.O['target' + i].turnOn();
+		
+		        }
+		
+		        G.S.targetCount=10;
+		    }
+		   
+		};
+    		 
+		G.F.shipAI  = function () {
+		    // move the ship left
+		    if (G.KB.keys.LEFT.isPressed) {
+		        if (this.x > 7)  {
+		            this.setVar({x:this.x-5}).draw();
+		        }
+		    }
+		
+		    // move the ship right
+		    else if (G.KB.keys.RIGHT.isPressed) {
+		        if (this.x < 193-this.w)  {
+		            this.setVar({x:this.x+5}).draw();
+		        }
+		    }
+		
+		    return this;
+		};
+
+		G.F.shipBodyAI  = function () {
+		    // move the ship left
+		    if (G.KB.keys.LEFT.isPressed) {
+		        if (this.x > 0)  {
+		            this.setVar({x:this.x-5}).draw();
+		        }
+		    }
+		
+		    // move the ship right
+		    else if (G.KB.keys.RIGHT.isPressed) {
+		        if (this.x < 174)  {
+		            this.setVar({x:this.x+5}).draw();
+		        }
+		    }
+		
+		    return this;
+		};
+		G.F.bulletAI = function () {
+		    // start firing from nose of ship
+		    if (G.KB.keys.F.isPressed && !this.S.firing ) {
+		        this.S.firing=1;
+		        this.setVar({x:G.O.ship.x -1+ G.O.ship.w/2,y: G.O.ship.y+10}).draw();
+		    }
+		
+		    // move the bullet up the screen
+		    if (this.S.firing) {
+		        if (this.y > 5) {
+		            this.setVar({y:this.y-18}).draw();
+		        }
+		
+		        else  {
+		            this.setState({firing:0}).setVar({x:-100,y:-100}).draw();
+		        }
+		    }
+		
+		    return this;
+		
+			
+		}; 
+		G.F.explosionAI = function (cmd) {
+		    var F;
+		
+		    if (cmd == 'reset') {
+		        this.setState({frame:0}).setVar({ tx:0, ty:0, tw:0, th:0 }).draw();
+		    }
+		
+		    else {
+		        
+		        if (!this.on) {
+		            return this;
+		        }
+		
+		        F=this.S.frame;
+		        
+		        if (F < 8) {
+		            this.setVar({ tx:-(F*F+1), ty:-(F*F+1), tw:F*F*2+2, th:F*F*2+2 }).draw();
+		        }
+		        else {
+		            this.turnOff();
+		        }
+		        
+		        this.S.frame++;
+		
+		    }
+		    
+		    return this;
+		}; 
+
+		G.makeBlock('main', G.F.loadMain).loadBlock('main');
+		
+   </script>
+  </body>
+</html>

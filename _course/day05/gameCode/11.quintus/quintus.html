@@ -1,0 +1,80 @@
+<html>
+  <head>
+  	<title>Quintus</title>
+	<link rel="shortcut icon" href="favicon.ico">
+
+    <script src='http://cdn.html5quintus.com/v0.2.0/quintus-all.js'></script>
+  </head>
+   <body>
+     <script>
+     //window.addEventListener('load',function(e) {
+      
+      // Now set up your game (most games will load a separate .js file)
+      var Q = Quintus()                          // Create a new engine instance
+              .include("Sprites, Scenes, Input, 2D") // Load any needed modules
+              .setup({ width: 1000, height: 600 })
+              .controls();                        // Add in default controls (keyboard, buttons)
+
+              
+
+	Q.scene("start",function(stage) {
+		
+		var sprite1 = new Q.Sprite({ x: 500, y: 100, asset: 'enemy.png', angle: 0, collisionMask: 1, scale: 1});
+		
+		//sprite1.p.points = [
+		//  [ -150, -90 ],
+		//  [  150, -90 ],
+		//  [  150,  90 ],
+		//  [ -150,  90 ]
+		//  ];
+		
+		stage.insert(sprite1);
+		
+		sprite1.add('2d');
+		
+		var sprite2 = new Q.Sprite({ x: 500, y: 600, w: 300, h: 200 });
+		
+		sprite2.draw= function(ctx) {
+			ctx.fillStyle = "Blue";
+			ctx.fillRect(-this.p.cx,-this.p.cy,this.p.w,this.p.h);
+		};
+		stage.insert(sprite2);
+		
+		Q.input.on('up',stage,function(e) { 
+			sprite1.p.scale -= 0.1;
+		});
+			
+		Q.input.on('down',stage,function(e) { 
+			sprite1.p.scale += 0.1;
+		});
+		
+		Q.input.on('left',stage,function(e) {
+			sprite1.p.angle -= 5;
+		});
+		
+		Q.input.on('right',stage,function(e) {
+			sprite1.p.angle += 5;
+		});
+	// 		
+		Q.input.on('fire',stage,function(e) {
+			sprite1.p.vy = -600;
+		});
+	// 		
+		// Q.input.on('action',stage,function(e) {
+			// sprite1.p.x = 500;
+			// sprite1.p.y = 100;
+		// });
+	});
+	
+	Q.load('enemy.png',function() {
+		
+		Q.stageScene("start");
+		 
+		Q.debug = true;
+		  
+		//Q.input.keyboardControls();
+	});
+
+   </script>
+   </body>
+</html>
