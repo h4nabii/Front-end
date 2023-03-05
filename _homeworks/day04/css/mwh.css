@@ -2,7 +2,7 @@
 
 body {
     width: 704px;
-    height: 1054px;
+    height: 1052px;
     border: 1px solid #2c2c2c;
     background: #ffd8d9;
 }
@@ -59,42 +59,50 @@ a {
     clear: both;
 }
 
-.login {
+.left {
     width: 180px;
     border-right: 1px solid #808080;
     float: left;
 }
 
-.login .login_panel {
-    height: 122px;
+.left .login_panel {
+    height: 125px;
     font-size: 14px;
 }
 
-.login .login_panel div {
+.left .login_panel li {
     height: 24px;
     margin-left: 10px;
 }
 
-.login .login_panel input {
+.left .login_panel input {
     width: 120px;
     height: 14px;
     border: 0 none;
     border-bottom: 1px black solid;
 }
 
-.login .login_panel input:focus {
+.left .login_panel input:focus {
     outline: 0 none;
 }
 
-.login .login_panel .buttons {
+.left .login_panel .buttons {
     margin-left: 15px;
 }
 
-.login .categories div {
+.left .categories div:first-child {
+    margin-top: 29px;
+}
+
+.left .categories div {
     margin-top: 49px;
 }
 
-.login .categories div .cate_title {
+.left .categories div:last-child {
+    margin-bottom: 20px;
+}
+
+.left .categories div .cate_title {
     margin: 0 18px;
     padding-left: 3px;
     height: 22px;
@@ -104,121 +112,121 @@ a {
     background: #ffd8d9;
 }
 
-.login .categories div ul {
+.left .categories div ul {
     margin-left: 15px;
     margin-right: 64px;
 }
 
 
-.login .categories div ul li {
+.left .categories div ul li {
     height: 23px;
     line-height: 23px;
     font-size: 13px;
     border-bottom: 1px dashed #999999;
 }
 
-.login .categories div ul li img {
+.left .categories div ul li img {
     margin-right: 20px;
 }
 
-.main {
+.right {
     width: 523px;
     float: left;
 }
 
-.main .latest {
+.right .latest {
     height: 154px;
     border-bottom: 1px solid #808080;
 }
 
-.main .latest > img {
+.right .latest > img {
     margin-top: 2px;
 }
 
-.main .latest ul li {
+.right .latest ul li {
     float: left;
     padding-right: 4px;
 }
 
-.main .latest ul li:last-child {
+.right .latest ul li:last-child {
     padding: 0;
 }
 
-.main .recommends {
+.right .recommends {
     height: 383px;
     border-bottom: 1px solid #808080;
 }
 
-.main .recommends > img {
+.right .recommends > img {
     margin-top: 27px;
 }
 
-.main .recommends ul li {
+.right .recommends ul li {
     width: 106px;
     float: left;
     margin: 0 12px;
 }
 
-.main .recommends p {
+.right .recommends p {
     text-align: center;
     line-height: 18px;
     font-size: 12px;
     color: black;
 }
 
-.main .recommends p:nth-child(2) {
+.right .recommends p:nth-child(2) {
     color: #551a8b;
 }
 
-.main .news {
+.right .news {
     height: 203px;
     border-bottom: 1px solid #808080;
 }
 
-.main .news > img {
+.right .news > img {
     margin-top: 25px;
 }
 
-.main .news ul {
+.right .news ul {
     margin-left: 11px;
 }
 
-.main .news ul li {
+.right .news ul li {
     margin-right: 22px;
     float: left;
 }
 
-.main .news p {
+.right .news p {
     text-align: center;
     line-height: 18px;
     font-size: 12px;
     color: #551a8b;
 }
 
-.main .guide {
+.right .guide {
 
 }
 
-.main .guide > img {
+.right .guide > img {
     margin-top: 20px;
     margin-bottom: 5px;
 }
 
-.main .guide ul {
+.right .guide ul {
     margin-left: 35px;
 }
 
-.main .guide ul li {
+.right .guide ul li {
     margin-bottom: 4px;
     float: left;
     width: 230px;
 }
 
-.main .guide ul li img {
+.right .guide ul li img {
     margin-right: 3px;
 }
 
-.main .guide ul li a {
+.right .guide ul li a {
     color: black;
     font-size: 12px;
 }
