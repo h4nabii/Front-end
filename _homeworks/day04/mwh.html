@@ -81,8 +81,20 @@
             font-size: 14px;
         }
 
+        .login .login_panel div {
+            height: 24px;
+            margin-left: 10px;
+        }
+
         .login .login_panel input {
             width: 120px;
+            height: 14px;
+            border: 0 none;
+            border-bottom: 1px black solid;
+        }
+
+        .login .login_panel input:focus {
+            outline: 0 none;
         }
 
         .login .login_panel .buttons {
@@ -245,11 +257,11 @@
         <div class="login_panel">
             <img src="img/login.jpg" alt="login">
             <div class="username">
-                用户：
+                用户:
                 <label><input type="text"></label>
             </div>
             <div class="password">
-                密码：
+                密码:
                 <label><input type="text"></label>
             </div>
             <div class="buttons">
