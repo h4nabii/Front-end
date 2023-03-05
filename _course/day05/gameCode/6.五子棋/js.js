@@ -1,5 +1,5 @@
 const DEBUG = true;
-const canvas = document.getElementById("canvas");
+const canvas = document.getElementById("canvas_main");
 const ctx = canvas.getContext("2d");
 
 const lineCount = 19;

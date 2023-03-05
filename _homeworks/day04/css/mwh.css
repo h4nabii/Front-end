@@ -1,0 +1,224 @@
+/* global css */
+
+body {
+    width: 704px;
+    height: 1054px;
+    border: 1px solid #2c2c2c;
+    background: #ffd8d9;
+}
+
+ul, li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none
+}
+
+.center {
+    margin: 0 auto;
+}
+
+/* main css */
+
+.banner {
+    height: 122px;
+    border-bottom: 1px solid #808080;
+}
+
+.navigator {
+    height: 38px;
+    padding-left: 3px;
+    border-bottom: 1px solid #808080;
+}
+
+.navigator ul li {
+    float: left;
+    width: 99px;
+    height: 18px;
+    padding-top: 10px;
+}
+
+.navigator ul li a {
+    height: 18px;
+    line-height: 18px;
+    color: #630002;
+    font-size: 12px;
+    display: block;
+    background: url("../img/button1.jpg");
+    padding-left: 24px;
+}
+
+.navigator ul li a:hover {
+    background: url("../img/button1_bg.jpg");
+}
+
+.content {
+    height: 890px;
+    background-color: white;
+    clear: both;
+}
+
+.login {
+    width: 180px;
+    border-right: 1px solid #808080;
+    float: left;
+}
+
+.login .login_panel {
+    height: 122px;
+    font-size: 14px;
+}
+
+.login .login_panel div {
+    height: 24px;
+    margin-left: 10px;
+}
+
+.login .login_panel input {
+    width: 120px;
+    height: 14px;
+    border: 0 none;
+    border-bottom: 1px black solid;
+}
+
+.login .login_panel input:focus {
+    outline: 0 none;
+}
+
+.login .login_panel .buttons {
+    margin-left: 15px;
+}
+
+.login .categories div {
+    margin-top: 49px;
+}
+
+.login .categories div .cate_title {
+    margin: 0 18px;
+    padding-left: 3px;
+    height: 22px;
+    line-height: 22px;
+    font-size: 14px;
+    font-weight: bold;
+    background: #ffd8d9;
+}
+
+.login .categories div ul {
+    margin-left: 15px;
+    margin-right: 64px;
+}
+
+
+.login .categories div ul li {
+    height: 23px;
+    line-height: 23px;
+    font-size: 13px;
+    border-bottom: 1px dashed #999999;
+}
+
+.login .categories div ul li img {
+    margin-right: 20px;
+}
+
+.main {
+    width: 523px;
+    float: left;
+}
+
+.main .latest {
+    height: 154px;
+    border-bottom: 1px solid #808080;
+}
+
+.main .latest > img {
+    margin-top: 2px;
+}
+
+.main .latest ul li {
+    float: left;
+    padding-right: 4px;
+}
+
+.main .latest ul li:last-child {
+    padding: 0;
+}
+
+.main .recommends {
+    height: 383px;
+    border-bottom: 1px solid #808080;
+}
+
+.main .recommends > img {
+    margin-top: 27px;
+}
+
+.main .recommends ul li {
+    width: 106px;
+    float: left;
+    margin: 0 12px;
+}
+
+.main .recommends p {
+    text-align: center;
+    line-height: 18px;
+    font-size: 12px;
+    color: black;
+}
+
+.main .recommends p:nth-child(2) {
+    color: #551a8b;
+}
+
+.main .news {
+    height: 203px;
+    border-bottom: 1px solid #808080;
+}
+
+.main .news > img {
+    margin-top: 25px;
+}
+
+.main .news ul {
+    margin-left: 11px;
+}
+
+.main .news ul li {
+    margin-right: 22px;
+    float: left;
+}
+
+.main .news p {
+    text-align: center;
+    line-height: 18px;
+    font-size: 12px;
+    color: #551a8b;
+}
+
+.main .guide {
+
+}
+
+.main .guide > img {
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.main .guide ul {
+    margin-left: 35px;
+}
+
+.main .guide ul li {
+    margin-bottom: 4px;
+    float: left;
+    width: 230px;
+}
+
+.main .guide ul li img {
+    margin-right: 3px;
+}
+
+.main .guide ul li a {
+    color: black;
+    font-size: 12px;
+}
