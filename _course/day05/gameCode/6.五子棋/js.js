@@ -99,7 +99,7 @@ function getStatOf(x, y) {
     return win;
 }
 
-$("#canvas").click(function (event) {
+$("#canvas_main").click(function (event) {
     debugInfo("----------------------------------------------")
     debugInfo("Clicking " + event.offsetX + ", " + event.offsetY)
 
