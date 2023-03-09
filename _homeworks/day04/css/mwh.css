@@ -60,9 +60,10 @@ a {
 }
 
 .left {
-    width: 180px;
+    width: 181px;
     border-right: 1px solid #808080;
     float: left;
+    box-sizing : border-box
 }
 
 .left .login_panel {
@@ -131,6 +132,7 @@ a {
 .right {
     width: 523px;
     float: left;
+    box-sizing : border-box
 }
 
 .right .latest {

@@ -1,0 +1,101 @@
+
+.container {
+    background: url("../img/bg.png") repeat-x;
+    height: 849px;
+}
+
+.banner {
+    background: url("../img/banner.png");
+    width: 1246px;
+    height: 95px;
+    margin: 0 auto;
+}
+
+.navigator {
+    width: 960px;
+    margin: 0 auto;
+}
+
+#__navi2 {
+    width: 958px;
+    height: 42px;
+    background: rgba(255, 255, 255, 7%);
+    border-top: rgb(107, 140, 186) 1px solid;
+    border-left: rgb(107, 140, 186) 1px solid;
+    border-right: rgb(107, 140, 186) 1px solid;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#__navi2 li {
+    height: 42px;
+    line-height: 42px;
+    float: left;
+}
+
+#__navi2 li a {
+    color: white;
+    height: 43px;
+    line-height: 43px;
+    display: block;
+    padding: 0 30px;
+}
+
+#__navi2 li.navi_current,
+#__navi2 li:hover {
+    background: url("../img/navi_selected.png") center no-repeat;
+}
+
+.content {
+    clear: both;
+    width: 960px;
+    height: 711px;
+    margin: 0 auto;
+    background: linear-gradient(white 537px, transparent 637px, transparent);
+}
+
+.content .right {
+    float: left;
+    width: 960px;
+    height: 580px;
+    box-shadow: -30px -30px 50px -70px;
+    font-size: 14px;
+    background: url("../img/download/page.png") no-repeat;
+    position: relative;
+}
+
+.content .right #download_1 {
+    position: absolute;
+    left: 123px;
+    top: 253px
+}
+
+.content .right #contact {
+    position: absolute;
+    left:257px;
+    top: 253px
+}
+
+.content .right #download_2 {
+    position: absolute;
+    left: 721px;
+    top: 253px
+}
+
+
+.content .extra_info {
+    clear: both;
+    height: 141px;
+    font-size: 12px;
+    color: rgb(128, 128, 128);
+    text-align: center;
+    cursor: default;
+}
+
+.content .extra_info > * {
+    height: 24px;
+}
+
+.content .extra_info .extra_links a {
+    color: rgb(128, 128, 128);
+}
