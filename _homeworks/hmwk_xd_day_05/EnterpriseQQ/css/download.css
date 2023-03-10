@@ -43,7 +43,7 @@
 
 #__navi2 li.navi_current,
 #__navi2 li:hover {
-    background: url("../img/navi_selected.png") center no-repeat;
+    background: url("../img/navi_selected.png") center top no-repeat;
 }
 
 .content {
