@@ -114,7 +114,17 @@
     font-weight: bold;
 }
 
-.content #list_1 p,
+.content #list_1 > p,
 .content #list_1 ol li:first-child {
-    margin-bottom: 13px;
+    margin-bottom: 12px;
+}
+
+.content #list_1 > p,
+.content #list_1 ol li {
+    font-size: 12px;
+}
+
+.content #list_1 ol li {
+    margin-left: 15px;
+    list-style: decimal;
 }
