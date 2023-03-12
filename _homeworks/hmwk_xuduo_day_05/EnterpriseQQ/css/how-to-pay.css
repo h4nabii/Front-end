@@ -38,6 +38,10 @@
     float: left;
 }
 
+#__navi2 li:first-child {
+    margin-left: 20px;
+}
+
 #__navi2 li a {
     color: white;
     height: 43px;
