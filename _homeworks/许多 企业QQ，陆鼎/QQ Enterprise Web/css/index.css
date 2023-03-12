@@ -1,0 +1,107 @@
+body {
+    background: url("../img/bg.png") repeat-x;
+}
+
+.banner {
+    background: url("../img/banner.png");
+    width: 1246px;
+    height: 95px;
+    margin: 0 auto;
+}
+
+.navigator ul {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.navigator ul li {
+    float: left;
+}
+
+.navigator ul li a {
+    display: block;
+    height: 43px;
+}
+
+.navigator ul li:nth-of-type(1) a {
+    background: url("../img/navi_1.png");
+    width: 117px;
+}
+
+.navigator ul li:nth-of-type(2) a {
+    background: url("../img/navi_2.png");
+    width: 136px;
+}
+
+.navigator ul li:nth-of-type(3) a {
+    background: url("../img/navi_3.png");
+    width: 116px;
+}
+
+.navigator ul li:nth-of-type(4) a {
+    background: url("../img/navi_4.png");
+    width: 136px;
+}
+
+.navigator ul li:nth-of-type(5) a {
+    background: url("../img/navi_5.png");
+    width: 116px;
+}
+
+.navigator ul li:nth-of-type(6) a {
+    background: url("../img/navi_6.png");
+    width: 136px;
+}
+
+.navigator ul li:nth-of-type(7) a {
+    background: url("../img/navi_7.png");
+    width: 115px;
+}
+
+.navigator ul li:nth-of-type(8) a {
+    background: url("../img/navi_last.png");
+    width: 88px;
+    cursor: default;
+}
+
+.navigator ul li a.navi_selected::after,
+.navigator ul li a:hover::after {
+    content: '';
+    display: block;
+    height: 6px;
+    width: 112px;
+    margin: 0 auto;
+    background: url("../img/navi_selected.png") no-repeat center top;
+}
+
+.content {
+    clear: both;
+    width: 960px;
+    height: 711px;
+    margin: 0 auto;
+    background: linear-gradient(white 535px, transparent 618px, transparent);
+}
+
+.content .frame {
+    width: 960px;
+    height: 520px;
+    margin-bottom: 45px;
+    overflow: hidden;
+}
+
+.content .extra_info {
+    clear: both;
+    height: 141px;
+    font-size: 12px;
+    color: rgb(128, 128, 128);
+    text-align: center;
+    cursor: default;
+}
+
+.content .extra_info > * {
+    height: 24px;
+}
+
+.content .extra_info .extra_links a {
+    color: rgb(128, 128, 128);
+}
