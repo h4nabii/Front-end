@@ -364,6 +364,7 @@
 }
 
 #input_message {
+    resize: none;
     width: 288px;
     height: 82px;
 }

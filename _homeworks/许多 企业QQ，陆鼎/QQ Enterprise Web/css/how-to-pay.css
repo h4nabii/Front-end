@@ -1,6 +1,7 @@
 .content {
     width: 960px;
     height: 520px;
+    overflow: hidden;
 }
 
 .content .left {

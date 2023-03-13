@@ -1,13 +1,8 @@
 .content {
-    width: 960px;
-    height: 520px;
-    overflow: hidden;
-}
-
-.content {
     float: left;
     width: 960px;
     height: 520px;
+    overflow: hidden;
     box-shadow: -30px -30px 50px -70px;
     font-size: 14px;
     background: url("../img/download/page.png") no-repeat;
@@ -16,15 +11,17 @@
 
 .content .v1 {
     float: left;
-    width: 595px;
-    height: 310px;
+    width: 280px;
+    height: 200px;
     margin-top: 80px;
     margin-left: 124px;
+    margin-bottom: 110px;
 }
 
 .content .v1 h1 {
-    font-size: 30px;
     margin-bottom: 30px;
+    padding-left: 10px;
+    font-size: 30px;
     font-weight: bold;
 }
 
@@ -35,6 +32,8 @@
 }
 
 .content .v2 {
+    width: 220px;
+    margin-left: 315px;
     float: left;
     margin-top: 85px;
 }
