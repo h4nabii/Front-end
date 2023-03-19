@@ -63,11 +63,4 @@ class ElementalStats {
     }
 }
 
-class Artifact {
-    constructor(type, set, name) {
-    }
-
-
-}
-
 console.log(new Character())

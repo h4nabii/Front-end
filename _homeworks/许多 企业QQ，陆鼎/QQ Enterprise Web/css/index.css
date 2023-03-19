@@ -3,10 +3,12 @@ body {
 }
 
 .banner {
+    --pic-width: 1246px;
+
     background: url("../img/banner.png");
-    width: 1246px;
+    width: var(--pic-width);
     height: 95px;
-    margin: 0 auto;
+    margin: 0 calc((100% - var(--pic-width)) / 2);
 }
 
 .navigator ul {

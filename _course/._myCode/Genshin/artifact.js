@@ -7,7 +7,7 @@ function valueSet(v07, v08, v09, v10) {
     }
 }
 
-const attribute = {
+const attributeValue = {
     HP: valueSet(
         209.13,
         239.00,
@@ -68,4 +68,25 @@ const attribute = {
         0.0583,
         0.0648,
     ),
+}
+
+class Artifact {
+    constructor(name, type) {
+        this.name = name;
+        this.type = type;
+        this.attribute = [];
+    }
+
+    build() {
+        if (this.attribute.length === 4) {
+            console.log("full");
+            return;
+        }
+    }
+}
+
+
+let ArtifactType = {
+    Flower: 0,
+    Cup: 1,
 }
