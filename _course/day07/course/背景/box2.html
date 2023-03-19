@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Document</title>
+    <style>
+        ul, li {
+            list-style: none;
+        }
+
+        body {
+            width: 800px;
+            height: 800px;
+            background: pink;
+        }
+
+        .box {
+            border: 1px solid red;
+            width: 400px;
+            height: 400px;
+            background: url(bg5.png) no-repeat right bottom
+            /* css 精灵图 */
+        }
+
+        a {
+            width: 18px;
+            height: 18px;
+            display: inline-block;
+            background: url(sidebaricon.png) no-repeat -10px -7px;
+        }
+
+        a:hover {
+            background-position-x: -36px;
+        }
+
+        .info a {
+            background-position-y: -31px;
+        }
+
+        .time a {
+            background-position-y: -77px;
+        }
+
+        .money a {
+            background-position-y: -53px;
+        }
+
+        .ring a {
+            background-position-y: -125px;
+        }
+
+        .top a {
+            background-position-y: -194px;
+        }
+
+        ul {
+            counter-reset: count;
+        }
+
+        ul li {
+            counter-increment: count;
+        }
+
+        ul li::after{
+            content: counter(count);
+
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="box">
+    <ul>
+        <li><a href="#"></a></li>
+        <li class="info"><a href="#"></a></li>
+        <li class="time"><a href="#"></a></li>
+        <li class="money"><a href="#"></a></li>
+        <li class="ring"><a href="#"></a></li>
+        <li class="top"><a href="#"></a></li>
+        <li><a href="#"></a></li>
+    </ul>
+</div>
+</body>
+</html>

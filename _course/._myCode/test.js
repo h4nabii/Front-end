@@ -145,3 +145,13 @@ codeOf["2023.3.18"] = function () {
         });
     }
 }
+
+codeOf["2023.3.19"] = function () {
+
+    function f(str, from = 0, to = 1) {
+        console.log(str.slice(from, to));
+    }
+
+    f("1111", 0, 2);
+
+}
