@@ -71,60 +71,60 @@ img {
     color: #000;
 }
 
-.main {
+.content {
     width: 700px;
     margin-top: 37px;
 }
 
-.main .left {
+.content .left {
     width: 180px;
     background: #fff;
     float: left;
 }
 
-.main .left .login {
+.content .left .login {
     height: 160px;
     background: url(../img/login.jpg) no-repeat left top;
 }
 
-.main .left .login input {
+.content .left .login input {
     width: 120px;
     border: 0 none;
     border-bottom: 1px solid #000;
 }
 
-.main .left .login form ul {
+.content .left .login form ul {
     padding-top: 54px;
     margin-left: 16px;
 }
 
-.main .left .login ul li:nth-child(3) {
+.content .left .login ul li:nth-child(3) {
     margin-left: 32px;
 }
 
-.main .left .login button {
+.content .left .login button {
     font-size: 12px;
 }
 
-.main .left .using,
-.main .left .sort,
-.main .left .price {
+.content .left .using,
+.content .left .sort,
+.content .left .price {
     height: 256px;
     margin-top: 20px;
 }
 
-.main .left h3 {
+.content .left h3 {
     background-color: pink;
     padding: 5px;
     width: 120px;
     margin-left: 18px;
 }
 
-.main .left ul {
+.content .left ul {
     margin-left: 16px;
 }
 
-.main .left ul li {
+.content .left ul li {
     background: url(../img/icon1.gif) no-repeat left center;
     border-bottom: 1px dashed #eee;
     height: 26px;
@@ -132,34 +132,34 @@ img {
     padding-left: 10px;
 }
 
-.main .right {
+.content .right {
     width: 518px;
     margin-left: 2px;
     height: 400px;
     float:left;
-   
+
 }
 
-.main .right .fastNews{
+.content .right .fastNews{
     width:518px;
     height: 150px;
     background:#fff url(../img/latest.jpg) no-repeat;
     margin-bottom:4px;
 }
-.main .right .fastNews ul{margin-top:40px;position:absolute;}
-.main .right .fastNews ul li{float:left;width:172px;margin-right:1px;}
-.main .right .fastNews ul li:nth-child(3){margin-right:0}
-.main .right .recommend{
+.content .right .fastNews ul{margin-top:40px;position:absolute;}
+.content .right .fastNews ul li{float:left;width:172px;margin-right:1px;}
+.content .right .fastNews ul li:nth-child(3){margin-right:0}
+.content .right .recommend{
     height:370px;
     background:#fff url(../img/recommend.jpg) no-repeat;
 }
-.main .right .recommend ul{width:518px;margin-top:40px;position:absolute;margin-left:12px;}
-.main .right .recommend ul li{float:left;width:106px;margin-right:22px;}
-.main .right .recommend ul ol li{font-size:12px;width:106px;text-align: center;line-height:20px;height:20px;}
+.content .right .recommend ul{width:518px;margin-top:40px;position:absolute;margin-left:12px;}
+.content .right .recommend ul li{float:left;width:106px;margin-right:22px;}
+.content .right .recommend ul ol li{font-size:12px;width:106px;text-align: center;line-height:20px;height:20px;}
 
-.main .right .newproducts{
-    
+.content .right .newproducts{
+
 
 }
-.main .right .newproducts ul{margin-top:40px;position:absolute;}
-.main .right .flowerbuy{}
+.content .right .newproducts ul{margin-top:40px;position:absolute;}
+.content .right .flowerbuy{}
