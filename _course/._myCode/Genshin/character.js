@@ -3,19 +3,16 @@ import Artifact from "./artifact.js";
 class Character {
     constructor() {
         this.max_hit_point = undefined;
-        this.attack = undefined;
-        this.defence = undefined;
+        this.base_attack = undefined;
+        this.base_defence = undefined;
         this.energy_recharge = undefined;
         this.elemental_mastery = undefined;
         this.critical = new Critical();
         this.healing_bonus = undefined;
         this.incoming_healing_bonus = undefined;
-        this.cd_reduction = undefined;
+        this.cool_down_reduction = undefined;
         this.shield_strength = undefined;
         this.elemental_stats = new ElementalStats();
-
-        this.weapon = undefined;
-        this.artifects = Artifact.getEmptySet();
     }
 }
 
@@ -42,27 +39,22 @@ class Critical {
 
 class ElementalStats {
     constructor() {
-        this.bonus = {
-            pyro: 0,
-            hydro: 0,
-            dendro: 0,
-            electro: 0,
-            anemo: 0,
-            cryo: 0,
-            geo: 0,
-            pysical: 0
-        }
-        this.resistance = {
-            pyro: 0,
-            hydro: 0,
-            dendro: 0,
-            electro: 0,
-            anemo: 0,
-            cryo: 0,
-            geo: 0,
-            pysical: 0
-        }
+        this.damage_bonus = getElementSet();
+        this.resistance = getElementSet();
     }
 }
 
-console.log(new Character())
+function getElementSet() {
+    return {
+        pyro: 0,
+        hydro: 0,
+        dendro: 0,
+        electro: 0,
+        anemo: 0,
+        cryo: 0,
+        geo: 0,
+        pysical: 0
+    }
+}
+
+export default Character;
