@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 什么是数据类型：JS中能够处理的数据的类型
+        /* 
+            一、基本数据类型
+                1.数值型（Number型）：正数、负数、整数、小数、0、NaN、Infinity、-Infinity
+                2.字符型（String型）
+                3.布尔型（Boolean型）
+                4.Undefined（Undefined型）
+                5.Null（Null型）
+            二、引用数据类型
+                1.数组
+                2.对象
+                3.函数
+        */
+
+        var num;
+
+        num = 10;
+        num = 3.14;
+        num = -0;
+
+        /*
+            八进制：以0开头，构成要素为0-7
+        */
+        num = 0123;
+
+        /* 
+            十六进制：以0x开头，构成要素为0-9a-f
+        */
+        num = 0x123f;
+
+        /* 
+            NaN:Not a Number：以表示运算结果不是一个数值
+            1.NaN和其它任何数据做运算时结果都是NaN
+            2.NaN也不等于NaN本身
+            3.可以使用isNaN方法测试参数是否为NaN，格式：isNaN(数据);如果返回值为true，则表示数据是NaN，否则不是
+        */
+
+        num = 'a' * 3;
+        num = NaN + 100;
+        console.log(num);
+        num = 1 + 1;
+        console.log(isNaN(num));
+
+        /* 
+            Infinity：表示正无穷
+            -Infinity：表示负无穷
+            JS中能够表示的数据的范围：Number.MAX_VALUE（JS中能够处理的最大值）、Number.MIN_VALUE（js中能够处理的最小值）
+        */
+        console.log(Number.MAX_VALUE);
+        console.log(Number.MIN_VALUE);
+        console.log(3 / 0);
+        console.log(-3 / 0);
+
+
+
+        /* 
+            浮点型：小数，小数位数最多为17位
+            注意：JS中，不要和浮点型数据做大小的比较
+        */
+       num = 0.1 + 0.2;
+       console.log(num);
+
+
+       /* 
+            二进制：0b开头，后面加0和1代码
+       */
+       num = 0b101;
+       console.log(num);
+       
+    </script>
+</body>
+</html>

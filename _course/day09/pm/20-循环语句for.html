@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+ // 正常情况下，循环语句一定有一个能让其退出的条件，否则就是死循环
+     var arr=[4,5,6,7,8,9,10];
+     var i=-1;
+     for(;;) {
+        // if(i==2)break;跳出循环体
+        i++
+        if(i==4 || i==5)continue  //终止当前循环，进入下一次循环
+        if(i<arr.length) {
+            console.log(arr[i])
+        }else{
+           break;
+        }
+        
+     }
+</script>

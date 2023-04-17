@@ -8,7 +8,7 @@ class Panel {
         this.character = character instanceof Character ? character : undefined;
         this.artifacts = {
             set flower(artifact) {
-                this._flower_of_life = artifact instanceof Artifact ? artifact : undefined;
+                if (artifact instanceof Artifact) this._flower_of_life = artifact;
             },
 
             get flower() {
@@ -20,7 +20,7 @@ class Panel {
             },
 
             get plume() {
-                return this._plume_of_death ;
+                return this._plume_of_death;
             },
 
             set sands(artifact) {
@@ -28,7 +28,7 @@ class Panel {
             },
 
             get sands() {
-                return this._sands_of_eon ;
+                return this._sands_of_eon;
             },
 
             set goblet(artifact) {
@@ -36,7 +36,7 @@ class Panel {
             },
 
             get goblet() {
-                return this._goblet_of_eonothem ;
+                return this._goblet_of_eonothem;
             },
 
             set circlet(artifact) {
@@ -44,7 +44,7 @@ class Panel {
             },
 
             get circlet() {
-                return this._circlet_of_logos ;
+                return this._circlet_of_logos;
             },
         };
     }

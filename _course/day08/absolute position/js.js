@@ -21,3 +21,5 @@ document.onload = () => {
     console.log(count);
 }
 
+let slide = document.getElementById("slide");
+console.log(slide.__proto__)

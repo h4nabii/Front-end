@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 练习：打印1、2，4，5，7，8，10，11，13，14 -->
+    <!-- <script>
+        for (var i = 1; i <= 15; i++) {
+            if (i % 3 == 0) {
+                continue;
+            }
+            console.log(i);
+        }
+    </script> -->
+
+
+    <!-- 练习：利用键盘向程序输入数值，求输入的值的和，当输入0时停止输入，最终将和打印到控制台 -->
+    <script>
+        var sum = 0;
+
+        while (true) {
+            var num = parseInt(prompt('请输入一个整数:'));//3
+            if (num == 0) {
+                break;
+            }
+            sum = sum + num;    //0+1+2+3
+        }
+
+        console.log(sum);
+    </script>
+</body>
+
+</html>

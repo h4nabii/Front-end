@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+ 
+ // for ...in
+ // for ...of
+
+ var arr=[1,2,3]
+ for(var i in arr){
+    console.log(i,arr[i]);
+ }
+for(var i of arr){ // i 就是arr的元素值
+    console.log(i);
+}
+    
+console.log('---------------------------------------');
+var obj={name:'sq',age:18};
+for(var val of obj){  // 不能访问
+     console.log(val);
+}
+</script>

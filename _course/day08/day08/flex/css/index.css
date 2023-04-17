@@ -240,7 +240,7 @@ nav {
     width: 28px;
     height: 28px;
     margin-top: 4px;
-    background: pink url(../images/subnav-bg.png) no-repeat;
+    background: url(../images/subnav-bg.png) no-repeat;
     background-size: 28px auto;
 }
 
@@ -279,7 +279,7 @@ nav {
 .more {
     position: absolute;
     right: 5px;
-    top: 0px;
+    top: 0;
     background: -webkit-linear-gradient(left, #FF506C, #FF6BC6);
     border-radius: 15px;
     padding: 3px 20px 3px 10px;

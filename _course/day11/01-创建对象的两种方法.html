@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+   // Array 数组  提供了一个关于数组的一般性模板
+   var arr = new Array();
+   arr[0]='中国';
+   arr[1]='美国';
+   arr[2]='俄罗斯'
+   console.log(arr);
+   var arr1=[1,2,3]  // 字面量的写法
+   // Date 日期  提供了一个关于日期的一般性模板
+  
+   var dd = new Date();
+   console.log(dd);
+
+   // String 字符串 提供了一个关于日期的一般性模板
+   
+   var str1 = new String('123')  
+   var str2 = '123'
+   console.log(str1);
+
+
+   console.log("Arr:",Array instanceof Object); // true
+   console.log("Date:", Date instanceof Object); // true
+   console.log("String",String instanceof Object);// true
+   console.log("Function:",Function instanceof Object);//true;
+   
+   // 所有对象都是从Object对象那里派生出来的
+   
+
+
+    // 1. 标准式创建对象
+     var Person = new Object();
+     // Object提供了一般的js对象的模板
+
+     // 对象是什么： 是属性和方法的集合
+
+     Person.name='张三';
+     Person.age=18;
+     Person.sex='男'
+
+     Person.say = function(){
+          console.log("说");
+     }
+     Person.talk = function(){
+        console.log('谈');
+     }
+
+     console.log(Person);
+
+     // instanceof  是否为它的实例
+</script>

@@ -1,0 +1,17 @@
+<script>
+    var arr=[9,3,1,0,7,12,11]
+    // arr.sort() // 排序,如果是数值比较,那么是有问题的
+    // console.log(arr);
+
+    // 改进,给sort传递一个匿名函数，根椐返回值来判断
+
+
+    // function(a,b){
+    //     return a-b
+    // }
+
+    arr.sort(function(a,b){
+        return a-b
+    })
+    console.log(arr);
+</script>

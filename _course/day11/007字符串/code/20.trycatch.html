@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            try  catch：异常捕获机制，如果没有try catch，那么当程序中有错误时，程序就会停到错误的位置，不在继续往下执行，即使后面的代码是正确的，也不执行，那么这样的用户体验不好，所以我们可以使用try catch异常捕获机制，将可能有问题的代码放在try中，然后将解决的方式放在catch中。这样就算程序发现错误，程序也会继续执行后面的代码
+            
+            1.格式
+            try {
+                可能会有问题的代码
+            } catch (error) {
+                错误的处理方式
+            }
+
+         */
+
+
+        console.log(1);
+        console.log(2);
+        try {
+            var arr = new Array(-10);
+            console.log(arr);
+        } catch (error) {
+            console.log(error)
+        }
+        console.log(4);
+        console.log(5);
+    </script>
+</body>
+</html>

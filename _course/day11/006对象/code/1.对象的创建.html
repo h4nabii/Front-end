@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        类：
+        对象：
+     -->
+    <script>
+        /* 字面量形式创建对象，格式
+            var 对象名称 = {
+                属性名：属性值,
+                属性名：属性值,
+                属性名：属性值,
+                ...
+                属性名：function() {}
+            };
+
+        */
+        // 创建一个人的对象（小明同学：属性：姓名，年龄，性别，功能：吃饭、学习、玩游戏）
+        var p1 = {
+            name: '小明',
+            age: 10,
+            gender: '男',
+
+            eat: function() {
+                console.log('吃饭啦');
+            },
+            study: function() {
+                console.log('web前端');
+            },
+            play: function() {
+                console.log('玩游戏');
+            }
+        };
+        console.log(p1);
+
+
+        // 创建对象（笔记本电脑：属性：品牌、价格、尺寸，功能：学习、打游戏）
+        var computer = {
+            brand: '苹果',
+            price: '20000',
+            size: 15,
+            
+            study: function() {
+                console.log('web前端');
+            },
+            play: function() {
+                console.log('玩游戏');
+            }
+        };
+        console.log(computer);
+    </script>
+</body>
+</html>

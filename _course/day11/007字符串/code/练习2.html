@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+        // 2.将字符串按照单词逆序（字符串只有单词和空格构成，如“Welcome to Beijing”，输出结果为“Beijing to Welcome”）
+        var str = 'Welcome to Beijing';
+
+        // 方式1：
+        // 将字符串str转换为数组
+        // var arr = str.split(' ');
+        // // 利用arr调用reverse方法
+        // arr.reverse();
+        // // 将数组arr转换为字符串
+        // var newStr = arr.join(' ');
+
+
+        // 方式2：
+        var newStr = str.split(' ').reverse().join(' ');
+        console.log(newStr);
+    </script> -->
+
+    <!-- <script>
+        // 3.传入："iOS Android HTML5 Java"
+        // 返回："avaJ 5LMTH diordnA SOi"
+        var str = 'iOS Android HTML5 Java';
+
+        var arr = str.split('');
+        arr.reverse();
+        var newStr = arr.join('');
+        console.log(newStr)
+    </script> -->
+
+    <!-- <script>
+        // 1.输入用户名，判断用户名是否合法。要求：用户名不能为空，长度必须在6--14位之间，第一个字符不能是数字，并且用户名只能由字母、数字、下滑线构成。
+        var username = prompt('请输入您的用户名');//hello123
+
+        if (username == '') {//判断是否为空
+            alert('用户名不可以为空');
+        } else if (username.length<6 || username.length>14) {//判断用户名的长度
+            alert('用户名长度必须是6-14位');
+        } else if (username.charAt(0)>='0' && username<='9') {//判断第一个字符是否为数字
+            alert('用户名第一个字符不可以是数字');
+        } else {//判断字符串的构成元素
+            for (var i=0; i<username.length; i++) {//a-b*cd&ef
+                // 获取字符串中的每个字符
+                var char = username.charAt(i);
+                // 判断该字符是否合法
+                if (char>='a'&&char<='z' || char>='A'&&char<='Z' || char>='0'&&char<='9' || char=='_') {
+
+                } else {
+                    alert('用户名必须是字母、数字、下划线');
+                    break;
+                }
+            }
+        }
+    </script> -->
+    <script>
+        // “ababcdeeeffhhljlkom”,统计这个字符串中每个字母出现的次数
+        var str = 'ababcdeeeffhhljlkom';
+        var obj = {}; //该对象的作用是用来存储字符串中出现的字符和其出现的次数，格式：字符-次数，字符-次数
+        
+        // 遍历字符串
+        for (var i=0; i<str.length; i++) {//1
+            // 获取当前遍历到的字符
+            var char = str.charAt(i);//a
+            
+            // 判断字符char是否在对象中出现过，即对象中是否有这样的一个属性，如果没有，则在对象中添加该属性，并将它的值设置为1，如果有，则取出该属性对应的值，将这个值加1后，再将结果赋值给该属性
+            if (obj[char]) {//没有
+                obj[char] = 1;
+            } else {// 有
+                obj[char] = obj[char] + 1;
+            }
+        }
+
+        console.log(obj);
+    </script>
+</body>
+</html>
+{
+    a: 2
+    b: 1
+}

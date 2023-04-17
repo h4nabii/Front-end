@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    //javascript: this是指向当前对象, //注意这里的 this会指向会有不同
+
+    //java: this 是指向前对象所属函数的引用
+
+     var obj = new Object();
+    //  var o={}
+     var o = {
+        name:'小李',
+        age:18,
+        sex:'男',
+        say:function(){
+            return this.name + '说，我今年' + this.age + "啦"
+         }
+        }
+       // console.log(o);
+        console.log(Object.keys(o));
+        console.log(Object.values(o));
+        console.log('------------------------------------------------');
+
+        console.log(o.name);
+        console.log(o.say());
+ 
+
+     // 字面量的方式
+     // 这两种创建对象的方法是等价的,
+
+     function o(name,age,sex){ // 构造函数
+        this.name = name;
+        this.age = age;
+        this.sex=sex;
+     }
+
+     // 原型 prototype
+     
+</script>
