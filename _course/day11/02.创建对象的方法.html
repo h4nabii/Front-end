@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    
+
 </body>
 </html>
 <script>
@@ -15,34 +15,34 @@
 
     //java: this 是指向前对象所属函数的引用
 
-     var obj = new Object();
+    var obj = {};
     //  var o={}
-     var o = {
-        name:'小李',
-        age:18,
-        sex:'男',
-        say:function(){
+    var o = {
+        name: '小李',
+        age: 18,
+        sex: '男',
+        say: function () {
             return this.name + '说，我今年' + this.age + "啦"
-         }
         }
-       // console.log(o);
-        console.log(Object.keys(o));
-        console.log(Object.values(o));
-        console.log('------------------------------------------------');
+    }
+    // console.log(o);
+    console.log(Object.keys(o));
+    console.log(Object.values(o));
+    console.log('------------------------------------------------');
 
-        console.log(o.name);
-        console.log(o.say());
- 
+    console.log(o.name);
+    console.log(o.say());
 
-     // 字面量的方式
-     // 这两种创建对象的方法是等价的,
 
-     function o(name,age,sex){ // 构造函数
+    // 字面量的方式
+    // 这两种创建对象的方法是等价的,
+
+    function oj(name, age, sex) { // 构造函数
         this.name = name;
         this.age = age;
-        this.sex=sex;
-     }
+        this.sex = sex;
+    }
 
-     // 原型 prototype
-     
+    // 原型 prototype
+
 </script>

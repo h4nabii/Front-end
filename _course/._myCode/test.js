@@ -6,11 +6,14 @@ setTimeout(function () {
     let func = specificDay ? codeOf?.[specificDay] : codeOf?.[today];
 
     if (!func) console.log("No function");
-    else func();
+    else {
+        console.log(today)
+        func();
+    }
 });
 
 let methods = {
-    log: (...msg)=> console.log(...msg.map(value => JSON.parse(JSON.stringify(value))))
+    log: (...msg) => console.log(...msg.map(value => JSON.parse(JSON.stringify(value))))
 }
 
 codeOf["2023.3.17"] = function () {
@@ -283,4 +286,134 @@ codeOf["2023.4.14"] = function () {
         methods.log(Object.getOwnPropertyNames(temp));
         temp = temp.__proto__;
     }
+}
+
+codeOf["2023.4.17"] = function () {
+    let obj = Object.create([1, 2, 3]);
+    console.log(obj);
+    console.log(obj.__proto__);
+
+    class Position {
+        static byPolar(t, r) {
+            return new Position(r * Math.cos(t), r * Math.sin(t));
+        }
+
+        static byCoordinate(x, y) {
+            return new Position(x, y);
+        }
+
+        constructor(x, y) {
+            this.x = x;
+            this.y = y;
+        }
+
+        get coordinate() {
+            return [this.x, this.y];
+        }
+
+        set coordinate([x, y]) {
+            this.x = x;
+            this.y = y;
+        }
+
+        get polar() {
+            let [x, y] = [this.x, this.y];
+            let {atan, sqrt, pow} = Math;
+            return [atan(y / x), sqrt(pow(x, 2) + pow(y, 2))];
+        }
+
+        set polar([t, r]) {
+            this.x = r * Math.cos(t);
+            this.y = r * Math.sin(t);
+        }
+    }
+
+    let pos = Position.byPolar(Math.PI / 4, 5);
+    console.log(pos.coordinate)
+    console.log(pos.polar)
+    pos.coordinate = [3, 4];
+    console.log(pos.polar);
+
+
+    function Student(name, id) {
+        this.name = name;
+        this.id = id;
+    }
+
+    Student.prototype = {
+        getName: function () {
+            return this.name;
+        },
+
+        getId: function () {
+            return this.id;
+        }
+    }
+
+    let stu = new Student("123", 123);
+    console.log(stu.getName());
+    console.log(stu.__proto__);
+    console.log(typeof stu);
+
+    console.log([1, 2, 3].find(val => val > 0));
+}
+
+codeOf["2023.4.20"] = function () {
+    console.log(
+        [0xff, 0xfe, 0xdc, 0x83, 0x90, 0x5f, 0x64, 0x57].reduce(
+            (previousValue, currentValue) => {
+                console.log(currentValue, currentValue - 0x7f, String.fromCharCode(currentValue - 0x80));
+                return previousValue + String.fromCharCode(currentValue - 0x80);
+            }, ''
+        )
+    );
+}
+
+codeOf["2023.5.6"] = function () {
+    console.log(-3 % 2);
+    console.log((3 + 6) * 2);
+    console.log(0 == null);
+    console.log(0 == undefined);
+    console.log(0 == NaN);
+    console.log(0 == "");
+
+    function info() {
+        year = 1999;
+    }
+    info();
+    console.log(year)
+    console.log("max" in Math);
+    new Date().getMonth();
+}
+
+codeOf["2023.5.7"] = function () {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

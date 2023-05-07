@@ -31,14 +31,14 @@
     // nodejs
 
     //
-    // BOM  -> 子集 ->DOM 
+    // BOM  -> 子集 ->DOM
     // 找对象
     // var oBox = document.getElementById('box');
     // var oBox = document.getElementsByTagName('div') //返回一个数组
 
     // console.log(oBox[0].id);
     // console.log(oBox[0].xiMing); // undefined
-    // console.log(oBox[0].getAttribute('xiaoMing')); // 
+    // console.log(oBox[0].getAttribute('xiaoMing')); //
 
     // h5  querySelector 找到第一个元素
     //       querySelectorAll
@@ -56,7 +56,7 @@
         //       myLis[i].style.backgroundColor = 'pink'
         //  }
            myLis[0].style.backgroundColor = 'cyan'
-        
+
     }
     // console.log(oBox.length);
 
@@ -66,13 +66,13 @@
     var oDiv = document.getElementById('box');
     // var myLis = document.getElementsByName('zs')
     // console.log(myLis);
-   
+
     // 以前ie不支持这种写法   document.getElementsByClassName
 
-    var myLis = oDiv.getElementsByClassName('test')  --> HTMLCollection
+    var myList = oDiv.getElementsByClassName('test') // --> HTMLCollection
 
-    console.log(myLis);
-    console.log(myLis.length);
+    console.log(myList);
+    console.log(myList.length);
 
 
 

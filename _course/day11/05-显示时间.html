@@ -1,64 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <style>
-        .time{
-            width:300px;
-            height:60px;
-            font-size:22px;
-            border:10px darkcyan double;
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .time {
+            width: 300px;
+            height: 60px;
+            font-size: 22px;
+            border: 10px darkcyan double;
             line-height: 60px;
             text-align: center;
             font-weight: bolder;
         }
-        </style>
-    </head>
-    <body>
-        <div class="time" id="time"></div>
-    </body>
+    </style>
+</head>
+<body>
+<div class="time" id="time"></div>
+</body>
 </html>
 <script>
-  var oT = document.getElementById('time');
-   showTime();
-   function showTime(){
-        var dd = new Date()
-        var yy = dd.getFullYear()
-        var mm = dd.getMonth()+1;
-        mm>=10?mm=mm:mm='0'+mm;
-        var day= dd.getDate();
-        day>10?day=day:day='0'+day;
-        var hh = dd.getHours();
-        hh>=10?hh=hh:hh='0'+hh;
-        var min = dd.getMinutes();
-        min>=10?min=min:min='0'+min;
-        var ss = dd.getSeconds();
-        ss>=10?ss=ss:ss='0'+ss;
-        var currentTime = `${yy}年${mm}月${day}日 ${hh}:${min}:${ss}`;
-        oT.innerHTML = currentTime;
-   }
-   setInterval(function(){
+    var oT = document.getElementById('time');
+    showTime();
+
+    function showTime() {
+        let date = new Date()
+        oT.innerHTML = new Intl.DateTimeFormat("zh", {
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit"
+        }).format(date);
+    }
+
+    setInterval(function () {
         showTime();
-   },1000)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }, 1000)
 
 
     // 2 开定时器的方法:
@@ -84,9 +62,7 @@
     //     clearTimeout(tid)
     //     console.log('终止了');
     // }
-    
-   
-  
+
 
     // 开一个定时器 ,每过一段时间就得到一次新的时间
     // setTimeout(1,ms) clearTimeout() 只能执行一次
