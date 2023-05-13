@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = window.prompt('请输入您的连接');
+        //console.log(str);
+        // str示例
+        //  https://www.runoob.com/jsref/jsref-obj-regexp.html
+        //  http://news.china.com.cn/2023-05/12/content_85289062.shtml
+        //  https://content-static.cctvnews.cctv.com/snow-book/index.html?item_id=17625519308674586355&t=1683851264484&toc_style_id=feeds_default&share_to=copy_url&track_id=9e48c2a7-6fbc-497a-84d7-e9a827290c2d
+        // 获取连接的文件名和后缀
+        /*
+            lastIndexOf
+            slice或substring
+            可以通过. /来做逻辑
+        */
+        
+        var lastPointPos = str.lastIndexOf('.'); // 得到文件名与后缀之间的位置
+        var lastFolderPos = str.lastIndexOf('/'); // 得到最后一个文件打开的标识位置
+        var nactionPos = str.lastIndexOf('?'); //获取问号的位置
+        if(nactionPos === -1){
+            var sufferStr =  str.slice(lastPointPos+1); //获取后缀字符
+        }
+        else{
+            var sufferStr =  str.slice(lastPointPos+1, nactionPos); //获取后缀字符
+        }
+        var fileName = str.slice(lastFolderPos + 1, lastPointPos);
+        console.log(fileName, sufferStr);
+    </script>
+</body>
+</html>

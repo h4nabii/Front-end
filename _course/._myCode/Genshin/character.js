@@ -1,5 +1,4 @@
 import Artifact from "./artifact.js";
-
 class Character {
     constructor() {
         this.max_hit_point = undefined;

@@ -1,0 +1,64 @@
+<!--
+ * @Description: 
+ * @Author: front end cabbage
+ * @Date: 2023-05-07 15:21:18
+ * @LastEditTime: 2023-05-07 16:11:47
+ * @LastEditors: front end cabbage
+ * @FilePath: \web2023\day12\下午\事件2.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{height:3000px;}
+        h1{width:400px;height:40px;}
+        .box{width:1200px;margin:0 auto;}
+        p{border:1px solid blue;}
+        ul{background:green;height:360px;width:1200px;}
+        ul li{border:1px solid cyan;height:80px;width:800px;background:grey;}
+    </style>
+
+</head>
+<body>
+     <div class="box" id="box">
+          <h1>111111111</h1>
+          <p>
+            aaaaaaaaaaaaaaa
+          </p>
+          <ul>
+            <li class="box1">A1</li>
+            <li class="box2">A2</li>
+            <li class="box3">A3</li>
+          </ul>
+     </div>
+</body>
+</html>
+<script>
+    // 事件冒泡   useCapture 默认是 false
+    // 防止事件冒泡
+    // e.cancleBubble = true;
+    // e.stopPropagation();
+    
+  var oUl = document.querySelector('.box ul');
+  var oBox3 = document.querySelector('.box3');
+  
+  oBox3.addEventListener('click',function(e){
+       alert('33333')
+       var evt=e||window.event;
+       evt.cancelBubble = true;
+    //    evt.stopPropagation();
+  },false)
+
+  oUl.addEventListener('click',function(){
+       alert('o Ul!')
+       evt.cancelBubble = true;
+    //    e.stopPropagation();
+  },false)
+
+    
+</script>

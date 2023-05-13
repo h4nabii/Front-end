@@ -1,3 +1,5 @@
+import MapPool from "./MapPool.js";
+
 const STAT = Object.freeze({
     HP: "HP",
     HP_Per: "HP%",
@@ -133,7 +135,7 @@ class Artifact {
                 29.8, 32.0, 34.2, 36.4, 38.6,
                 40.8, 43.0, 45.2, 47.4, 49.6, 51.8
             ]],
-            [STAT.CRIT_Rate, [
+            [STAT.CRIT_Rate_Per, [
                 4.7, 6.0, 7.3, 8.6, 9.9,
                 11.3, 12.6, 13.9, 15.2, 16.6,
                 17.9, 19.2, 20.5, 21.8, 23.2,
@@ -164,7 +166,7 @@ class Artifact {
             ]],
             [TYPE.Sands, [
                 [STAT.ATK_Per, 1334],
-                [STAT.HP_Per, 1334],
+                [STAT.HP_Per, 1333],
                 [STAT.DEF_Per, 1333],
                 [STAT.Energy_Recharge_Per, 500],
                 [STAT.Elemental_Mastery, 500],
@@ -189,7 +191,7 @@ class Artifact {
                 [STAT.DEF_Per, 1100],
                 [STAT.Healing_Bonus_Per, 500],
                 [STAT.CRIT_Rate_Per, 500],
-                [STAT.Cryo_DMG_Per, 500],
+                [STAT.CRIT_DMG_Per, 500],
                 [STAT.Elemental_Mastery, 200],
             ]],
         ]);
@@ -269,32 +271,6 @@ class Artifact {
 
 function randomSelectFrom(list) {
     return list[Math.floor(Math.random() * list.length)];
-}
-
-class MapPool {
-    constructor(map) {
-        if (map instanceof Map) this.map = map;
-        else this.map = new Map(map);
-
-        this.size = [...this.map.values()].reduce((p, c) => p + c, 0)
-    }
-
-    remove(key) {
-        this.size -= this.map.get(key) ?? 0;
-        this.map.delete(key);
-    }
-
-    select() {
-        let random = Math.floor(Math.random() * this.size);
-        let sum = 0;
-        for (let [k, v] of this.map) {
-            sum += v;
-            if (sum > random) {
-                this.remove(k)
-                return k;
-            }
-        }
-    }
 }
 
 export default Artifact;

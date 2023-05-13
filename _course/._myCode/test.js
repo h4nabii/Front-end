@@ -380,6 +380,7 @@ codeOf["2023.5.6"] = function () {
     function info() {
         year = 1999;
     }
+
     info();
     console.log(year)
     console.log("max" in Math);
@@ -387,33 +388,37 @@ codeOf["2023.5.6"] = function () {
 }
 
 codeOf["2023.5.7"] = function () {
+    console.log(Function.prototype);
+    console.log(Function.constructor);
+    console.log(Object.__proto__);
+}
 
+codeOf["2023.5.13"] = function () {
+    class CharacterPool {
+        static standardCharacters = [
+            "Dehya",
+            "Tighnari",
+            "Keqing",
+            "Mona",
+            "Qiqi",
+            "Diluc",
+            "Jean"
+        ];
 
+        constructor(pickUpCharacter) {
+            this.pickUpRate = 0.5;
+            this.baseRateStar5 = 0.006;
+            this.incRateStar5 = 0.06;
+            this.incContStar5 = 73;
+            this.baseRateStar4 = 0.051;
+            this.count = 0;
+        }
 
+        
 
+        draw() {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            this.count++;
+        }
+    }
 }

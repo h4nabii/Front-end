@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = window.prompt('请输入您的字符');
+        //console.log(str);
+        // 请统计str中有有几个a字符；
+        /*
+            indexOf 必须要用到
+        */
+        
+        // var strA='Hello world!';
+        // var a = strA.indexOf('e');//1
+        // var b = strA.indexOf("Hello");//0
+        // var c = strA.indexOf("World");//-1
+        // var d = strA.indexOf("o", 5);// 7
+        // var e = strA.indexOf("o", 4);// 4
+        // console.log(a,b,c, d, e);
+
+
+        var i = 0; //表示位置
+        var count = 0; //表示个数
+        while(i < str.length){
+            var everyChar = str.charAt(i); //当前位置的字符
+            if(everyChar.indexOf('a') != -1){ // 或 everyChar.indexOf('a') == 0
+                count++;
+            }
+            i++;
+        }
+        console.log(`${str}中有${count}个a字符。`)
+
+
+        var j = 0; // 当前在str检索到的位置
+        var ifFristIndex = true; // 表示是否是第一个检索
+        var num = 0; // 表示个数
+        while(j != -1){ // j能被检索到
+           if(ifFristIndex){
+            // 第一次检索
+            ifFristIndex = false;
+            j = str.indexOf('a');
+           }
+           else{
+            // 第二次开始检索
+            j = str.indexOf('a', j + 1);
+           }
+
+           // 不等于-1表示存在
+           if(j !== -1){
+            num++;
+           }
+        }
+        console.log(`${str}中有${num}个a字符。`)
+    </script>
+</body>
+</html>
