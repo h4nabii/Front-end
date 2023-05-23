@@ -393,7 +393,7 @@ codeOf["2023.5.7"] = function () {
     console.log(Object.__proto__);
 }
 
-codeOf["2023.5.13"] = function () {
+codeOf["2023.5.14"] = function () {
     class CharacterPool {
         static standardCharacters = [
             "Dehya",
@@ -414,11 +414,73 @@ codeOf["2023.5.13"] = function () {
             this.count = 0;
         }
 
-        
-
         draw() {
 
             this.count++;
         }
     }
+}
+
+codeOf["2023.5.21"] = function () {
+
+    let times = 100000;
+
+    let total = 37;
+    let target = 4;
+    let countAvg = 0;
+
+    let map = new Map();
+    let count = 0;
+
+    map.clear();
+    countAvg = 0;
+    for (let i = 0; i < times; i++) {
+        count = 0;
+        for (let num = 1; num <= total && count < target; num++) {
+            if (Math.floor(Math.random() * (total - num + 1)) === 0) {
+                map.set(num, (map.get(num) ?? 0) + 1);
+                count++;
+            }
+        }
+        countAvg += count;
+    }
+    console.log(countAvg / times);
+    console.log(new Map([...map].sort((a, b) => a[0] - b[0])));
+
+    map.clear();
+    countAvg = 0;
+    for (let i = 0; i < times; i++) {
+        count = 0;
+        for (let num = 1; num <= total && count < target; num++) {
+            if (Math.floor(Math.random() * (total - num + 1)) < (target - count)) {
+                map.set(num, (map.get(num) ?? 0) + 1);
+                count++;
+            }
+        }
+        countAvg += count;
+    }
+    console.log(countAvg / times);
+    console.log(new Map([...map].sort((a, b) => a[0] - b[0])));
+
+    map.clear();
+    countAvg = 0;
+    for (let i = 0; i < times; i++) {
+        count = 0;
+        for (let num = 1; num <= total && count < target; num++) {
+            if ((total - num + 1) <= (target - count)) {
+                while (num++ <= total) {
+                    map.set(num, (map.get(num) ?? 0) + 1);
+                    count++;
+                }
+                break;
+            }
+            if (Math.floor(Math.random() * (total - num + 1)) === 0) {
+                map.set(num, (map.get(num) ?? 0) + 1);
+                count++;
+            }
+        }
+        countAvg += count;
+    }
+    console.log(countAvg / times);
+    console.log(new Map([...map].sort((a, b) => a[0] - b[0])));
 }
