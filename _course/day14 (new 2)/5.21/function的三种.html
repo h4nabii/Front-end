@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        funB(); // 不会报错
+        // 字符串写法
+        var funA = new Function(`
+            var a = 1;
+            var b = 2;
+            console.log(a + b);
+        `);
+        funA();
+
+        // function写法，函数作用于置顶效果
+        function funB(){
+            var a = 3;
+            var b = 4;
+            console.log(a + b);
+        }
+        funB();
+
+        // function变量写法
+        var funC = function(){
+            var a = 5;
+            var b = 6;
+            console.log(a + b);
+        }
+        funC();
+    </script>
+</body>
+</html>

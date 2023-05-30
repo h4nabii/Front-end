@@ -29,7 +29,7 @@ function Ball() {
   this.size = random(10,20);
 }
 
-// define ball draw method
+// define ball.html draw method
 
 Ball.prototype.draw = function() {
   ctx.beginPath();
@@ -38,7 +38,7 @@ Ball.prototype.draw = function() {
   ctx.fill();
 };
 
-// define ball update method
+// define ball.html update method
 
 Ball.prototype.update = function() {
   if((this.x + this.size) >= width) {
@@ -61,7 +61,7 @@ Ball.prototype.update = function() {
   this.y += this.velY;
 };
 
-// define ball collision detection
+// define ball.html collision detection
 
 Ball.prototype.collisionDetect = function() {
   for (const ball of balls) {

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 键值对，json对象
+        var json = {
+            nameA: 'abc', // 值必须是所学的数据类型
+            nameB: 123,
+            nameC: true,
+            nameD: null,
+            nameE: undefined,
+            nameF: function(a){ console.log(a) },
+            nameG: [1,true, 'a'],
+            nameH: {
+                a: 1,
+                b: 'e'
+            },
+            '中国': 9999,
+            '&#': '随便写的'
+        };
+
+        console.log( json.nameA,  json['nameA'] ); //获取json对象的nameA键对应的值
+
+        json.nameA = 'cde'; // 设置键对应的值； nameA是json对象的属性
+        console.log( json.nameA ); // 'cde'
+
+        json['nameA'] = 'fgh'; // 设置键对应的值
+        console.log( json.nameA ); // 'fgh'
+
+        console.log( typeof json.nameF === 'function' ); // true
+
+        json.nameF('我是nameF函数'); // nameF是json对象的方法（函数）
+
+        // json['中国']  json['&#']
+
+        for(var key in json){ // 枚举循环； 假设key变量是json的键名称
+            console.log(key, json[key])
+        }
+    </script>
+</body>
+</html>

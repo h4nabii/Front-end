@@ -484,3 +484,28 @@ codeOf["2023.5.21"] = function () {
     console.log(countAvg / times);
     console.log(new Map([...map].sort((a, b) => a[0] - b[0])));
 }
+
+
+codeOf["2023.5.25"] = function () {
+    console.log("ASCII 0x" +
+        [..."Xu"].map(val =>
+            val.charCodeAt(0).toString(16).padStart(2, "0")
+        ).join("")
+    );
+
+    function encodeX(str) {
+        return "0x" + [...str].map(val =>
+            val.charCodeAt(0).toString(16).padStart(2, "0")
+        ).join("");
+    }
+
+    console.log(encodeX("Xu"));
+}
+
+
+codeOf["2023.5.27"] = function () {
+    let t = 144;
+    for (let i = 0; i < t; i++) {
+        console.log((Math.floor(i / t * 1000) / 10), i, t);
+    }
+}

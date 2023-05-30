@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #content {
+            width: 400px;
+            height: 400px;
+            margin: 100px auto 0;
+            background-color: #cccccc;
+        }
+
+        .circle {
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+<div id="content" class="circle"></div>
+<script>
+    function random(from, to) {
+        if (typeof from !== "number" || typeof to !== "number") throw new TypeError("Wrong argument type");
+        from = Math.ceil(from);
+        to = Math.floor(to);
+        return Math.floor(Math.random() * (to - from + 1) + from);
+    }
+
+    let oColor = {
+        targetNode: document.querySelector('#content'),
+        init() {
+            let node = this.targetNode;
+            console.log(node.style.width)
+            node.style.width = 400 + "px";
+            node.style.height = 400 + "px";
+            node.onmouseenter = function () {
+                oColor.randomColor(this);
+            }
+            node.onclick = function () {
+                oColor.split(this);
+            }
+        },
+        randomColor(node) {
+            node.style.backgroundColor = `rgb(
+                ${Math.floor(random(0, 255))},
+                ${Math.floor(random(0, 255))},
+                ${Math.floor(random(0, 255))})`;
+        },
+        split(node) {
+            let divs = [];
+            let width = Number.parseInt(node.style.width) / 2;
+            let height = Number.parseInt(node.style.height) / 2;
+            node.style.display = "flex"
+            node.style.flexWrap = "wrap";
+            for (let i = 0; i < 4; i++) {
+                let newNode = document.createElement("div");
+                newNode.style.backgroundColor = `rgb(
+                ${Math.floor(random(0, 255))},
+                ${Math.floor(random(0, 255))},
+                ${Math.floor(random(0, 255))}
+                )`;
+                newNode.className = "circle";
+                newNode.style.width = width + "px";
+                newNode.style.height = height + "px";
+                newNode.onclick = node.onclick;
+                newNode.onmouseenter = node.onmouseenter;
+                divs.push(newNode);
+            }
+            node.style.background = "transparent";
+            node.onmouseenter = undefined;
+            node.onclick = undefined;
+            divs.forEach(val => node.appendChild(val));
+        }
+    }
+
+    window.onload = function () {
+        oColor.init();
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 引用型数据类型: array、function、json对象、正则对象、实例对象等；指针地址一样才是一样的
+        var obj = {a: 2}
+        var objA = { a: 1 };
+        var objB = objA;
+        objB.a = 2;
+        console.log(obj, objA); // {a: 2} {a: 2}
+        console.log(objA === objB, obj === objA); // true false
+        
+
+        // 基础数据类型: number、string、boolean、null、undefined；值相同就是相同
+        var a = 1;
+        var b = a;
+        var b = 2;
+        console.log(a, b); // 1 2
+
+        // 堆栈内存
+    </script>
+</body>
+</html>
