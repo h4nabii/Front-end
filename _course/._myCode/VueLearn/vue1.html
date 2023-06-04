@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <ol>
+        <todo-item
+                v-for="item in list"
+                v-bind:todo="item"
+                v-bind:key="item.id"
+        ></todo-item>
+    </ol>
+    <button v-on:click="reverse">{{ message }}</button>
+
+    <div style="height: 50px">{{ inputTest}}</div>
+    <input type="text" class="input" v-model="inputTest">
+</div>
+<script>
+    Vue.component("todo-item", {
+        props: ["todo"],
+        template: "<li>{{ todo.text }}</li>"
+    })
+
+    let app = new Vue({
+        el: "#app",
+        data: {
+            list: [
+                {id: 0, text: "001"},
+                {id: 1, text: "002"},
+                {id: 2, text: "003"},
+            ],
+            message: "message",
+            inputTest: ""
+        },
+        methods: {
+            reverse() {
+                console.log(2)
+                this.message = this.message.split("").reverse().join("");
+            }
+        }
+    });
+</script>
+</body>
+</html>

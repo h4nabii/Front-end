@@ -509,3 +509,29 @@ codeOf["2023.5.27"] = function () {
         console.log((Math.floor(i / t * 1000) / 10), i, t);
     }
 }
+
+codeOf["2023.6.1"] = function () {
+    function combination(n, k) {
+        let ans = 1;
+        while (k) ans = ans * n-- / k--;
+        return ans;
+    }
+
+    function permutation(n, k) {
+        let ans = 1;
+        while (k--) ans *= n--;
+        return ans;
+    }
+
+    function sigma(start, end, fn) {
+        let ans = 0;
+        for (let i = start; i <= end; i++) {
+            ans += fn(i);
+        }
+        return ans;
+    }
+
+    let start = 0;
+    let end = 10;
+    console.log(sigma(start, end, val => combination(end, val) * Math.pow(1 / 4, val) * Math.pow(3 / 4, end - val)))
+}
