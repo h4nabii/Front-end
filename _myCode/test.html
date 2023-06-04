@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        #video-player {
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+<span class="content">Waiting inputs</span>
+<br>
+<br>
+<input type="file" name="file-input" id="file-input" accept="video/*">
+<br>
+<video controls autoplay id="video-player">
+    HTML5 &lt;video&gt; unsupported
+</video>
+
+<ul>
+    <li>123</li>
+    <li>123</li>
+    <li>123</li>
+    <li>123</li>
+    <li>123</li>
+</ul>
+
+</body>
+<script>
+    const button = document.querySelector("#file-input");
+    const player = document.querySelector("#video-player");
+
+    button.onchange = function () {
+        const video = button.files?.[0];
+        if (video) {
+            console.log("change")
+            player.setAttribute("src", URL.createObjectURL(video));
+        }
+    }
+</script>
+</html>
