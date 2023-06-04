@@ -5,7 +5,7 @@
  */
 var maximumTastiness = function (price, k) {
     let binarySearch = {
-        minVal(min, max, matchFn, mode = "min") {
+        minVal(min, max, matchFn) {
             while (min < max) {
                 let mid = Math.ceil((max + min) / 2);
                 if (matchFn(mid)) min = mid;
@@ -13,7 +13,7 @@ var maximumTastiness = function (price, k) {
             }
             return min;
         },
-        maxVal(min, max, matchFn, mode = "min") {
+        maxVal(min, max, matchFn) {
             while (min < max) {
                 let mid = Math.ceil((max + min) / 2);
                 if (matchFn(mid)) max = mid;
@@ -21,7 +21,7 @@ var maximumTastiness = function (price, k) {
             }
             return min;
         }
-    }
+    };
 
     let n = price.length;
     price.sort(function (a, b) {

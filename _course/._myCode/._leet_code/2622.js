@@ -14,7 +14,7 @@ TimeLimitedCache.prototype.set = function (key, value, duration) {
         value: value,
         timestamp: new Date().getTime(),
         duration: duration
-    })
+    });
     return exist !== undefined;
 };
 
