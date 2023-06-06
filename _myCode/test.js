@@ -7,27 +7,27 @@ setTimeout(function () {
 
     if (!func) console.log("No function");
     else {
-        console.log(today)
+        console.log(today);
         func();
     }
 });
 
 let methods = {
     log: (...msg) => console.log(...msg.map(value => JSON.parse(JSON.stringify(value))))
-}
+};
 
 codeOf["2023.3.17"] = function () {
     // JS block scope
     let t = function () {
         throw undefined;
-    }
+    };
     try {
         t();
     } catch (a) {
-        a = 2
+        a = 2;
         console.log(a);
     }
-    console.log(a)
+    console.log(a);
 
     // let scope
     // let (a = 2) {
@@ -35,17 +35,17 @@ codeOf["2023.3.17"] = function () {
     // }
     {
         let a = 2;
-        console.log(a)
+        console.log(a);
     }
 
 
     {
         function a() {
-            console.log("before")
+            console.log("before");
         }
 
         function a() {
-            console.log("after")
+            console.log("after");
         }
 
         a();
@@ -56,19 +56,19 @@ codeOf["2023.3.17"] = function () {
 
         if (false) {
             function foo() {
-                console.log(1)
+                console.log(1);
             }
         } else {
             function foo() {
-                console.log(2)
+                console.log(2);
             }
         }
 
         function foo() {
-            console.log(3)
+            console.log(3);
         }
     }
-}
+};
 
 codeOf["2023.3.18"] = function () {
     {
@@ -125,7 +125,7 @@ codeOf["2023.3.18"] = function () {
             return {
                 setName: setName,
                 getName: getName
-            }
+            };
         }
 
         let a = getInstance("a");
@@ -143,15 +143,15 @@ codeOf["2023.3.18"] = function () {
             log: function () {
                 console.log(this.id);
             }
-        }
+        };
 
         test.log();
         setTimeout(test.log.bind(test));
         setTimeout(() => {
-            test.log()
+            test.log();
         });
     }
-}
+};
 
 codeOf["2023.3.19"] = function () {
 
@@ -160,14 +160,14 @@ codeOf["2023.3.19"] = function () {
     }
 
     f("1111", 0, 2);
-}
+};
 
 codeOf["2023.4.9"] = function () {
 
     class Range {
         constructor(from, to) {
             this.from = from;
-            this.to = to
+            this.to = to;
         }
 
         [Symbol.iterator]() {
@@ -182,12 +182,12 @@ codeOf["2023.4.9"] = function () {
                     return this;
                 },
                 next() {
-                    console.log("inside of " + random)
+                    console.log("inside of " + random);
                     return next <= last ?
                         {value: next++} :
                         {done: true};
                 }
-            }
+            };
         }
     }
 
@@ -199,11 +199,11 @@ codeOf["2023.4.9"] = function () {
     (function () {
         for (var i = 0; i < 10; i++) {
             (function (j) {
-                setTimeout(() => console.log(j))
-            })(i)
+                setTimeout(() => console.log(j));
+            })(i);
         }
     })();
-}
+};
 
 codeOf["2023.4.10"] = function () {
     function check(rate) {
@@ -215,9 +215,9 @@ codeOf["2023.4.10"] = function () {
     for (let i = 0; i < total; i++) {
         let times = 0;
         while (!check(3600)) times++;
-        map.set(times, (map.get(times) ?? 0) + 1)
+        map.set(times, (map.get(times) ?? 0) + 1);
     }
-    console.log(map)
+    console.log(map);
     let avg = 0;
     for (let [k, v] of map) {
         avg += k * v;
@@ -231,7 +231,7 @@ codeOf["2023.4.10"] = function () {
         if (from().get()) count++;
     }
     console.log(count / all);
-}
+};
 
 codeOf["2023.4.11"] = function () {
     function from(total = 100) {
@@ -253,23 +253,23 @@ codeOf["2023.4.11"] = function () {
     let pro = new Promise((resolve, reject) => {
         setTimeout(() => {
             resolve("123");
-        }, 100)
-    })
+        }, 100);
+    });
 
     pro.then(response => {
-        console.log(response)
+        console.log(response);
     });
 
     function sleep(milliseconds) {
-        return new Promise(resolve => setTimeout(resolve, milliseconds))
+        return new Promise(resolve => setTimeout(resolve, milliseconds));
     }
 
     (async () => {
-        await sleep(1000).then(() => console.log("???"))
+        await sleep(1000).then(() => console.log("???"));
         await sleep(1000);
-        console.log(1000)
-    })()
-}
+        console.log(1000);
+    })();
+};
 
 codeOf["2023.4.14"] = function () {
     let temp = {
@@ -280,13 +280,13 @@ codeOf["2023.4.14"] = function () {
     };
     // temp = [];
     while (temp) {
-        console.log("---------------------------------------------------------------")
-        console.log(temp)
+        console.log("---------------------------------------------------------------");
+        console.log(temp);
         console.log(Object.getOwnPropertyNames(temp));
         methods.log(Object.getOwnPropertyNames(temp));
         temp = temp.__proto__;
     }
-}
+};
 
 codeOf["2023.4.17"] = function () {
     let obj = Object.create([1, 2, 3]);
@@ -329,8 +329,8 @@ codeOf["2023.4.17"] = function () {
     }
 
     let pos = Position.byPolar(Math.PI / 4, 5);
-    console.log(pos.coordinate)
-    console.log(pos.polar)
+    console.log(pos.coordinate);
+    console.log(pos.polar);
     pos.coordinate = [3, 4];
     console.log(pos.polar);
 
@@ -348,7 +348,7 @@ codeOf["2023.4.17"] = function () {
         getId: function () {
             return this.id;
         }
-    }
+    };
 
     let stu = new Student("123", 123);
     console.log(stu.getName());
@@ -356,7 +356,7 @@ codeOf["2023.4.17"] = function () {
     console.log(typeof stu);
 
     console.log([1, 2, 3].find(val => val > 0));
-}
+};
 
 codeOf["2023.4.20"] = function () {
     console.log(
@@ -364,10 +364,10 @@ codeOf["2023.4.20"] = function () {
             (previousValue, currentValue) => {
                 console.log(currentValue, currentValue - 0x7f, String.fromCharCode(currentValue - 0x80));
                 return previousValue + String.fromCharCode(currentValue - 0x80);
-            }, ''
+            }, ""
         )
     );
-}
+};
 
 codeOf["2023.5.6"] = function () {
     console.log(-3 % 2);
@@ -382,16 +382,16 @@ codeOf["2023.5.6"] = function () {
     }
 
     info();
-    console.log(year)
+    console.log(year);
     console.log("max" in Math);
     new Date().getMonth();
-}
+};
 
 codeOf["2023.5.7"] = function () {
     console.log(Function.prototype);
     console.log(Function.constructor);
     console.log(Object.__proto__);
-}
+};
 
 codeOf["2023.5.14"] = function () {
     class CharacterPool {
@@ -419,7 +419,7 @@ codeOf["2023.5.14"] = function () {
             this.count++;
         }
     }
-}
+};
 
 codeOf["2023.5.21"] = function () {
 
@@ -483,7 +483,7 @@ codeOf["2023.5.21"] = function () {
     }
     console.log(countAvg / times);
     console.log(new Map([...map].sort((a, b) => a[0] - b[0])));
-}
+};
 
 
 codeOf["2023.5.25"] = function () {
@@ -500,7 +500,7 @@ codeOf["2023.5.25"] = function () {
     }
 
     console.log(encodeX("Xu"));
-}
+};
 
 
 codeOf["2023.5.27"] = function () {
@@ -508,7 +508,7 @@ codeOf["2023.5.27"] = function () {
     for (let i = 0; i < t; i++) {
         console.log((Math.floor(i / t * 1000) / 10), i, t);
     }
-}
+};
 
 codeOf["2023.6.1"] = function () {
     function combination(n, k) {
@@ -533,5 +533,131 @@ codeOf["2023.6.1"] = function () {
 
     let start = 0;
     let end = 10;
-    console.log(sigma(start, end, val => combination(end, val) * Math.pow(1 / 4, val) * Math.pow(3 / 4, end - val)))
-}
+    console.log(sigma(start, end, val => combination(end, val) * Math.pow(1 / 4, val) * Math.pow(3 / 4, end - val)));
+};
+
+codeOf["2023.6.6"] = function () {
+    // code below are generated by copilot
+    // a data structure for a tree
+
+    class Node {
+        constructor(value) {
+            this.value = value;
+            this.children = [];
+        }
+
+        // tree functions
+        addChild(node) {
+            this.children.push(node);
+        }
+
+        // tree remove
+        removeChild(node) {
+            this.children = this.children.filter(child => child !== node);
+        }
+
+        // tree traversal
+        depthFirstSearch(value) {
+            if (this.value === value) return this;
+            for (let child of this.children) {
+                let result = child.depthFirstSearch(value);
+                if (result) return result;
+            }
+            return null;
+        }
+    }
+
+    // apply a dfs to a tree
+    function dfs(node, fn) {
+        fn(node);
+        for (let child of node.children) {
+            dfs(child, fn);
+        }
+    }
+
+    // generate a random tree using node class above
+    function generateTree() {
+        let root = new Node(0);
+        let queue = [root];
+        let depth = 0;
+        let maxDepth = 7;
+        while (queue.length) {
+            depth++;
+            let node = queue.shift();
+            let childrenCount = Math.floor(Math.random() * (maxDepth - depth));
+            for (let i = 0; i < childrenCount; i++) {
+                let child = new Node(depth);
+                node.addChild(child);
+                queue.push(child);
+            }
+        }
+        return root;
+    }
+
+    let root = generateTree();
+
+    dfs(root, node => console.log(node.value));
+    console.log(root.depthFirstSearch(5));
+};
+
+codeOf["2023.6.8"] = function () {
+    // create a tree node
+    class Node {
+        constructor(value) {
+            this.value = value;
+            this.children = [];
+        }
+
+        // add a child to a node
+        addChild(node) {
+            this.children.push(node);
+        }
+
+        // remove a child from a node
+        removeChild(node) {
+            this.children = this.children.filter(child => child !== node);
+        }
+
+        // inorder traversal
+        inorderTraversal(fn) {
+            for (let child of this.children) {
+                child.inorderTraversal(fn);
+            }
+            fn(this);
+        }
+    }
+
+    // apply dfs on a tree
+    function dfs(node, fn) {
+        fn(node);
+        for (let child of node.children) {
+            dfs(child, fn);
+        }
+    }
+
+    // generate a random tree
+    function generateTree() {
+        let root = new Node(0);
+        let queue = [root];
+        let depth = 0;
+        let maxDepth = 7;
+        while (queue.length) {
+            depth++;
+            let node = queue.shift();
+            let childrenCount = Math.floor(Math.random() * (maxDepth - depth));
+            for (let i = 0; i < childrenCount; i++) {
+                let child = new Node(depth);
+                node.addChild(child);
+                queue.push(child);
+            }
+        }
+        return root;
+    }
+
+    let root = generateTree();
+
+    dfs(root, node => console.log(node.value));
+
+    root.inorderTraversal(node => console.log(node.value));
+
+};
