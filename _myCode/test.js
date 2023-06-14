@@ -661,3 +661,30 @@ codeOf["2023.6.8"] = function () {
     root.inorderTraversal(node => console.log(node.value));
 
 };
+
+codeOf["2023.6.10"] = function () {
+    function f(s) {
+        let map = new Map();
+        let min = "z";
+        for (let char of s) {
+            if (char < min) min = char;
+            map.set(char, map.get(char) + 1 || 1);
+        }
+        console.log(min);
+        return map.get(min);
+    }
+
+    console.log(f("vvvvvvccc"));
+
+    console.log(Math.min("a", "b"));
+};
+
+codeOf["2023.6.11"] = function () {
+    function a(b) {
+        if (b === 10) {
+            return 132;
+        }
+    }
+
+    console.log(a(10), a(100));
+};

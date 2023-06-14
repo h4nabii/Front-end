@@ -5,11 +5,25 @@
  *     this.next = (next===undefined ? null : next)
  * }
  */
+class MyNode {
+    constructor(val, next) {
+        this.val = (val === undefined ? 0 : val);
+        this.next = (next === undefined ? null : next);
+    }
+
+    * [Symbol.iterator]() {
+        let iter = this;
+        while (iter) {
+            yield iter.val;
+            iter = iter.next;
+        }
+    }
+}
+
 function ListNode(val, next) {
     this.val = (val === undefined ? 0 : val);
     this.next = (next === undefined ? null : next);
 }
-
 
 ListNode.prototype[Symbol.iterator] = function* () {
     let iter = this;
@@ -19,13 +33,11 @@ ListNode.prototype[Symbol.iterator] = function* () {
     }
 };
 
-function toNode(list) {
+Array.prototype.toNode = function () {
     let node;
-    list.reverse().forEach(val => {
-        node = new ListNode(val, node);
-    });
+    this.reverse().forEach(val => node = new ListNode(val, node));
     return node;
-}
+};
 
 /**
  * @param {ListNode} head
@@ -44,12 +56,10 @@ ListNode.prototype.prefix = function* () {
 var removeZeroSumSublists = function (head) {
     let dummy = new ListNode(0, head);
     let map = new Map();
-    let list = [...dummy.prefix()];
-    for (let [prefix, node] of list)
-        map.set(prefix, node);
-    for (let [prefix, node] of list)
-        node.next = map.get(prefix).next;
+    for (let [prefix, node] of dummy.prefix()) map.set(prefix, node);
+    for (let [prefix, node] of dummy.prefix()) node.next = map.get(prefix).next;
     return dummy.next;
 };
 
-console.log([removeZeroSumSublists(toNode([1, -1]))]);
+console.log(...[1, 14, 1, 4, 1, 4, 1, -1].toNode());
+console.log([removeZeroSumSublists([1, -1].toNode())]);
