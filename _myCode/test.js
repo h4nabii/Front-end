@@ -688,3 +688,79 @@ codeOf["2023.6.11"] = function () {
 
     console.log(a(10), a(100));
 };
+
+
+codeOf["2023.6.18"] = function () {
+    let a, b, c;
+
+    /**
+     * @param str1
+     * @param str2
+     * @returns {string}
+     */
+    function xor(str1, str2) {
+        let ans = "";
+
+        let max = Math.max(str1.length, str2.length);
+        str1 = str1.padStart(max, "0");
+        str2 = str2.padStart(max, "0");
+        for (let i = 0; i < max; i += 8) {
+            ans += (
+                Number.parseInt(str1.substring(i, i + 8), 2) ^
+                Number.parseInt(str2.substring(i, i + 8), 2)
+            ).toString(2).padStart(8, "0");
+        }
+        return ans;
+    }
+
+    console.log(xor(
+        "000000000001011111111110100101011010100000001100",
+        "110100001011111001101110100100001011010010100000"
+    ));
+};
+
+codeOf["2023.6.21"] = function () {
+    let a = new Array(10).fill([]);
+
+    a[5][1] = 1;
+    console.log(a);
+};
+
+codeOf["2023.6.28"] = function () {
+
+    let obj = {
+        a: 10
+    };
+
+    let jpg = {
+        b: 10
+    };
+
+    function f() {
+        console.log(this.a);
+        setTimeout(() => {
+            console.log(this.a);
+        });
+    }
+
+    obj.f = f;
+    jpg.f = f;
+
+    obj.f();
+};
+
+codeOf["2023.6.30"] = function () {
+    class Student {
+        constructor(name, id) {
+            this.name = name;
+            this.id = id;
+        }
+
+        static a() {
+            console.log();
+        }
+    }
+
+    let jack = new Student("jack", 123);
+    Student.a();
+};

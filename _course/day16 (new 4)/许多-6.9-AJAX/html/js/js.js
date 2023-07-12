@@ -40,11 +40,16 @@ let oComment = {
     sendComment(textNode) {
         let xhr = new XMLHttpRequest();
         let url = "http://localhost:8088/commit/list";
-        url += "?user=" + Math.floor(Math.random() * 100 + 100);
-        url += "&timestamp=" + new Date().getTime();
-        url += "&text=" + textNode.value;
+        let data = "";
+        data += "user=" + Math.floor(Math.random() * 100 + 100);
+        data += "&timestamp=" + new Date().getTime();
+        data += "&text=" + textNode.value;
         xhr.open("post", url);
-        xhr.send();
+        xhr.setRequestHeader(
+            "Content-Type",
+            "application/x-www-form-urlencoded"
+        );
+        xhr.send(data);
         xhr.onreadystatechange = function () {
             if (xhr.status === 200 && xhr.readyState === 4) {
                 let json = JSON.parse(xhr.responseText);

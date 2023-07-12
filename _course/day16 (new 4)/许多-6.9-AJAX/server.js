@@ -5,6 +5,9 @@ const url = require("url");
 
 let app = express();
 let port = 8088;
+let bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 app.use(express.static("./html"));
 app.use(cors());
@@ -28,15 +31,8 @@ app.get("/article/detail", function (req, res) {
 
 app.post("/commit/list", function (req, res) {
     req.url = decodeURI(req.url);
-    console.log("request url:", req.url);
-    let queryList = req.url.split("?")[1]?.split("&");
-    let queryObj = {};
-    queryList?.forEach(val => {
-        [key, val] = val.split("=");
-        queryObj[key] = val;
-    });
-    if (queryObj["text"] !== "") {
-        commentMap.set(counter++, JSON.stringify(queryObj));
+    if (req.body["text"] !== "") {
+        commentMap.set(counter++, JSON.stringify(req.body));
         res.json({
             post: "ok"
         });

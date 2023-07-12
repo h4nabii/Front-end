@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{margin:0;padding:0;}
+        /* .box{width:600px;border:1px solid red;
+            display: flex;
+        }
+        .box span
+        {width:150px;height:150px;background:green;
+          
+            border:2px solid white;
+        } */
+
+        .box{
+            width:600px;border:1px solid red;
+            background: url(./bg+.png);
+            overflow: hidden;
+            /* height:154px; */
+           
+        }
+        .box span
+        {   background:green;
+            /* display: block; */
+            /* float:left; */
+            /* position:fixed; */
+            position: absolute;
+            width:150px;
+            height:150px;
+            border:2px solid white;
+        }
+        .box span:nth-child(2){
+            margin-left: 150px;
+            background:red;
+        }
+        .box span:nth-child(3){
+            margin-left:300px;
+        }
+        /* 行级元素，添加float属性或position:absolute或fixed,
+        它就会拥有布局，在没有给宽高的情况，默认是以紧缩模式来显示*/
+
+        /* float元素的，后续布局会受此影响，因而需要清除浮动 */
+    </style>
+</head>
+<body>
+
+    <div style="height:100px;background-color: red;"></div>
+
+
+
+    <div class="box" id="box">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+    </div>
+</body>
+</html>
