@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+选择一个文件:
+<input type="file" name="uploadFile" id="file"/>
+<br/><br/>
+<button id="submit">上传</button>
+<br/><br/>
+<label><input type="text" style="display: none" id="base64"></label>
+</body>
+<script>
+    let file = document.querySelector("#file");
+    let result = document.querySelector("#base64");
+    file.onchange = function () {
+        let len = file.files.length;
+        if (len === 0) {
+            console.log("select BMP file please");
+            return;
+        }
+        for (let i = 0; i < len; i++) {
+            let reader = new FileReader();
+            reader.readAsBinaryString(file.files[0]);
+            reader.onload = function () {
+                result.value = btoa(this.result.toString());
+                // console.log(result.value);
+            };
+        }
+    };
+
+    document.querySelector("#submit").onclick = function submit() {
+        let xhr = new XMLHttpRequest();
+        let url = "http://localhost:8088/commit/list";
+        console.log(document.querySelector("#base64").value);
+        xhr.open("post", url);
+        xhr.send(JSON.stringify({
+            user: 404,
+            timestamp: new Date().getTime(),
+            text: +document.querySelector("#base64").value
+        }));
+        xhr.onreadystatechange = function () {
+            if (xhr.status === 200 && xhr.readyState === 4) {
+                let json = JSON.parse(xhr.responseText);
+                console.log(json);
+            }
+        };
+    };
+</script>
+</html>

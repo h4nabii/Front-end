@@ -1,0 +1,145 @@
+<!--
+ * 
+ *    ┏┓　　　┏┓
+ *  ┏┛┻━━━┛┻┓
+ *  ┃　　　　　　　┃
+ *  ┃　　　━　　　┃
+ *  ┃　＞　　　＜　┃
+ *  ┃　　　　　　　┃
+ *  ┃...　⌒　...　┃
+ *  ┃　　　　　　　┃
+ *  ┗━┓　　　┏━┛
+ *      ┃　　　┃　
+ *      ┃　　　┃
+ *      ┃　　　┃
+ *      ┃　　　┃  神兽保佑
+ *      ┃　　　┃  代码无bug　　
+ *      ┃　　　┃
+ *      ┃　　　┗━━━┓
+ *      ┃　　　　　　　┣┓
+ *      ┃　　　　　　　┏┛
+ *      ┗┓┓┏━┳┓┏┛
+ *        ┃┫┫　┃┫┫
+ *        ┗┻┛　┗┻┛
+ * 
+ * @Author: lucky友人a
+ * @Date: 2022-11-03 18:56:15
+ * @FilePath: \Web\day7\goodsTb.html
+ * @LastEditors: lucky友人a
+ * @LastEditTime: 2022-11-11 09:30:37
+ -->
+
+ <!DOCTYPE html>
+ <html>
+ 
+ <head>
+     <meta charset="utf-8">
+     <title>商品管理页面</title>
+     <link rel="stylesheet" href="css/goodsTb.css">
+ </head>
+ 
+ <body>
+     <div id="tableA">
+ 
+ 
+         <div class="headA">
+ 
+ 
+             <label for="inputN" class="inputNf">商品名:</label> <input type="text" id="inputN" placeholder="请输入商品名" />
+ 
+             <label for="inputPwd" class="inputPwdf">商品编号:</label> <input type="text" id="inputPwd"
+                 placeholder="请输入商品编号" />
+             <label for="selSex" class="selSexf"> 商品类型:</label>
+             <select name="" id="selSex">
+                 <option value="">水果</option>
+                 <option value="">蔬菜</option>
+                 <option value="">其他</option>
+             </select>
+             <button type="button" value="" class="btnG" id="findBtn" onclick="findBtnFun()">查找</button>
+         </div>
+ 
+         <div class="centerA">
+ 
+             <input type="checkbox" id="allChose" onclick="allChose()">
+             <label for="allChose" class="allChosef" id="allChosef">全选</label>
+             <button type="button" value="" class="btnG" id="btnG" onclick="btnG()">添加</button>
+ 
+ 
+         </div>
+ 
+         <div class="footA">
+             <table border="1" class="tableA" id="0">
+                 <thead>
+ 
+                     <th colspan="6" class="userM">商品信息管理</th>
+                     <tr class="tbW">
+ 
+                         <th>选择</th>
+                         <th>商品名称</th>
+                         <th>商品编号</th>
+                         <th>商品类型</th>
+                         <th>状态</th>
+                         <th>操作</th>
+                     </tr>
+                 </thead>
+                 <tbody id="tbody">
+ 
+ 
+                 </tbody>
+             </table>
+ 
+             <div class="zhezhao" id='zhezhao' style="display: none;">
+                 <div class="tankuang">
+                     <div id="header">
+                         <h3>修改界面</h3>
+                     </div> <br>
+                     <div id='tankuangBody'>
+                         <label for="" class="lb11">商品名称：</label> <input type="text" name="" id="accNN"
+                             class="lb11t"><br>
+                         <label for="" class="lb22">商品编号：</label> <input type="text" name="" id="pwdNN"
+                             class="lb22t"><br>
+ 
+                         <label for="" class="lb33">商品类型：</label> <input type="text" name="" id="goodsNN"
+                             class="lb33t"><br>
+                     </div>
+ 
+                     <div id='tankuangFoot'>
+                         <input type="button" value="确定" onclick="sureBtn()">
+                         <input type="button" value="取消" onclick=" hidder()">
+                     </div>
+ 
+                 </div>
+             </div>
+ 
+ 
+             <div class="zhezhao" id='zhezhao2' style="display: none;">
+                 <div class="tankuang">
+                     <div id="header">
+                         <h3>添加商品</h3>
+                     </div> <br>
+                     <div id='tankuangBody'>
+                         <label for="" class="lb11">商品名称：</label> <input type="text" name="" id="accNNN"
+                             class="lb11t"><br>
+                         <label for="" class="lb22">商品编号：</label> <input type="text" name="" id="pwdNNN"
+                             class="lb22t"><br>
+ 
+                         <label for="" class="lb33">商品类型：</label> <input type="text" name="" id="goodsNNN"
+                             class="lb33t"><br>
+                     </div>
+ 
+                     <div id='tankuangFoot'>
+                         <input type="button" value="确定" onclick="addSure()">
+                         <input type="button" value="取消" onclick=" hidder()">
+                     </div>
+ 
+                 </div>
+             </div>
+ 
+         </div>
+ 
+     </div>
+     <script src="./js/goodsTb.js"></script>
+ </body>
+ 
+ </html>
+ 

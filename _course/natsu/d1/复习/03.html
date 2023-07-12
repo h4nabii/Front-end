@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            /* 标准模式 */
+            /* box-sizing:content-box;  */
+            /* 怪异模式 */
+            /* box-sizing: border-box; */
+            width:100px;
+            height:100px;
+            border:1px solid red;
+            margin:10px;
+            padding:30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box">
+
+    </div>
+</body>
+</html>
+<script>
+    // 网页的解析模式,在html4.0时代的产物
+    // html5没有整个网页下，都是标准模式，但可以对某个盒模型进行，
+    //  标准模式或怪异模式的设置
+
+    var oBox = document.getElementById('box');
+    console.log(oBox.offsetWidth); 
+    
+    //在标准模式下： 实际width = width+2*border+2*padding
+    //在怪异查式下： 实际width = width
+
+</script>

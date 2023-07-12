@@ -1,0 +1,212 @@
+#tableA {
+    /* 这是大的div */
+    position: relative;
+    width: 1200px;
+    height: 500px;
+    margin: 0 auto;
+    /* background-color: aqua; */
+}
+
+
+
+
+.headA {
+    /* 这是头部div */
+    text-align: left;
+    font-size: 19px;
+    font-weight: 700;
+    font-family: "黑体";
+    margin-top: 30px;
+    height: 60px;
+
+
+}
+
+.headA input {
+    margin-right: 35px;
+    width: 140px;
+    height: 25px;
+
+}
+
+.headA select {
+    margin-right: 35px;
+    width: 60px;
+    height: 28px;
+}
+
+.centerA {
+    text-align: left;
+
+    font-size: 19px;
+    font-weight: 700;
+    font-family: "黑体";
+    margin-bottom: 20px;
+
+}
+
+.footA {
+
+
+    margin: 0 auto;
+    text-align: center;
+    margin-right: 20px;
+    font-size: 19px;
+    font-weight: 700;
+    font-family: "黑体";
+    /* background-color: blue; */
+
+}
+
+.tableA {
+    width: 1200px;
+    height: 300px;
+    margin: 0 auto;
+    /* 设置table的边框线为1条 */
+    border-collapse: collapse;
+    border-color: rgb(0, 139, 139);
+
+}
+
+.tbW {
+    height: 50px;
+    /* background-color: rgb(0, 139, 139);
+    color: white; */
+
+}
+
+.userM {
+    height: 50px;
+
+    color: rgb(0, 139, 139);
+}
+
+/* 下面是弹框 */
+.zhezhao {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    /* 透明度  布局固定居中*/
+    opacity: 1;
+
+}
+
+.tankuang {
+    position: relative;
+    background: white;
+    width: 24%;
+    height: 37%;
+    border-radius: 5px;
+    margin: 8% auto;
+    border: 1px solid black;
+}
+
+#header {
+    height: 60px;
+    /* background: rgb(0, 139, 139); */
+}
+
+#header h3 {
+    position: absolute;
+    width: 150px;
+    height: 50px;
+    top: 5px;
+    left: 150px;
+    color: palevioletred;
+}
+
+#tankuangBody {
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    /* background-color: pink; */
+    left: 110px;
+
+
+}
+
+
+.lb11 {
+    position: absolute;
+    top: 30px;
+    right: 200px;
+}
+
+.lb11t {
+    position: absolute;
+    top: 25px;
+    right: 60px;
+    width: 130px;
+    height: 20px;
+}
+
+
+.lb22 {
+    position: absolute;
+    top: 70px;
+    right: 200px;
+}
+
+.lb22t {
+    position: absolute;
+    top: 65px;
+    right: 60px;
+    width: 130px;
+    height: 20px;
+}
+
+.lb33 {
+    position: absolute;
+    top: 110px;
+    right: 200px;
+}
+
+.lb33t {
+    position: absolute;
+    top: 105px;
+    right: 60px;
+    width: 130px;
+    height: 20px;
+}
+
+#tankuangFoot {
+    position: absolute;
+    width: 220px;
+    height: 80px;
+    top: 265px;
+    left: 150px;
+
+}
+
+#tankuangFoot input {
+
+    background-color: pink;
+    font-size: 20px;
+    margin-left: 26px;
+    border-radius: 8px;
+}
+
+.btnG {
+
+    width: 60px;
+    height: 30px;
+    margin-right: 6px;
+    color: green;
+    border-radius: 8px;
+    background-color: navajowhite;
+    font-size: 19px;
+    font-weight: 600;
+    font-family: "黑体
+
+}
+
+.allChosef {
+    margin-right: 6px;
+    color: green;
+    font-size: 19px;
+    font-weight: 600;
+    font-family: "黑体
+
+}

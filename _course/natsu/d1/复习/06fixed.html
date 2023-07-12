@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       
+        .box{width:350px;height:250px;background-color: green;
+            right:0;
+            bottom: 0;
+            position:fixed;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box"></div>
+</body>
+</html>
+<script>
+     var oBox = document.querySelector('.box');
+     var oBody = document.documentElement||document.body;
+     var tid = null;
+    //  console.log(oBox.offsetHeight);
+     oBox.style.top= oBody.clientHeight + oBox.offsetHeight +'px'
+     console.log(oBox.offsetTop);
+     setTimeout(() => {
+            tid = setInterval(function(){
+                if(oBox.offsetTop<=oBody.clientHeight-oBox.offsetTop/2){
+                    clearInterval(tid)
+                }else{
+                    oBox.style.top = oBox.offsetTop-10 + "px"
+                }
+        },10)
+     }, 5000);
+     
+</script>
