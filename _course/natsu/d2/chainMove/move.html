@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Move</title>
+    <style>
+        body {
+            height: 500px;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #00a0ff;
+            position: fixed;
+        }
+    </style>
+</head>
+<body>
+<div class="box" id="box"></div>
+</body>
+<script>
+    let boxNode = document.querySelector("#box");
+
+    moveOnTime(boxNode, 100, 100).then(() => {
+        return moveOnTime(boxNode, 300, 100);
+    }).then(() => {
+        return moveOnTime(boxNode, 100, 300);
+    }).then(async () => {
+        await moveOnTime(boxNode, 100, 100);
+        await moveOnTime(boxNode, 320, 100);
+        await moveOnTime(boxNode, 100, 500);
+        await moveOnTime(boxNode, 0, 0);
+        await moveOnTime(boxNode, 320, 100);
+        await moveOnTime(boxNode, 200, 100);
+        await moveOnSpeed(boxNode, 100, 100);
+        await moveOnSpeed(boxNode, 320, 100);
+        await moveOnSpeed(boxNode, 100, 500);
+        await moveOnSpeed(boxNode, 0, 0);
+        await moveOnSpeed(boxNode, 320, 100);
+        await moveOnSpeed(boxNode, 200, 100);
+        let seg = 60;
+        let pos = [];
+        for (let i = 0; i < seg; i++) {
+            let radius = 100;
+            let deg = (Math.PI * 2 / seg) * i;
+            let x = radius * Math.cos(deg);
+            let y = radius * Math.sin(deg);
+            pos.push([x, y]);
+        }
+        // console.log(pos);
+        for (let i = 0; i < seg; i++) {
+            let [offsetX, offsetY] = [100, 100];
+            await moveOnTime(boxNode, pos[i][0] + offsetX, pos[i][1] + offsetY, 100);
+        }
+    });
+
+
+    function moveOnTime(obj, x, y, time = 300, mspf = 20) {
+        function refresh() {
+            obj.style.left = px + "px";
+            obj.style.top = py + "px";
+        }
+
+        let [px, py] = [obj.offsetLeft, obj.offsetTop];
+        x = Number.parseInt(x);
+        y = Number.parseInt(y);
+
+        let xDist = x - px;
+        let yDist = y - py;
+
+        let xSpeed = xDist / time * mspf;
+        let ySpeed = yDist / time * mspf;
+
+        return new Promise(resolve => {
+            obj.timer = setInterval(function () {
+                if (px === x && py === y) {
+                    clearInterval(obj.timer);
+                    resolve();
+
+                } else {
+                    if (
+                        xDist > 0 && obj.offsetLeft < x ||
+                        xDist < 0 && obj.offsetLeft > x
+                    ) {
+                        px += xSpeed;
+                    } else px = x;
+
+                    if (yDist > 0 && obj.offsetTop < y ||
+                        yDist < 0 && obj.offsetTop > y
+                    ) {
+                        py += ySpeed;
+                    } else py = y;
+                }
+                refresh();
+
+            }, mspf);
+        });
+    }
+
+    function moveOnSpeed(obj, x, y, speed = 5, fps = 100) {
+        function refresh() {
+            obj.style.left = px + "px";
+            obj.style.top = py + "px";
+        }
+
+        let [px, py] = [obj.offsetLeft, obj.offsetTop];
+        x = Number.parseInt(x);
+        y = Number.parseInt(y);
+
+        let xDist = x - px;
+        let yDist = y - py;
+
+        let xSpeed = speed * Math.cos(Math.atan2(yDist, xDist));
+        let ySpeed = speed * Math.sin(Math.atan2(yDist, xDist));
+
+        return new Promise(resolve => {
+            obj.timer = setInterval(function () {
+                if (px === x && py === y) {
+                    clearInterval(obj.timer);
+                    resolve();
+
+                } else {
+                    if (
+                        xDist > 0 && obj.offsetLeft < x ||
+                        xDist < 0 && obj.offsetLeft > x
+                    ) {
+                        px += xSpeed;
+                    } else px = x;
+
+                    if (yDist > 0 && obj.offsetTop < y ||
+                        yDist < 0 && obj.offsetTop > y
+                    ) {
+                        py += ySpeed;
+                    } else py = y;
+                }
+                refresh();
+
+            }, 1000 / fps);
+        });
+    }
+
+</script>
+</html>
