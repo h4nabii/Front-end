@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>我是第1个li</li>
+        <li>我是第2个li</li>
+        <li>我是第3个li</li>
+        <li>我是第4个li</li>
+        <li>我是第5个li</li>
+    </ul>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        /* 
+            append方法和appendTo方法
+            1.作用：将jQuery对象以尾部追加的方式添加到容器内部
+            2.格式：
+                1)容器.append(被添加的jQuery对象或标签形成的字符串);
+                2)被添加对象.appendTo(代表容器的jQuery对象或选择器);
+        
+
+            prepend方法和prependTo方法
+            1.作用：将jQuery对象添加到容器的前端
+            2.格式：
+                1)容器.prepend(被添加的jQuery对象或标签形成的字符串);
+                2)被添加对象.prependTo(代表容器的jQuery对象或选择器);
+         */
+        // 创建一个新的li
+        // var $newLi = $('<li id="box" class="sty" title="ok">hello</li>');
+        // $('ul').appendTo($newLi);
+        // $newLi.appendTo($('ul'));
+
+        // $('ul').append('<li id="box" class="sty" title="ok">hello</li>');
+        // $newLi.appendTo('ul');
+
+
+
+
+        var $newLi = $('<li>我是新的li</li>');
+        // $('ul').prepend($newLi);
+        // $('ul').prepend('<li>我是新的li</li>');
+
+        // $newLi.prependTo($('ul'));
+        $newLi.prependTo('ul');
+    </script>
+</body>
+</html>

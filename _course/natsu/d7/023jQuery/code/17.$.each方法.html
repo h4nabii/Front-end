@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        /* 
+            $.each方法
+            1.该方法是$的一个静态方法，可以用该方法去处理数组或对象
+            2.$.each(数组/对象，function() {})
+        */
+        var arr = [10, 20, 30, 40, 50];
+        var obj = {
+            a: 1,
+            b: 2,
+            c: 3
+        };
+
+        $.each(obj, function(index, val) {
+            console.log(index + '....' + val);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>黑土哥菜鸟</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./js/jquery-3.7.0.js"></script>
+    <script defer src="./js/index.js"></script>
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <!-- background -->
+        <div class="logo">
+            <h1 hidden>黑土哥菜鸟科技有限公司</h1>
+            <h2 hidden>HTG cai bird webSite industry Technology Co., Ltd.</h2>
+            <a href="#"><img src="./img/logo.png" alt="logo"></a>
+        </div>
+        <div class="lang">
+            <span id="changeChinese">中文版</span>
+            |
+            <span id="changeEnglish">English</span>
+        </div>
+        <div class="phone">
+            <img src="./img/phone.png" alt="phone">
+        </div>
+    </header>
+    <div class="navigator">
+        <ul>
+            <li><a href="#"><span>首页</span></a></li>
+            <li><a href="#"><span>公司介绍</span></a></li>
+            <li><a href="#"><span>产品展示</span></a></li>
+            <li><a href="#"><span>新闻中心</span></a></li>
+            <li><a href="#"><span>办公平台</span></a></li>
+            <li><a href="#"><span>联系我们</span></a></li>
+            <li><a href="#"><span>在线联系</span></a></li>
+            <li><a href="#"><span>会员登录</span></a></li>
+            <li><a href="#"><span>公历时间</span></a></li>
+        </ul>
+    </div>
+    <div class="banner" id="banner">
+        <img src="./img/banner-bg.png" alt="banner" class="show">
+        <img src="./img/banner-bg-2.png" alt="banner">
+        <img src="./img/banner-bg-3.png" alt="banner">
+        <img src="./img/banner-bg-4.png" alt="banner">
+        <div class="left-mask mask" id="left-mask"></div>
+        <div class="right-mask mask" id="right-mask"></div>
+    </div>
+    <div class="login">
+        <form action="#">
+            <label for="login-username-input"><img src="./img/member-center-label.png" alt="member-center"></label>
+            <input type="text" id="login-username-input" placeholder="请输入用户名">
+            <label hidden for="login-password-input"></label>
+            <input type="password" id="login-password-input">
+            <button></button>
+            <a href="javascript:">立即注册</a>
+        </form>
+        <div class="share">
+            <a href="javascript:"></a>
+            <div>分享到：</div>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <div class="share-count" id="share-count">5.8万</div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="main-content">
+            <div class="company-profile">
+                <div class="title-bar">
+                    <div class="title-icon">公司简介</div>
+                    <div class="title-english">company profile</div>
+                    <a href="#"></a>
+                </div>
+                <img src="./img/profile-img.png" alt="company-img">
+                <div class="intro">
+                    <div>
+                        &nbsp;HTG菜鸟公司是一家大型的<br/>
+                        公司，发展的路上经历了很<br/>
+                        多不一样的经历，是我好好<br/>
+                        学习其刨根儿的事情<br/>
+                    </div>
+                    <div>
+                        性炭专家,紧密合作，专业从事各类专用活性炭研发生<br/>
+                        公司公司拥有 。自主知识产权...<br/>
+                    </div>
+                </div>
+            </div>
+            <div class="news-center">
+                <div class="title-bar">
+                    <div class="title-icon">新闻中心</div>
+                    <div class="title-english">news center</div>
+                    <a href="#"></a>
+                </div>
+                <div class="latest-news">
+                    <img src="./img/news-img.png" alt="latest-news-img">
+                    <div class="news-title">让品位到家，一切尽善尽美欧</div>
+                    <div class="news-content">在企业发展过程中，公司确立了以科技创新
+                        为先导的立业宗旨...<a href="#">[详细>>]</a></div>
+                </div>
+                <ul class="news-list">
+                    <li><a href="#">
+                        <span>用科技创造精品饭菜，追求卓越品质</span>
+                        <span class="date">2013-01-03</span>
+                    </a></li>
+                    <li><a href="#">
+                        <span>菜鸟公司坚持以高标准配置生产设备</span>
+                        <span class="date">2013-01-03</span>
+                    </a></li>
+                </ul>
+            </div>
+            <div class="contact-us">
+                <div class="title-bar">
+                    <div class="title-icon">联系我们</div>
+                    <div class="title-english">contact us</div>
+                </div>
+                <ul class="contact-info">
+                    <li><span></span>地址：杭州下沙工业园信源南路1314号</li>
+                    <li><span></span>邮编：311000</li>
+                    <li><span></span>电话：0571-8711044 18814845441</li>
+                    <li><span></span>传真：0571-8910338</li>
+                    <li><span></span>E-mail：bird@163.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="product-display">
+            <div class="title-bar">
+                <div class="title">产品展示</div>
+                <div class="line"></div>
+                <div class="buttons">
+                    <button id="slider-move-left-btn"></button>
+                    <button id="slider-move-right-btn"></button>
+                </div>
+            </div>
+            <div class="slider-box">
+                <ul class="products" id="products">
+                    <li>
+                        <img src="./img/product.png" alt="product">
+                        <div class="name">产品名称1</div>
+                    </li>
+                    <li>
+                        <img src="./img/product.png" alt="product">
+                        <div class="name">产品名称2</div>
+                    </li>
+                    <li>
+                        <img src="./img/product.png" alt="product">
+                        <div class="name">产品名称3</div>
+                    </li>
+                    <li>
+                        <img src="./img/product.png" alt="product">
+                        <div class="name">产品名称4</div>
+                    </li>
+                    <li>
+                        <img src="./img/product.png" alt="product">
+                        <div class="name">产品名称5</div>
+                    </li>
+                    <li>
+                        <img src="./img/product.png" alt="product">
+                        <div class="name">产品名称6</div>
+                    </li>
+                    <li>
+                        <img src="./img/product.png" alt="product">
+                        <div class="name">产品名称7</div>
+                    </li>
+                    <li>
+                        <img src="./img/product.png" alt="product">
+                        <div class="name">产品名称8</div>
+                    </li>
+                    <li>
+                        <img src="./img/product.png" alt="product">
+                        <div class="name">产品名称9</div>
+                    </li>
+                    <li>
+                        <img src="./img/product.png" alt="product">
+                        <div class="name">产品名称10</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-line address-line">
+            地址：杭州下沙工业园区信源南路1314号　　邮编：311000
+        </div>
+        <div class="footer-line contact-line">
+            电话：18814845441　　传真：8555566　　网址：<a href="#">Http：//www.txianren.com</a>　　E-mail：mywebsite 黑土哥网站管理
+        </div>
+    </footer>
+</div>
+</body>
+</html>

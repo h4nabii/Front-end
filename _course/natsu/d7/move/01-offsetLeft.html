@@ -1,0 +1,56 @@
+<!--
+ * @Description: 
+ * @Author: front end cabbage
+ * @Date: 2023-07-10 21:06:02
+ * @LastEditTime: 2023-07-11 13:47:18
+ * @LastEditors: front end cabbage
+ * @FilePath: \web2023\day14\move\01-offsetLeft.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{margin:0;padding:0;}
+        .parent {
+            position:relative;
+            left: 500px;
+            background-color: blue;
+            width:300px;height:300px;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+            left:0;
+            opacity: 0.3;
+            /* filter:alpha(opacity=30) ie5,ie6,ie7,ie8,ie9可用*/
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="box" id="box" style="width:100px;"></div>
+    </div>
+
+</body>
+
+</html>
+<script>
+    // oBox.style.left = oBox.offsetLeft+ 20 +'px'
+    // 在js 没有一个方法专门用去获取对象的透明度
+
+    var oBox = document.querySelector('.box');
+    console.log(oBox.offsetLeft);
+    console.log(oBox.offsetWidth);
+    console.log(oBox.get)
+    console.log(oBox.style.width);
+    console.log(oBox.style['width']); // 如果后面的属性不确定，那就需使用这种形式
+</script>

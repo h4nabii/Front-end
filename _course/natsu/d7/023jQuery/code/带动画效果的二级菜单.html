@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		div{
+			width: 400px;
+			height: 30px;
+			margin: 100px auto;
+		}
+		ul{
+			list-style: none;
+
+		}
+		div>ul>li{
+			float: left;
+			width: 100px;
+			margin-right: 10px;
+			background: pink;
+			text-align: center;
+			font-size: 14px;
+			line-height: 2em;
+		}
+		a{
+			text-decoration: none;
+			color: #000;
+		}
+
+		ul ul{
+			display: none;
+		}
+	</style>
+	<script type="text/javascript" src="jquery-1.12.4.js"></script>
+</head>
+<body>
+	<div>
+		<ul>
+			<li>
+				<a href="">吉林省</a>
+				<ul>
+					<li><a href="">长春市</a></li>
+					<li><a href="">吉林市</a></li>
+					<li><a href="">四平市</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="">辽宁省</a>
+				<ul>
+					<li><a href="">沈阳市</a></li>
+					<li><a href="">大连市</a></li>
+					<li><a href="">盘锦市</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="">黑龙江省</a>
+				<ul>
+					<li><a href="">哈尔滨市</a></li>
+					<li><a href="">齐齐哈尔市</a></li>
+					<li><a href="">黑河市</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+	<script type="text/javascript">
+		$('div>ul>li').mouseenter(function() {
+			// $(this).children('ul').slideDown(1000).end().siblings().children('ul').slideUp(1000);
+			$(this).children('ul').stop().slideDown();
+		});
+		$('div>ul>li').mouseleave(function() {
+			// $(this).children('ul').slideDown(1000).end().siblings().children('ul').slideUp(1000);
+			$(this).children('ul').stop().slideUp();
+		});
+	</script>
+</body>
+</html>

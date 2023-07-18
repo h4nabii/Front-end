@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        我是div的内容
+        <h1>我是一级标题</h1>
+        <h2>我是二级标题</h2>
+    </div>
+
+    <ul>
+        <li>我是第1个li</li>
+        <li>我是第2个li</li>
+        <li>我是第3个li</li>
+        <li>我是第4个li</li>
+        <li>我是第5个li</li>
+    </ul>
+
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        /* 
+            text方法
+            1.作用：获取或者设置jQuery对象中的内容
+            2.格式：jQuery对象.text()或jQuery对象.text(内容);
+            html方法
+            1.作用：获取或者设置jQuery对象中的内容
+            2.格式：jQuery对象.html()或jQuery对象.html(内容);
+
+            区别：
+            1.text方法在获取jQuery对象下面内容的时候，返回的是所有文本内容拼接的字符串
+            2.html方法在获取jQuery对象下面内容的时候，返回的是文本内容和后代节点
+            3.在设置时，text不解析标签，而html解析标签
+            4.如果jQuery对象有多个元素构成，那么text在执行时会有隐式迭代，而html只取jQuery对象中第一个元素的内容
+        */
+
+        console.log($('div').text());
+        console.log($('div').html());
+
+        // $('div').text('<i>hello</i>')
+        $('div').html('<i>hello</i>')
+
+
+        console.log($('li').text());//隐式迭代
+        console.log($('li').html());
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!--
+ * @Description: 
+ * @Author: front end cabbage
+ * @Date: 2023-07-11 10:19:32
+ * @LastEditTime: 2023-07-11 10:34:22
+ * @LastEditors: front end cabbage
+ * @FilePath: \web2023\day14\move\2-运动中级(3、4集)\课程案例\多物体变化.html
+-->
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<style>
+		div {
+			width: 100px;
+			height: 50px;
+			background: red;
+			margin-top: 50px;
+			border: 2px solid black;
+		}
+	</style>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>无标题文档</title>
+	<script type="text/javascript">
+		window.onload = function () {
+			var aDiv = document.getElementsByTagName('div');
+
+			var i = 0;
+           
+
+			for (i = 0; i < aDiv.length; i++) {
+				//  aDiv[i].timer = null;
+				aDiv[i].onmouseover = function () {
+					startMove(this, 300);
+				}
+
+				aDiv[i].onmouseout = function () {
+					startMove(this, 100);
+				}
+			}
+		}
+
+		function getStyle(obj, attr) {
+            // 获取非行间样式
+			if (obj.currentStyle) { // for ie
+				return obj.currentStyle[attr];
+			}
+			else {
+				return getComputedStyle(obj, false)[attr];
+			}
+		}
+
+ 
+
+      var timer = null;
+
+		function startMove(obj, iTarget) {
+			clearInterval(timer); // 防止连续点击
+			timer = setInterval(function () {
+				var iSpeed = (iTarget - obj.offsetWidth) / 8;
+				iSpeed = iSpeed > 0 ? Math.ceil(iSpeed) : Math.floor(iSpeed);
+
+				if (obj.offsetWidth == iTarget) {
+					clearInterval(timer);
+				}
+				else {
+					obj.style.width = obj.offsetWidth + iSpeed + 'px';
+				}
+			}, 30)
+		}
+	</script>
+</head>
+
+<body>
+	<div></div>
+	<div></div>
+	<div></div>
+</body>
+
+</html>

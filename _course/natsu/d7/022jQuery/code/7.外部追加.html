@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>我是第1个li</li>
+        <li>我是第2个li</li>
+        <li id="li3">我是第3个li</li>
+        <li>我是第4个li</li>
+        <li id="box">我是第5个li</li>
+        <li>我是第6个li</li>
+        <li>我是第7个li</li>
+        <li>我是第8个li</li>
+        <li>我是第9个li</li>
+        <li>我是第10个li</li>
+    </ul>
+
+
+
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        /* 
+            after方法、insertAfter方法
+            1.作用：在目标元素的后面插入新的jQuery对象
+            2.格式：
+                1)目标元素.after(要插入的新的jQuery对象)
+                2)要插入的新的jQuery.insertAfter(目标元素)
+            before方法、insertBefore方法
+            1.作用：在目标元素的前面插入新的jQuery对象
+            2.格式：
+                1)目标元素.before(要插入的新的jQuery对象)
+                2)要插入的新的jQuery.insertbefore(目标元素)
+        */
+
+        // var $newLi = $('<li>123</li>');
+        // $('#box').after($newLi)
+        // $newLi.insertAfter($('#box'));
+
+        // var $newLi = $('<li>ok</li>')
+        // // $('#box').before($newLi);
+        // $newLi.insertBefore($('#box'));
+
+
+        var $li3 = $('#li3');
+        $('#box').after($li3);//如果要操作的节点是页面中已有的，那么append、appendTo、prepend、prependTo、after、before、insertAfter、insertBefore方法具有移动节点的功能
+
+    </script>
+</body>
+</html>

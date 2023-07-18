@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>我是第1个li</li>
+        <li>我是第2个li</li>
+        <li id="box">我是第3个li</li>
+        <li>我是第4个li</li>
+        <li>我是第5个li</li>
+    </ul>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        /* 
+            delegate方法：注意，该方法在为元素绑定事件的时候只能用事件委托的形式来绑定
+            1.格式：祖先元素.delegate(后代元素，事件名称，数据，function() {
+                // 事件被触发时要执行的操作
+            })
+        */
+        $('ul').delegate('#box', 'click', {a: 1, b: 2}, function(e) {
+            console.log(e.data);
+        });
+    </script>
+</body>
+</html>

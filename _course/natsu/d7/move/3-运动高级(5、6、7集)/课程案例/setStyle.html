@@ -1,0 +1,64 @@
+<!--
+ * @Description: 
+ * @Author: front end cabbage
+ * @Date: 2023-07-10 20:50:21
+ * @LastEditTime: 2023-07-11 13:35:04
+ * @LastEditors: front end cabbage
+ * @FilePath: \web2023\day14\move\3-运动高级(5、6、7集)\课程案例\setStyle.html
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style>
+#div1 {width:100px; height:100px; background:red;}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script>
+function setStyle(obj, json)
+{
+	var attr='';
+	
+	for(attr in json)
+	{
+		obj.style[attr]=json[attr];
+	}
+}
+
+window.onload=function ()
+{
+	var oDiv=document.getElementById('div1');
+	
+	setStyle(oDiv, {width: '200px', height: '200px', background: 'green'});
+};
+</script>
+</head>
+
+<body>
+<div id="div1">
+</div>
+</body>
+</html>
+<script>
+
+//第一节：
+
+  // 1. 匀速运不能整除的问题
+  // 2. 定时器被连续触发的问题
+  // 3. 缓冲运动不能被整除的算法问题
+  // 4. 全局定时器与对象定时器问题
+
+
+
+接下来
+   // setTimeout,setInterval
+   
+   // 特殊的透明度，alpha值
+
+   // 1. 链式运动  --》 回调地狱
+
+   // 2. 多属性变化  width,height,left,top
+
+   // 3. 链式运动框架和多属性完美运动框架
+
+</script>
