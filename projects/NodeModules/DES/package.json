@@ -1,0 +1,14 @@
+{
+  "name": "des",
+  "version": "1.0.0",
+  "description": "a javascript implementation of des algorithm",
+  "main": "main.js",
+  "scripts": {
+    "test": "node main.js"
+  },
+  "keywords": [
+    "des"
+  ],
+  "author": "h4nabii",
+  "license": "ISC"
+}
