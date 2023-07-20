@@ -1,7 +1,3 @@
-/*
-    入口文件
-*/
-
 const path = require("path");
 const fs = require("fs");
 const md = require("markdown-it")();
@@ -23,6 +19,7 @@ fs.readFile(mdPath, "utf8", (err, data) => {
     fs.readFile(tplPath, "utf8", (err, tplData) => {
         if (err) return;
         tplData = tplData.replace("<%content%>", result);
+        console.log(result);
         // 生成的最终页面写入目标文件
         fs.writeFile(targetPath, tplData, (err) => {
             console.log("转换完成");
