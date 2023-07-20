@@ -1,0 +1,45 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\10367\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js install
+
+PATH: 
+  C:\Program Files\PowerShell\7;;;C:\Python311\Scripts\;C:\Python311\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;D:\Applications\Tools\Python2.7.18\;D:\Applications\Tools\Python2.7.18\Scripts;C:\Program Files\PlasticSCM5\server;C:\Program Files\PlasticSCM5\client;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files\Common Files\Autodesk Shared\;D:\Applications\Programming\MinGW\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Azure Data Studio\bin;%JAVA_HOME%\bin;D:\Applications\Programming\PuTTY\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Lua\5.1;C:\Program Files (x86)\Lua\5.1\clibs;D:\Applications\Tools\微信web开发者工具\dll;E:\Programming\JSP\apache-maven-3.9.1\bin;C:\Program Files\dotnet\;C:\Program Files (x86)\ZeroTier\One\;C:\Program Files\PuTTY\;C:\Program Files\PowerShell\7\;C:\Users\10367\AppData\Local\Programs\Python\Python39\Scripts\;C:\Users\10367\AppData\Local\Programs\Python\Python39\;C:\Users\10367\AppData\Local\Microsoft\WindowsApps;D:\Applications\Programming\MinGW\bin;E:\Programming\Java\gradle-6.8.1\bin;C:\Program Files\Java\jdk-17.0.2\bin;C:\Program Files\MySQL\MySQL Server 8.0\bin;C:\Program Files\Azure Data Studio\bin;D:\Applications\Tools\IntelliJ IDEA 2021.3.2\bin;C:\Program Files\JetBrains\PyCharm 2021.3.2\bin;D:\Applications\Programming\PhpStorm 2022.1\bin;D:\Applications\CLion 2022.1.2\bin;C:\Users\10367\AppData\Local\GitHubDesktop\bin;D:\Applications\Programming\WebStorm 2022.3.1\bin;C:\Users\10367\AppData\Roaming\npm;C:\Users\10367\AppData\Local\JetBrains\Toolbox\scripts;D:\Applications\Programming\Microsoft VS Code\bin;D:\Server\php;
+
+Yarn version: 
+  1.22.19
+
+Node version: 
+  18.13.0
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: read ECONNRESET
+      at TLSWrap.onStreamRead (node:internal/stream_base_commons:217:20)
+
+npm manifest: 
+  {
+    "name": "mybook",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "art-template": "^4.9.1",
+      "body-parser": "^1.17.2",
+      "express": "^4.15.3",
+      "express-art-template": "^1.0.0",
+      "mysql": "github:mysqljs/mysql"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
