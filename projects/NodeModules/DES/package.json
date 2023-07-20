@@ -2,9 +2,9 @@
   "name": "des",
   "version": "1.0.0",
   "description": "a javascript implementation of des algorithm",
-  "main": "main.js",
+  "main": "entry.js",
   "scripts": {
-    "test": "node main.js"
+    "test": "node test.js"
   },
   "keywords": [
     "des"
