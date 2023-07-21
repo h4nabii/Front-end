@@ -1,1 +1,5 @@
+# not update the source code of Byakuya Museum
 /_myCode/_tests/Byakuya/
+
+# ignore all the node_modules
+**/node_modules
