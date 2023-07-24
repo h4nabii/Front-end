@@ -1,7 +1,7 @@
 let DES = require("./DES");
 let Binaries = require("./Binaries");
 
-function pack(str) {
+function encrypt(str) {
     let binaries = Binaries.from(str);
     let ciphers = [], keys = [];
     binaries.forEach((binary32, index) => {
@@ -30,6 +30,6 @@ function decrypt(cipher, key) {
 }
 
 module.exports = {
-    encrypt: pack,
+    encrypt: encrypt,
     decrypt
 };
