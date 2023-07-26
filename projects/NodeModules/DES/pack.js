@@ -1,8 +1,14 @@
 let DES = require("./DES");
 let Binaries = require("./Binaries");
 
-function encrypt(str) {
-    let binaries = Binaries.from(str);
+/**
+ * Encrypt `plaintext` to hex `cipher` and hex `key` by DES algorithm
+ * @param {String} plaintext Plaintext
+ * @return {[String, String]} Cipher and key
+ * @author h4nabii
+ */
+function encrypt(plaintext) {
+    let binaries = Binaries.from(plaintext);
     let ciphers = [], keys = [];
     binaries.forEach((binary32, index) => {
         let [cipher, key] = DES.encryptBinary(binary32);
@@ -15,6 +21,13 @@ function encrypt(str) {
     return [cipherCode, keyCode];
 }
 
+/**
+ * Decrypt Hex cipher with a Hex key to plain text
+ * @param {String} cipher
+ * @param {String} key
+ * @return {string}
+ * @author h4nabii
+ */
 function decrypt(cipher, key) {
     let decryptedBinaries = [];
     for (let i = 0; i < cipher.length / 16; i++) {
