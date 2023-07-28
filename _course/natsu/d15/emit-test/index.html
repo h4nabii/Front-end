@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/tools/vue2.7.14.js"></script>
+</head>
+<body>
+<div id="app">
+    <test-comp @large="handle"></test-comp>
+    <test-comp @large="handle(this, $event, arguments)"></test-comp>
+    <br/>
+    <br/>
+    <br/>
+    <button @click="handle">123</button>
+    <button @click="handle(this, $event, arguments)">123</button>
+</div>
+<script>
+    Vue.component("test-comp", {
+        emits: ["large"],
+        template: `
+            <button @click="$emit('large', 1, 2)">Comp</button>
+        `
+    });
+
+    let app = new Vue({
+        el: "#app",
+        methods: {
+            handle(arg1, arg2, arg3) {
+                console.log(arg1, arg2, arg3);
+            }
+        }
+    });
+</script>
+</body>
+</html>
