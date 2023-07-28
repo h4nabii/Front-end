@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+<script>
+    //同步：阻塞的 按顺序执行代码
+    //异步：非阻塞的 各做各的 、
+
+    //同步代码
+    console.log("---1111-----");
+    for (let i = 1; i < 100; i++) {
+        console.log(i);
+    }
+    console.log("----2222-----");
+
+    //异步：ajax 特点：局部刷新 异步请求
+    console.log("---1111------");
+    let xhr = new XMLHttpRequest();
+    xhr.open("get", "test.txt", true);
+    xhr.send();
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                console.log(xhr.responseText);
+            }
+        }
+    };
+    console.log("----2222------");
+    for (let i = 1; i < 100; i++) {
+        console.log(i);
+    }
+</script>
+</body>
+</html>

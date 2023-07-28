@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<input type="text" id="username">
+<input type="text" id="password">
+<button id="login">发送</button>
+<script>
+    //get传递参数
+    document.getElementById("login").onclick = function () {
+
+        //获取用户值
+        let username = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
+        console.log("用户输入的值", username, password);
+
+        //创建ajax对象 发送请求
+        let xhr = new XMLHttpRequest();
+
+        //准备发送请求  参数：xhr.open("get","06ajax.php?username=qq&password=123")
+        let url = "http://localhost:5000/intro/server/03.php?username=" + username + "&password=" + password;
+        xhr.open("get", url, true);
+
+        //get传递参数在url地址栏 传递----send()空内容
+        xhr.send();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === (XMLHttpRequest.DONE || 4)) {
+                if (xhr.status === 200) {
+
+                    //后台返回的响应的数据 xhr.response / xhr.responseText
+                    console.log(xhr.response);
+                }
+            }
+        };
+    };
+</script>
+</body>
+</html>
