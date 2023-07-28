@@ -1,6 +1,6 @@
 export default {
-    func: function () {
+    f: function () {
         console.log("func, export default");
     },
     a: 10
-}
+};

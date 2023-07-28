@@ -1,4 +1,4 @@
-export function func() {
+export function f() {
     console.log("func, export default");
 }
 
