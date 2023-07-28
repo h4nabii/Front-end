@@ -1,0 +1,130 @@
+<!--
+ * @Description:
+ * @Author: front end cabbage
+ * @Date: 2023-07-17 14:02:24
+ * @LastEditTime: 2023-07-17 14:49:42
+ * @LastEditors: front end cabbage
+ * @FilePath: \htg\code\test2.html
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form name="f1"
+      action="http://localhost:5000/getInfo.php"
+      method="post">
+    uid:<input type="text" name="uid" id='u1' required><br>
+    age:
+    <input type="text" name="age" placeholder="请输入：" required><br/>
+    <input type="submit" value="提交">
+</form>
+
+<ul id="myData">
+
+</ul>
+</body>
+</html>
+<script>
+
+
+    //	  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+    // 	xmlhttp=new XMLHttpRequest();
+    // }
+    // else
+    // {
+    // 	// IE6, IE5 浏览器执行代码
+    // 	xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    // }
+    // // xmlhttp.onreadystatechange=function()
+    // // {
+    // // 	if (xmlhttp.readyState==4 && xmlhttp.status==200)
+    // // 	{
+    // // 		document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
+    // // 	}
+    // // }
+    // // xmlhttp.open("GET","/try/ajax/ajax_info.txt",true);
+    // // xmlhttp.send();
+
+
+    // }
+
+
+    // function createXmlHttp()
+    // {
+    //     var MSXML = ["Msxml2.XMLHTTP.6.0","Msxml2.XMLHTTP.5.0","Msxml2.XMLHTTP.4.0","Msxml2.XMLHTTP.3.0","Msxml2.XMLHTTP","Microsoft.XMLHTTP"];
+    //     if( window.XMLHttpRequest )    //W3C标准(firefox、360、IE8等)
+    //     {
+    //         xmlHttp = new XMLHttpRequest();
+    //     }
+    //     else if( window.ActiveXObject )    //主要IE的低版本
+    //     {
+    //         for( var n = 0; n < MSXML.length; n++)
+    //         {
+    //             try
+    //             {
+    //                 xmlHttp = new ActiveXObject(MSXML[n]);
+    //                 if( xmlHttp )
+    //                 {
+    //                     break;
+    //                 }
+    //             }
+    //             catch(e) {  }
+    //         }
+    //     }
+    //     else
+    //     {
+    //         xmlHttp = null;
+    //     }
+    // }
+
+
+    // 1. 创建ajax对象
+
+
+    var xhr = null;
+
+    if (window.XMLHttpRequest) {
+        xhr = new XMLHttpRequest();
+    } else {
+        xhr = new ActiveXObject("XMLHTTP");
+    }
+
+    // console.log(xhr);
+
+    // 2. 进行数据装车
+
+    var oUid = document.querySelector("#u1");
+    xhr.onreadystatechange = function () {
+        // 1.xhr.readyState ajax的状态码
+        //  0
+        //  1
+        //  2
+        //  3
+        //  4
+
+        // 2.http状态码
+
+        if (xhr.readyState == 4 && xhr.status == 200) {
+
+            console.log(xhr.responseText);
+        }
+
+
+    };
+    xhr.open("get", "http://getInfo.php?uid=" + oUid.value, true);
+    xhr.send(null);
+
+
+</script>
+
+
+
+
+
+
+

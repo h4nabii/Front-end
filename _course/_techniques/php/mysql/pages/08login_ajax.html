@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .info{border:1px solid red; padding:10px;}
+    </style>
+</head>
+<body>
+
+    <h2>AJAX-登录-案例</h2>
+    <form>
+        <p>账号：<input type="text" id='uname'></p>
+        <p>密码：<input type="text" id='mima'></p>
+        <button type="button" class='login'>登录</button>
+        <div class='info'></div>
+    </form>
+
+
+
+    <h2>AJAX-注册-案例</h2>
+    <form>
+        <p>账号：<input type="text" id='name'></p>
+        <p>密码：<input type="text" id='zhumima'></p>
+        <button type="button" class='zhuce'>注册</button>
+    </form>
+
+
+    <script src='js/jquery-1.12.4.js'></script>
+    <script>
+        //1.点击登录--触发事件
+        $(".login").click(function(){
+            //2.获取用户输入内容
+            var uname=$("#uname").val();
+            var mima=$("#mima").val();
+            //3.创建ajax方法  参数配置 传递对象{}
+            $.ajax({
+                type:'post',//请求的方式get/post
+                url:'09login.php',//请求的url地址 接口
+                data:{//传递给后台的参数 data:{ key:value,...}
+                //注意：参数1：后台定义的接受变量 参数2：uname前端要传递的值
+                    username:uname,
+                    password:mima
+                },
+                //回调函数-- 服务器返回的数据给ajax 
+                success:function(res){//res形参
+                    console.log(res);    
+                    $(".info").html(res);
+                }
+            })
+
+        })
+        
+        //2.点击注册信息------------------------
+        //ajax({  url:'zhuce.php',.....})
+   
+   </script>
+</body>
+</html>
