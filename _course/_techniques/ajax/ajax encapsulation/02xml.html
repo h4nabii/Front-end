@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>进入页面获取书本信息</h2>
+
+    <script>
+        //1.创建对象
+        var  xhr=new XMLHttpRequest();
+        xhr.open('get','data/data.xml',true);
+        xhr.send();
+        xhr.onreadystatechange=function(){
+            if(xhr.readyState==4){
+                if(xhr.status==200){
+                    console.log(xhr.responseXML);
+                    var data=xhr.responseXML;
+                    var bookHtml=data.getElementsByTagName('bookstore')[0];
+                    var books=bookHtml.getElementsByTagName('book');
+                    console.log(books);
+                    //遍历
+                    var str='';
+                    for(var i=0;i<books.length;i++){
+                        console.log(books[i]);
+                        console.log(books[i].getElementsByTagName('name')[0].innerHTML);
+                    }
+                    //插入
+
+                }
+            }
+        }
+
+    </script>
+
+</body>
+</html>

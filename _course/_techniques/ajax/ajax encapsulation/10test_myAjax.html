@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id='inp'>
+    <button id='ceshi'>测试post</button>
+    <script src='js/myAjax.js'></script>
+    <script>
+        //1.测试获取书本信息
+        myAjax({
+            method:'get',
+            url:'data/data.json',
+            success:function(res){
+                console.log(JSON.parse(res));
+                //解析对象
+            }
+        })
+       //3.测试post传递参数-----
+        document.getElementById('ceshi').onclick=function(){
+            var inp=document.getElementById('inp').value;
+            //执行myAjax()
+            myAjax({
+                method:'post',
+                url:'11test.php',
+                data:{
+                    code:inp
+                },
+                success:function(res){
+                    console.log('post数据：',res);
+
+                }
+            })
+        }
+        //2.测试本地获取 大写get
+        myAjax({
+            method:'GET',
+            url:'data/data.json',
+            success:function(res){
+                console.log('第二个数据：',JSON.parse(res));
+                //解析对象
+            }
+        })
+
+    </script>
+</body>
+</html>

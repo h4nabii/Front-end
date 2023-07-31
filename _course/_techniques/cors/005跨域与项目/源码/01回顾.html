@@ -1,0 +1,77 @@
+
+1.原生的ajax步骤：
+    var xhr=new XMLHttpRequest();//ie7+
+
+    xhr.open('get','192.168.xxx.xxx/url.php?uname=qq',true);
+    xhr.send();
+
+    xhr.onreadystatechange=function(){
+        if(xhr.readyState==4){
+            if(xhr.status==200){
+                //返回的结果
+                xhr.responseText;
+
+            }
+        }
+    }
+
+2.XMLHttpRequest介绍对象
+    属性：readyState 记录请求的各各状态
+            0:创建xml对象 未请求初始化
+            1:请求服务器
+            2:服务器接受请求
+            3:服务器处理请求
+            4:服务器响应数据
+    属性：status http协议状态码
+        2xx 成功  200
+        3xx 重定向 304 307
+        4xx 资源不存在  404
+        5xx 服务器错误  500  505
+    属性：responseText responseXML
+        响应text
+        响应xml
+    方法：open('','','')
+        准备请求
+    方法：send()
+        执行发送
+    事件：
+     xhr.onreadystatechange 事件自动执行 监听xhr执行的状态
+
+3.jquery的api--ajax()
+    jquery的API文档：https://www.jquery123.com/       http://jquery.cuishifeng.cn/
+
+    语法：
+        $.ajax({
+            type:'get/post',
+            url:'接口',
+            data:{
+
+            },
+            dataType:'json/xml/html/js/text',
+            success:callback,
+            error:callback,
+            beforeSend:callback,
+            complete:callback
+        })
+
+        $.get() 请求只能是get
+        $.post() 请求只能是post
+        $.getJSON() 请求方式是get并且返回的数据是json
+
+4.封装ajax
+        1.为什么封装
+        2.怎么封装
+            myAjax({
+                method:'',
+                url:'',
+                data:{},
+                success:callback
+            })
+
+            思路：
+                1.接受参数 object={method:'',...}
+                2.创建xhr对象ajax
+                3.判断有没有参数 如果有参数：{uname:qq,mima:123}--转成字符串拼接'uname=qq&mima=123'
+                4.判断请求方式 get/post
+                5.监听函数
+                6.返回的数据接口--调用函数返回参数

@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style>
+* {margin:0; padding:0;}
+#target {position:relative; border:1px solid black; width:680px; height:139px; margin:10px auto; }
+#target ul {position:absolute; left:0;}
+#target ul li {list-style:none; float:left; width:150px; height:112px; padding:10px;}
+#target ul li img {width:150px;}
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script>
+window.onload=function ()
+{
+	var oDiv=document.getElementById('target');
+	var oUl=oDiv.getElementsByTagName('ul')[0];
+	var aLi=oUl.getElementsByTagName('li');
+	var timer=null;
+
+    oDiv.onmouseover= function(){
+        clearInterval(timer);
+    }
+      oDiv.onmouseout= function(){
+        autoPlay();
+    }
+
+
+	oUl.innerHTML = oUl.innerHTML + oUl.innerHTML;
+	oUl.style.width=aLi.length*aLi[0].offsetWidth+'px';
+
+    autoPlay();
+   function autoPlay(){
+       timer=setInterval(function (){
+		if(oUl.offsetLeft<-oUl.offsetWidth/2)
+		{
+			oUl.style.left=0;
+		}
+		oUl.style.left=oUl.offsetLeft-10+'px';
+	}, 300);
+};
+   }
+
+</script>
+</head>
+
+<body>
+<div id="target">
+	<ul>
+    	<li><img src="img/1.jpg" />11111</li>
+    	<li><img src="img/2.jpg" />22222</li>
+    	<li><img src="img/3.jpg" />33333</li>
+    	<li><img src="img/4.jpg" />44444</li>
+    </ul>
+</div>
+</body>
+</html>

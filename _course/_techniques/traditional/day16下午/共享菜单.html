@@ -1,0 +1,94 @@
+<!--
+ * @Description:
+ * @Author: front end cabbage
+ * @Date: 2023-07-13 13:32:27
+ * @LastEditTime: 2023-07-13 13:47:09
+ * @LastEditors: front end cabbage
+ * @FilePath: \day16\共享菜单.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            width: 1000px;
+            height: 3000px;
+            background-color: #eee;
+            margin: 0 auto;
+        }
+
+        .login {
+            width: 1000px;
+            height: 60px;
+            line-height: 60px;
+            position: absolute;
+            top: 400px;
+            background-color: pink;
+            overflow: hidden;
+        }
+
+        .share {
+            width: 300px;
+            height: 40px;
+            line-height: 40px;
+            background-color: green;
+            position: absolute;
+            top:10px;
+            left:-280px;
+        }
+        .share span{float:right;color:red;}
+        .share span:hover{cursor:pointer}
+    </style>
+</head>
+
+<body>
+
+    <div class="content">
+
+        <div class="login">
+            <div class="share">
+                11111
+                <span class="btn">>></span>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script>
+    var oS = document.querySelector('.share');
+    console.log(oS);
+    var btn = document.querySelector('.share span');
+    var initPos = oS.offsetLeft;
+    console.log(initPos);
+    var tid = null;
+    var flag = true
+    btn.onclick = function(){
+         console.log('aaaa');
+        //  oS.style.left = 0+"px"
+        if(flag){
+                tid = setInterval(function(){
+                if(oS.offsetLeft>=0){
+                    oS.style.left=0;
+                    clearInterval(tid)
+                }
+                oS.style.left = oS.offsetLeft + 20 +'px'
+            },30)
+            flag = false;
+        }else{
+             oS.style.left = initPos +'px'
+             flag = true;
+        }
+
+          }
+</script>

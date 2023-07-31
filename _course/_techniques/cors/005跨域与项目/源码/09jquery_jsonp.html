@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        ul{
+            list-style: none;
+        }
+    </style>
+
+
+    <input type="text" id='inp'>
+    <button id='look'>查看</button>
+    <!-- <ul>
+        <li></li>
+    </ul> -->
+
+    <script src='js/jquery.min.js'></script>
+    <script>
+        //跨域访问百度接口----jsonp跨域方法
+        $("#look").click(function(){
+            var inp=$("#inp").val();
+
+            //请求 --jquery封装的跨域方法jsonp
+            $.ajax({
+                type:'get',//跨域jsonp只能get请求
+                url:'http://suggestion.baidu.com/su?wd='+inp,//参数地址栏传递
+                // data:{wd:inp},
+                dataType:'jsonp',//必须jsonp
+                jsonp:'cb',//后台接受的函数
+                jsonpCallback:'demo',//后台把数据返回给你前端的函数    默认生成名字jquery+数字
+                success:function(res){
+                    console.log(res);
+                }
+            })
+
+        })
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!--
+ * @Description:
+ * @Author: front end cabbage
+ * @Date: 2023-07-14 13:29:42
+ * @LastEditTime: 2023-07-14 13:32:49
+ * @LastEditors: front end cabbage
+ * @FilePath: \day17\ES6\26-继承3.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+// 四、寄生组合继承
+// 实现方式：调用Object.create方法，并传入父类的原型，再将返回值赋值给子类的原型
+
+
+        function Parent(name, age) {
+            this.name = name;
+            this.age = age;
+            this.hobby = ["音乐", "电影", "睡觉"]
+        }
+        //原型上面添加方法 run
+        Parent.prototype.run = function () {
+            console.log(this.name + "今年" + this.age);
+            return this.name + "今年" + this.age
+        }
+
+
+        function Child(name, age) {
+            Parent.call(this, name, age); //构造函数继承
+        }
+        Child.prototype = Object.create(Parent.prototype) //与组合继承的差异
+        //通过create方法创造了一个对象，并且这个对象的proto指向Parent的prototype
+
+        let newChildA = new Child("小何", 24);
+        let newChildB = new Child("小何", 24);
+
+        console.log(newChildA);
+        console.log(newChildB);
+        newChildA.run() //run方法调用成功
+
+
+</script>

@@ -1,0 +1,63 @@
+<!--
+ * @Description:
+ * @Author: front end cabbage
+ * @Date: 2023-07-14 13:29:42
+ * @LastEditTime: 2023-07-14 15:00:44
+ * @LastEditors: front end cabbage
+ * @FilePath: \day17\ES6\26-继承2.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+// 二、构造函数继承
+
+// 特点：
+
+// 1、可以解决原型链继承中共享属性的情况，不存在引用类型一个修改，另外一个也会发生变化的情况。
+// 2、构造函数继承不会继承原型链上面的属性及方法
+// 实现方式：使用this绑定的形式，来实现继承 例子如下：
+
+
+    //父类
+	function Parent(name, age) {
+            this.name = name;
+            this.age = age;
+            this.hobby = ["音乐", "电影", "睡觉"]
+        }
+        //原型上面添加方法 run
+        Parent.prototype.run = function () {
+            console.log(this.name + "今年" + this.age);
+            return this.name + "今年" + this.age
+        }
+
+	//子类
+        function Child(name,age) {
+            Parent.call(this,name,age);   // Parent通过call,把自己的属性设置方法交给了Child
+            //构造函数的继承,使用this绑定的形式来获得父类含有的属性
+        }
+
+        let newChildA = new Child("小何",24);
+        let newChildB = new Child("小何",24);
+        console.log(newChildA);
+        console.groupEnd(newChildA.hobby);
+        console.log(newChildB);
+
+        //改变其中一个的引用类型
+        newChildA.hobby.push("篮球");
+        console.log(newChildA); // hobby: (4) ['音乐', '电影', '睡觉', '篮球']
+        console.log(newChildB); // hobby: (4) ['音乐', '电影', '睡觉']
+        //打印可以看到,相互是不会影响的，解决了原型链继承共享属性的情况
+
+        newChildA.run()  //会报错，此时实例上面没有 run方法 构造函数继承不会继承原型链上面的方法
+
+</script>

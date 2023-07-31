@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    var obj = {
+        id:1,
+        name:'Andy',
+        msg: {
+            age:18
+        },
+        color:['pink','red']
+    }
+
+    var newObj = {}
+    //封装函数
+    function deepCopy(newObj,obj) {
+        for(var key in obj) {
+            //判断属性值属于哪种数据类型
+            //属性值 obj[key]
+            //1.判断这个值是否为数组(数组也属于特殊对象，也是引用类型数据)
+            if(obj[key] instanceof Array) {
+                newObj[key] = []
+                deepCopy(newObj[key],obj[key]) //运用递归，把原对象属性值给新对象
+                //判断这个值是否为对象
+            } else if(obj[key] instanceof Object) {
+                newObj[key] = {}
+                deepCopy(newObj[key],obj[key]) //运用递归，把原对象属性值给新对象
+            } else {
+                //若是普通数据类型
+                newObj[key] = obj[key]
+            }
+
+        }
+    }
+    deepCopy(newObj,obj)
+
+    console.log(newObj)
+
+    newObj.msg.age = 88;
+    console.log(obj.msg.age);   // 18
+    newObj.color[0] = 'red';
+    console.log(obj.color[0]); // pink
+</script>
+
+    </body>
+</html>

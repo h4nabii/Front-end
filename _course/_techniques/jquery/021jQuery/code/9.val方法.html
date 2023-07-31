@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="user">
+    <button type="button">按钮</button>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        /*
+            val方法
+            1.作用：获取或者设置表单元素中的值
+            2.格式：表单元素.val()或表单元素.val(值)；
+
+            */
+        $('button').click(function() {
+            // console.log(typeof $('input').val());
+            $('input').val(100);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<style>
+#target {width:100px; height:100px; position:absolute; background:red; left:0; top:50px;}
+.div2{width:1px;height:300px;position: absolute;border-left: 1px solid red;left:300px;top:0;}
+
+</style>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript">
+var timer=null;
+
+function startMove(iTarget)
+{
+	var oDiv=document.getElementById('target');
+
+	// clearInterval(timer);
+	timer=setInterval(function (){
+		var iSpeed=(iTarget-oDiv.offsetLeft)/10;
+
+         if(iSpeed>0){
+            iSpeed = Math.ceil(iSpeed);
+         }else{
+             iSpeed = Math.floor(iSpeed);
+         }
+
+        // iSpeed>0?iSpeed = Math.ceil(iSpeed):Math.floor(iSpeed);
+
+		if(oDiv.offsetLeft===iTarget)	//是否到达终点
+		{
+			clearInterval(timer);	//到达终点
+		}
+		else
+		{
+			console.log(iSpeed);
+			oDiv.style.left=oDiv.offsetLeft+iSpeed+'px';	//到达之前
+            //console.log(oDiv.offsetLeft)
+		}
+	}, 30);
+}
+
+</script>
+</head>
+
+<body>
+<input type="button" value="开始运动" onclick="startMove(300)" />
+<input type="button" value="back" onclick="startMove(0)" />
+<div id="target"></div>
+<div class="div2"></div>
+</body>
+</html>

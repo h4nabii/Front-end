@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <!--
+        script标签可以访问任意网络资源 不跨域 可以访问
+         <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.0/jquery.min.js"></script>
+            <script>
+                console.log($);
+            </script>
+     -->
+
+
+    <script>
+         function demo(res){
+             console.log(res);
+         }
+     </script>
+     <script src='07fun.php?callback=demo'></script>
+
+
+    <!-- jsonp跨域怎么实现？
+        百度搜索的接口数据：
+            百度搜索内容是jsonp跨域格式获取的 ：
+            网址：http://suggestion.baidu.com/su?cb=callback&wd=a
+                参数：cb百度后台接受的变量 函数名
+                    wd：搜索框的内容
+
+    -->
+
+    <script>
+        function demo(res){
+            console.log(res);
+        }
+    </script>
+
+    <script src='http://suggestion.baidu.com/su?cb=demo&wd=程序员为什么'></script>
+
+
+
+</body>
+</html>

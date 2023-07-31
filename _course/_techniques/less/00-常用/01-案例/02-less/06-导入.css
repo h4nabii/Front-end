@@ -1,0 +1,20 @@
+html {
+  font-size: 12px;
+}
+.father {
+  color: red;
+  background: green;
+  width: 68rem;
+  height: 100rem;
+}
+.father .son {
+  width: 20rem;
+  height: 20rem;
+  background-color: pink;
+}
+/*
+    块注释
+    第二行
+    第三行
+*/
+/*# sourceMappingURL=06-导入.css.map */

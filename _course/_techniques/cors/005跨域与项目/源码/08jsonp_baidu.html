@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id='box'>
+    <h2>点击查询---查询搜索的内容</h2>
+
+    <input type="text" id='inp'>
+    <button id='search'>查询</button>
+
+    <script>
+
+        //1.点击事件
+        document.getElementById('search').onclick=function(){
+            //获取用户输入的内容--搜索内容
+            var inp = document.getElementById('inp').value;
+
+            //请求百度的接口数据--做查询
+            //利用jsonp实现：原理 动态创建script标签 让src属性访问接口
+            var script=document.createElement('script');
+            script.src='http://suggestion.baidu.com/su?cb=aa&wd='+inp;
+            // console.log(script);
+            //插入文档页面
+            document.getElementById('box').appendChild(script);
+        }
+
+        //定义函数接受--返回的数据 script  src=''返回的数据
+        function aa(res){
+            console.log(res);
+            console.log(res.s);
+        }
+
+
+
+
+    </script>
+
+</body>
+</html>

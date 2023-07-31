@@ -1,0 +1,71 @@
+<!--
+ * @Description:
+ * @Author: front end cabbage
+ * @Date: 2023-07-14 13:28:31
+ * @LastEditTime: 2023-07-14 14:57:46
+ * @LastEditors: front end cabbage
+ * @FilePath: \day17\ES6\26-继承1.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+
+// 一、原型链继承
+
+// 特点：属性是共享的，如果属性中有引用数据类型，那么修改其中一个，另外一个也会修改。
+// 实现方式：在要继承的子类的原型上面赋值为父类的实例化 例子如下
+
+    //父函数
+	function Parent(name,age) {
+            this.name = name;
+            this.age = age;
+            this.hobby = ["音乐", "电影", "睡觉"]
+        }
+        //原型上面添加方法 run
+        Parent.prototype.run = function () {
+            console.log(this.name + "今年" + this.age);
+            return this.name + "今年" + this.age
+        }
+
+	//要继承的子函数
+        function Child() {
+
+        }
+
+        // 原型链继承：在Child的原型上赋值为 Parent的实例化 实现继承
+        // new Child()会生成一个实例化对象 此时这个对象有上面的name age hobby属性 还有原型上面的 run方法
+        // 并将这个实例化对象 赋值给Child的原型 以实现继承
+        //这时候再实例化 Child 就可以实现继承了
+        Child.prototype = new Parent("小王",18);  //继承实现的核心代码
+
+
+        let newChildA = new Child();
+        let newChildB = new Child();
+
+        console.log(newChildA,newChildA.name);
+        console.log(newChildB,newChildA.name);
+        console.log(newChildA.run());
+
+        // 原型链继承的特点 如果属性有引用类型 继承的是引用的地址
+        // 改变一个 另外一个也会改变
+        // 例如:属性hobby为数组 改变newChildA的 打印newChildB的也改变了
+        // newChildA.hobby.push("篮球");
+        // console.log(newChildA,newChildA.hobby);
+        // console.log(newChildB,newChildB.hobby);
+
+        //改变基本类型不受影响
+        // newChildA.name = "小周";
+        // newChildB.name = "小秋";
+        // console.log(newChildA);
+        // console.log(newChildB);
+
+</script>

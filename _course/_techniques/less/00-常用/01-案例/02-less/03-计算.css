@@ -1,0 +1,11 @@
+.father {
+  width: 1000px;
+  height: 600px;
+  border: 10px dashed pink;
+}
+.father .son {
+  color: purple;
+  font-size: 100px;
+  font-weight: bolder;
+}
+/*# sourceMappingURL=03-计算.css.map */

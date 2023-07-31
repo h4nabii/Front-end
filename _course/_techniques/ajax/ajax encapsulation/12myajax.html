@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        jquery的ajax:
+            $.ajax({
+                type:'get/post',
+                url:'地址',
+                data:{
+                    key:value
+                },
+                success:callback,
+                error:callback
+            })
+
+        原生的ajax:
+            var xhr=new XMLHttpRequest()
+            //发送 get请求参数
+            var str='username=qq&mima=123'
+            xhr.open('get','urlxxx?'+str,true);
+            xhr.send()
+            xhr.onreadystatechange=callback;
+     -->
+     <input type="text" id='uname'>
+     <input type="text" id='mima'>
+     <button id='btn'>点击查看数据</button>
+     <script>
+         //点击按钮 触发事件
+         document.getElementById('btn').onclick=function(){
+             //获取用户输入的值
+             var uname=document.getElementById('uname').value;
+             var mima=document.getElementById('mima').value;
+            //创建xhr对象ajax  请求后台
+            //封装成一个方法 名字：myAjax()   参数：
+            myAjax({
+                method:'get',
+                url:'09ajax.php',
+                data:{
+                    username:uname,
+                    password:mima
+                },
+                success:function(res){
+                    console.log(res);
+                }
+            });
+
+         }
+
+         //定义你封装的函数  myAjax(obj)
+         //参数：obj={method:'请求方式get/post',url:'请求地址',data:{参数对象},success:''}
+         function myAjax(obj){
+            var xhr=new XMLHttpRequest();
+            //先判断是否有参数传递 有参数 {username:qq,password:123} 转成'username=qq&password=123'
+            var newStr='';
+            if(obj.data){
+                var str='';
+                for(var key in obj.data){
+                    str+=key+'='+obj.data[key]+'&';
+                }
+                newStr=str.slice(0,str.length-1);
+            }
+
+            //再判断请求方式是get/post
+            if(obj.method.toLowerCase()=='get'){
+                xhr.open('get',obj.url+'?'+newStr,true)
+                xhr.send();
+            }else if(obj.method.toLowerCase()=='post'){
+                xhr.open('post',obj.url,true);
+                xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded;charset=utf-8");
+                xhr.send(newStr);
+            }
+            //监听函数
+            xhr.onreadystatechange=function(){
+                if(xhr.readyState==4){
+                    if(xhr.status==200){//请求成功--有数据
+                        //回调函数的形式  把成功的结果返回给success函数  --实参xhr.responseText
+                        obj.success(xhr.responseText);
+                    }
+                }
+            }
+
+         }
+
+
+     </script>
+
+</body>
+</html>

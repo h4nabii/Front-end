@@ -1,0 +1,44 @@
+<!--
+ * @Description:
+ * @Author: front end cabbage
+ * @Date: 2023-07-13 23:07:44
+ * @LastEditTime: 2023-07-14 14:51:35
+ * @LastEditors: front end cabbage
+ * @FilePath: \day17\ES6\12-rest参数.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rest参数</title>
+</head>
+<body>
+    <script>
+        // ES6 引入 rest 参数，用于获取函数的实参，用来代替 arguments
+
+
+        // ES5 获取实参的方式
+        // function date(){
+        //     console.log(arguments);
+        //     console.log(arguments.callee);
+        // }
+        // date('tom','rose','smith');
+
+       // rest 参数
+        // function date(user1,...args){
+        //     console.log(args);// filter some every map
+        // }
+        // date('阿娇','柏芝','思慧');
+
+        // rest 参数必须要放到参数最后
+        function fn(a,b,...args){
+            console.log(a);
+            console.log(b);
+            console.log(args);
+        }
+        fn(1,2,3,4,5,6);
+
+    </script>
+</body>
+</html>

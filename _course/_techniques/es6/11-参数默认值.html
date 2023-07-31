@@ -1,0 +1,46 @@
+<!--
+ * @Description:
+ * @Author: front end cabbage
+ * @Date: 2023-07-13 23:07:44
+ * @LastEditTime: 2023-07-14 14:39:55
+ * @LastEditors: front end cabbage
+ * @FilePath: \day17\ES6\11-参数默认值.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数参数默认值</title>
+</head>
+<body>
+    <script>
+        //ES6 允许给函数参数赋值初始值
+
+        //1. 形参初始值 具有默认值的参数, 一般位置要靠后(潜规则)
+
+        function add(a,c=10,b) {
+            // 严格的位置匹配
+            console.log(a,b,c);
+            return a + b + c;
+        }
+        let result = add(1,2);
+        console.log(result);  // NaN
+
+
+        //2. 与解构赋值结合
+        function connect({host="127.0.0.1", username,password, port}){
+            console.log(host)
+            console.log(username)
+            console.log(password)
+            console.log(port)
+        }
+        connect({
+            host: 'chinaren.com',
+            username: 'root',
+            password: 'root',
+            port: 3306
+        })
+    </script>
+</body>
+</html>

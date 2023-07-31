@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<script>
+function fn(data) {
+	// alert(data);
+	var oBox = document.getElementById('box')
+	oBox.innerHTML = data;
+}
+</script>
+<!--<script src="2.txt"></script>-->
+<script>
+window.onload = function() {
+
+	var oBtn = document.getElementById('btn');
+
+	oBtn.onclick = function() {
+
+		//当按钮点击的时候再去加载远程资源，让他执行
+
+		var oScript = document.createElement('script');
+		oScript.src = 'http://192.168.1.106/day19/jsonp/2.txt';
+		document.body.appendChild(oScript);
+
+	}
+
+}
+</script>
+</head>
+
+<body>
+	<input type="button" id="btn" value="按钮" />
+    <div class="box" id="box">
+
+	</div>
+</body>
+</html>

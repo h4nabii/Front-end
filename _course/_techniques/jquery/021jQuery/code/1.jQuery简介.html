@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://cdn.bootcss.com/jquery/3.5.0/jquery.js"></script>
+    <script>
+        /*
+        1.什么是jQuery：jQuery是JavaScript的一个库，里面是由JS代码封装好的各种函数，可以利用这些函数实现对页面中元素的操作，如操作CSS样式，也可以操作从后台获取数据等等。
+        2.jQuery宗旨：write less， do more，写的更少，做的更多
+        3.jQuery官网：https://jquery.com/
+        4.为什么要学jQuery
+        5.jQuery文档的下载：先找jQuery官网---download-最下面的链接（jquery cdn）--在跳转到的页面中点击下载
+        6.获取jQuery的方式2：从https://www.bootcdn.cn/jquery/，将jQuery的链接地址直接粘贴到HTML的script的src后面
+        7.jQuery的使用
+            第一步：在html文档中创建一个script标签，将src属性的值设置为jQuery文档的路径
+            第二步：再创建一个script，在给script中写js代码
+        */
+    </script>
+
+    <style>
+        .box{border:1px solid red;width:300px;}
+        .box span{background-color: green;display: block;height:30px;}
+        .box .content{border:1px solid #aaa;width:300px;height:200px;}
+    </style>
+
+    <div class="box" id="box">
+         <span>
+              javascript学习
+         </span>
+         <div class="content">
+            第一步：在html文档中创建一个script标签，将src属性的值设置为jQuery文档的路径
+            第二步：再创建一个script，在给script中写js代码
+         </div>
+    </div>
+</body>
+</html>
+<script>
+     // jquery 加载的 函数库文件
+    // 选择器 类似于css样式
+    // console.log($);
+    // console.log(jQuery)
+    console.log($===jQuery); // true;
+
+
+    $('.box .content').hide();
+
+    // $('.box span').mouseover(function(){
+    //      $('.box .content').show();
+    // })
+
+    // $('.box span').mouseout(function(){
+    //      $('.box .content').hide();
+    // })
+    // 1. 这是jquery的特色  链式写法
+
+    //  $('.box span').mouseover(function(){
+    //     $('.box .content').show();
+    //  }).mouseout(function(){
+    //     $('.box .content').hide();
+    //  })
+
+     $('.box span').hover(
+        function(){
+            $('.box .content').show();
+        },
+        function(){
+            $('.box .content').hide();
+        }
+        )
+</script>

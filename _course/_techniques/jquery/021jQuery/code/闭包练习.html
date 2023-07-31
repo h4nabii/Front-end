@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            line-height: 3em;
+            background-color: darkmagenta;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        在页面中创建一个ul列表，点击li时打印该li的下标
+    -->
+    <ul>
+        <li>我是第1个li</li>
+        <li>我是第2个li</li>
+        <li>我是第3个li</li>
+        <li>我是第4个li</li>
+        <li>我是第5个li</li>
+    </ul>
+
+    <script>
+        /****************下面的代码是有问题的，打印的i的值都是5******************/
+        // var lis = document.querySelectorAll('li');
+
+        // for (var i=0; i<lis.length; i++) {
+        //     lis[i].onclick = function() {
+        //         console.log(i);
+        //     };
+        // }
+
+
+
+        /****************正确方式1：为li节点绑定属性******************/
+        // var lis = document.querySelectorAll('li');
+
+        // for (var i=0; i<lis.length; i++) {
+        //     // 为每个li绑定一个属性，给属性的值就是下标
+        //     lis[i].id = i;
+
+        //     lis[i].onclick = function() {
+        //         console.log(this.id);;
+        //     };
+        // }
+
+
+
+        /****************正确方式2：利用闭包******************/
+        var lis = document.querySelectorAll('li');
+
+        for (var i=0; i<lis.length; i++) {
+            // lis[i].onclick = function() {
+            //     console.log(i);
+            // };
+            lis[i].onclick = (function(j) {
+                return function() {
+                    console.log(j);
+                };
+            })(i);
+        }
+    </script>
+</body>
+</html>

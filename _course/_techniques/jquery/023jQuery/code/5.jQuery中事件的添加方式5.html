@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: #f00;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        /*
+            hover方法
+            1.作用：为元素添加移入和移出事件
+            2.格式：jQuery对象.hover(function() {}, function() {});
+        */
+
+        $('div').hover(function() {
+            console.log('移入事件');
+        }, function() {
+            console.log('移出事件');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: darkturquoise;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+        button {
+            width: 100px;
+            height: 50px;
+            position: fixed;
+            right: 300px;
+            top: 100px;
+
+        }
+    </style>
+</head>
+<body>
+    <button>启动动画</button>
+    <div></div>
+
+
+
+    <script src="jquery-1.12.4.js"></script>
+    <script src="jquery.color.min.js"></script>
+    <script>
+        /*
+            animate方法
+            1.作用：jQuery中用来创建自定义动画的方法
+            2.格式：jQuery对象.animate(参数1，参数2，参数3，参数4);
+            3.参数说明
+            参数1：该参数通常是一个对象，里面一键值对的形式封装了要达到的CSS样式，注意：animate的修改样式时只对属性值中包含数值的样式敏感，属性值可以不带单位
+            参数2：动画执行所需时间，单位为毫秒，该参数也可以是字符串，如fast（200毫秒）、normal（默认，400毫秒）、slow（600毫秒），如果是任意的字符串，如‘abc’表示normal
+            参数3：动画在执行时的状态（即是匀速的，还是慢-快-慢），只支持两个值linear、swing(默认)
+            参数4：回调函数，动画执行完毕后执行该回调函数
+        */
+
+
+        $('button').click(function() {
+            $('div')
+                .animate({
+                    top: 400,
+                    backgroundColor: 'red',
+                    borderRadius: '20%'
+                }, 3000, 'swing', function() {
+                    console.log('动画执行完毕了1');
+                })
+                .animate({
+                    left: 500,
+                    backgroundColor: 'yellow',
+                    borderRadius: '50%'
+                }, 2000, 'linear', function() {
+                    console.log('动画执行完毕了2');
+                })
+                .animate({
+                    top: 0,
+                    backgroundColor: 'gold',
+                    borderRadius: '20%'
+                }, 2000, 'linear', function() {
+                    console.log('动画执行完毕了3');
+                })
+                .animate({
+                    left: 0,
+                    backgroundColor: 'darkturquoise',
+                    borderRadius: '0%'
+                }, 2000, 'linear', function() {
+                    console.log('动画执行完毕了4');
+                })
+
+        });
+    </script>
+</body>
+</html>

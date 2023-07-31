@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">hello</div>
+
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        /*
+            DOM对象：用原生JS的方式选取到的页面元素被称为DOM对象
+            jQuery对象：用jQuery的方式获取到的页面元素被称为jQuery对象
+
+            jQuery对象和DOM对象的相互转换
+            jQuery对象转换为DOM对象：jQuery对象[下标]
+            DOM 对象转换为jQuery对象：$(DOM对象)
+        */
+
+        var div = document.querySelector('#box');
+        var $div = $('#box');
+
+        console.log($(div).text());
+        console.log($div[0].innerHTML);
+    </script>
+</body>
+</html>

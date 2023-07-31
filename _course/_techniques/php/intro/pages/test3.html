@@ -1,0 +1,96 @@
+<!--
+ * @Description:
+ * @Author: front end cabbage
+ * @Date: 2023-07-17 14:02:24
+ * @LastEditTime: 2023-07-17 15:13:50
+ * @LastEditors: front end cabbage
+ * @FilePath: \htg\code\test3.html
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<form name="f1"
+      action="http://localhost:5000/getInfo2.php"
+      method="post">
+    uid:<input type="text" name="uid" id='u1' required><br>
+    age:
+    <input type="text" name="age" placeholder="请输入：" required><br/>
+    <input type="submit" value="提交">
+</form>
+
+<div id="myData">
+
+</div>
+
+</body>
+</html>
+<script>
+
+    // 1. 创建ajax对象
+
+
+    var xhr = null;
+
+    if (window.XMLHttpRequest) {
+        xhr = new XMLHttpRequest();
+    } else {
+        xhr = new ActiveXObject("XMLHTTP");
+    }
+
+
+    var oUid = document.querySelector("#u1");
+    //   console.log(oUid.value);
+    // 4.设置回调函数
+
+    oUid.onblur = function () {
+        xhr.onreadystatechange = function () {
+
+            if (xhr.readyState == 4 && xhr.status == 200) {
+
+                // console.log(xhr.responseText);
+                // 5。把服务器端的响应结果data回传到客户端
+
+
+                //  var num = parseInt(xhr.responseText)
+
+                //  var oUL = document.getElementsByTagName('ul');
+                //  for(var i=0;i<oUL.length;i++){
+                //     oUL[i].style.display = 'none'
+                //  }
+                //  if(num==1){
+                //     oUL[0].style.display = 'block'
+                //  }else{
+                //     oUL[1].style.display = 'block'
+                //  }
+                var myData = document.getElementById("myData");
+                myData.innerHTML = xhr.responseText;
+
+
+            }
+        };
+        // 2. 进行数据装车
+        xhr.open("get", "http://192.168.1.104/htg/code/getinfo2.php?uid=" + oUid.value, true);
+        // 3. 发送动作
+        xhr.send();
+    };
+
+
+</script>
+
+
+
+
+
+
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>我是第1个li</li>
+        <li>我是第2个li</li>
+        <li id="box">我是第3个li</li>
+        <li>我是第4个li</li>
+        <li>我是第5个li</li>
+        <li>我是第6个li</li>
+        <li>我是第7个li</li>
+        <li>我是第8个li</li>
+        <li>我是第9个li</li>
+        <li>我是第10个li</li>
+    </ul>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        /* addBack方法
+            1.作用：将目标元素添加到jQuery对象集合中
+            2.示例：$('#box').nextAll().addBack()
+        */
+        // $('#box').nextAll().addBack().css('background', 'red');
+
+
+        /*
+            end方法
+            1.作用：返回链式结构被破坏之前的那个jQuery对象
+            2.示例：$('#box').next().end()
+        */
+        $('#box').next().end().css('background', 'red');
+    </script>
+</body>
+</html>

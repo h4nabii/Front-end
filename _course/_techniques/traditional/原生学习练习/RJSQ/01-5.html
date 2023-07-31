@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>完全拖曳</title>
+    <style type="text/css">
+        html,body{overflow:hidden;}
+        body,div,h2,p{margin:0;padding:0;}
+        body{color:#fff;background:#000;font:12px/2 Arial;}
+    </style>
+    <script type="text/javascript">
+        window.onload = function ()
+        {
+            var oBox = document.getElementById("box");
+            var oH2 = oBox.getElementsByTagName("h2")[0];
+            var oA = oBox.getElementsByTagName("a")[0];
+            var aSpan = oBox.getElementsByTagName("span");
+            var disX = disY = 0;
+            var bDrag = false;
+            var aPos = [{x:oBox.offsetLeft,y:oBox.offsetTop}];
+        }
+    </script>
+</head>
+<body>
+<div id="box">
+    <h2><a href="javascript:;">点击回放拖动轨迹</a></h2>
+    <p><strong>Drag:</strong><span></span></p>
+    <p><strong>offsetTop:</strong><span></span></p>
+    <p><strong>offsetLeft:</strong><span></span></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!--
+ * @Description:
+ * @Author: front end cabbage
+ * @Date: 2023-07-12 14:55:00
+ * @LastEditTime: 2023-07-12 15:23:08
+ * @LastEditors: front end cabbage
+ * @FilePath: \web2023\day15\023jQuery\code\01动画.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{width:100px;height:100px;background-color: red;;}
+    </style>
+    <script src="./jquery-1.12.4.js"></script>
+    <script>
+
+
+//    function addLoadEvent(func){
+// 	var oldonload=window.onload;
+// 	if(typeof window.onload!='function'){
+// 		window.onload=func;
+// 	}else{
+// 		window.onload=function(){
+// 			oldonload();
+// 			func();
+// 		}
+// 	}
+// }
+
+
+//   function box1(){
+//        alert('111111')
+//   }
+//   function box2(){
+//        alert('2222222')
+//   }
+//   function box3(){
+//        alert('3333333')
+//   }
+
+// //   addLoadEvent(box1)
+// //   addLoadEvent(box2)
+// //   addLoadEvent(box3)
+
+//   box1();
+//   box2();
+//   box3();
+
+
+
+
+
+
+        // $(document).ready(function(){
+        //     alert('aaaa')
+        // })
+        // $(document).ready(function(){
+        //     alert('bbbb')
+        // })
+        // $(function(){
+
+        // })
+        //alert($('.box'))
+        // $(function(){
+        //     alert($('.box').text())
+        // })
+
+    </script>
+</head>
+<body>
+    <div class="box" id="box">
+       11111111
+    </div>
+
+</body>
+
+</html>
+<script>
+//    $('.box').hide();
+//    $(document).click(function(){
+//         $('.box').show(1000);
+//    })
+
+
+//    $('.box').slideUp('fast');
+//    $(document).click(function(){
+//         $('.box').slideDown('fast');
+//    })
+
+//    $('.box').fadeOut('fast');
+//    $(document).click(function(){
+//         $('.box').fadeIn('fast');
+//    })
+
+
+//    $('.box').toggle(function(){
+//        $('.box').fadeOut('fast');
+//     },function(){
+//        $('.box').fadeIn('fast');
+//    });
+
+
+   $('.box').animate({opacity:"0.5",'width':300},function(){
+         $(this).animate({'height':300})
+   })
+
+</script>

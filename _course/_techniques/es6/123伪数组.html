@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    var fakeArray = {
+        length: 3,
+        "0": "first",
+        "1": "second",
+        "2": "third"
+    };
+
+    for (var i = 0; i < fakeArray.length; i++) {
+        console.log(fakeArray[i]);
+    }
+
+   console.log(Array.prototype.join.call(fakeArray,'+')) ;
+
+   console.log(fakeArray.join('+')); // fakeArray.join is not a function
+</script>
+</body>
+</html>

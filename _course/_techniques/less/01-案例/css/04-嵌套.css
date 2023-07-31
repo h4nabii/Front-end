@@ -1,0 +1,13 @@
+.father {
+  width: 1000px;
+  height: 300px;
+}
+.father .son {
+  width: 80px;
+}
+.father .son:hover {
+  background: orange;
+}
+.father:hover {
+  background: green;
+}

@@ -1,0 +1,40 @@
+<!--
+ * @Description:
+ * @Author: front end cabbage
+ * @Date: 2023-07-17 11:33:41
+ * @LastEditTime: 2023-07-17 14:01:18
+ * @LastEditors: front end cabbage
+ * @FilePath: \htg\code\test.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<form name="f1"
+      action="http://localhost:5000/getInfo.php?str=100&welcome=hello&time=2023-10-10"
+      method="post" onsubmit="return check()">
+    uid:<input type="text" name="uid" id='u1' required><br>
+    age:<input type="text" name="age" placeholder="请输入：" required><br/>
+    <input type="submit" value="提交">
+</form>
+
+<ul id="myData">
+</ul>
+</body>
+</html>
+<script>
+    // var oUid = document.querySelector('#u1');
+    // oUid.focus();
+
+    // function check(){
+    //        if(oUid.value==''){
+    //            alert('用户名不能为空!');
+    //            oUid.focus();
+    //            return false;
+    //        }
+    // }
+</script>

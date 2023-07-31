@@ -1,0 +1,67 @@
+<!--
+ * @Description:
+ * @Author: front end cabbage
+ * @Date: 2023-07-14 13:29:42
+ * @LastEditTime: 2023-07-14 15:12:08
+ * @LastEditors: front end cabbage
+ * @FilePath: \day17\ES6\26-继承3.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+//     三、组合继承
+
+// 特点：
+
+// 1、相当于把构造函数继承与原型链继承组合在一起
+// 2、及可以解决原型链继承共享属性的情况又可以实现继承父类原型链上的属性及方法
+// 缺点：
+
+// 会实例化两次，在改变子对象this指向的时候会实例化一次，在赋值父实例的时候也会实例化一次
+
+
+function Parent(name, age) {
+            this.name = name;
+            this.age = age;
+            this.hobby = ["音乐", "电影", "睡觉"]
+        }
+        //原型上面添加方法 run
+        Parent.prototype.run = function () {
+            console.log(this.name + "今年" + this.age);
+            return this.name + "今年" + this.age+"我会跑了"
+        }
+
+        var p1=new Parent('jack',18)
+        console.log(p1.constructor);
+
+        function Child(name, age) {
+            Parent.call(this, name, age); //构造函数继承   会实例化一次
+        }
+
+
+        Child.prototype = new Parent() //原型链继承     会再一次实例化
+        // 以上两个地方会 实例化两次
+        Child.prototype.constructor = Child;
+
+
+
+        let newChildA = new Child("小何", 24);
+        // console.log(object);
+        console.log(newChildA.constructor);
+
+        let newChildB = new Child("小明", 44);
+
+        console.log(newChildA);
+        console.log(newChildB);
+        newChildA.run() //run方法调用成功
+
+</script>

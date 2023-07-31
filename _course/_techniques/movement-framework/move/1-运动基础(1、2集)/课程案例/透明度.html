@@ -1,0 +1,46 @@
+<!--
+ * @Description:
+ * @Author: front end cabbage
+ * @Date: 2023-07-11 11:24:23
+ * @LastEditTime: 2023-07-11 11:30:22
+ * @LastEditors: front end cabbage
+ * @FilePath: \web2023\day14\move\1-运动基础(1、2集)\课程案例\透明度.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{opacity:0.3;}
+    </style>
+</head>
+<body>
+    <img src="./Desert.jpeg" alt="aaaa" width="200">
+</body>
+</html>
+<script>
+    var oImg = document.querySelector('img');
+    var alpha=30;
+
+    oImg.onmouseover = function (param) {
+          startMove(10,100)
+     }
+     oImg.onmouseout = function (param) {
+          startMove(-10,30)
+    }
+    var tid = null;
+    function startMove(iSpeed,iTarget){
+       clearInterval(tid)
+       tid =  setInterval(function(){
+            if(alpha===iTarget){
+              clearInterval(tid)
+            }else{
+                alpha+=iSpeed
+                oImg.style.opacity = alpha/100
+            }
+        },30)
+
+    }
+</script>

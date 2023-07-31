@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    var obj = {
+        id:1,
+        name:'Andy',
+        msg: {
+            age:18
+        }
+    }
+
+    var newObj = {}
+    for(var key in obj) {
+        //key是当前属性名， obj[k]是当前属性值
+        newObj[key] = obj[key]
+    }
+    console.log(newObj)
+    console.log(newObj.name);
+    newObj.name = 'tom';
+    console.log(newObj.name);
+    console.log(obj.name);
+
+    newObj.msg.age = 88;
+    console.log(obj.msg.age);
+</script>
+</body>
+</html>

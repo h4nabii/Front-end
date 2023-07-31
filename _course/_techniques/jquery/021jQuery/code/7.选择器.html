@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div id="box">hello</div>
+    <div class="sty">hello</div>
+    <div class="sty">hello</div>
+    <p>1</p>
+    <p>2</p>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul> -->
+
+    <!-- <span>1</span>
+    <div>
+        <span>2</span>
+        <p>
+            <span>3</span>
+        </p>
+    </div> -->
+
+
+    <!-- <ul>
+        <li>我是第1个</li>
+        <li>我是第2个</li>
+        <li>我是第3个</li>
+        <li>我是第4个</li>
+        <li>我是第5个</li>
+        <li>我是第6个</li>
+        <li>我是第7个</li>
+        <li>我是第8个</li>
+        <li>我是第9个</li>
+        <li>我是第10个</li>
+    </ul> -->
+
+    <!-- <div>
+        <p>1</p>
+        <h1>2</h1>
+        <p>3</p>
+        <h3>4</h3>
+        <h1>aaa</h1>
+        <p>5</p>
+        <h4>6</h4>
+        <h1>bbbb</h1>
+        <h1>7</h1>
+    </div> -->
+
+    姓名：<input type="text"><br>
+    密码：<input type="password"><br>
+    性别：
+    <input type="radio" name="gender" value="boy">男
+    <input type="radio" name="gender" value="girl">女
+    <br>
+    爱好:
+    <input type="checkbox" name="hobby" value="爬山" checked>爬山
+    <input type="checkbox" name="hobby" value="游泳">游泳
+    <br>
+    <button type="submit">提交</button>
+    <button type="reset">重置</button>
+    <button type="button">普通按钮</button><br>
+    <select name="" id="">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3" selected>3</option>
+    </select>
+
+
+
+
+
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // $('#box').css('backgroundColor', 'red');//id选择器
+        // $('.sty').css('backgroundColor', 'blue');//类选择器
+        // $('#box,.sty').css('color', 'yellow');//群组选择器
+        // $('p').css('background', 'red');//元素选择器（标签选择器）
+
+        // $('li').click(function() {
+        //     console.log($(this).text())
+        // });
+
+        // console.log($('*'));//全局选择器
+
+        // $('div span').css('background', 'red');//后代选择器
+        // $('div>span').css('background', 'red');//子选择器
+
+        // $('#li4+p').css('background', 'red');//下一个兄弟元素选择器
+        // $('#li4~p').css('background', 'red');//后面所有的兄弟元素选择器
+
+        // $('ul li:first').css('background', 'blue');//选择容器中的第一个元素
+        // $('ul :last').css('background', 'blue');//选择容器中的最后一个元素
+        // $('ul :eq(3)').css('background', 'yellow');//选择容器中下标为n的元素
+        // $('ul li:even').css('background', 'yellow');//选择容器中的下标为偶数的元素
+        // $('ul li:odd').css('background', 'green');//选择容器中下标为奇数的元素
+        // $('ul li:gt(3)').css('background', 'red');//选择容器中下标大于n的元素
+        // $('ul li:lt(3)').css('background', 'red');//选择容器中下标小于n的元素
+
+        // $('ul li:first-child').css('background', 'red');
+        // $('ul li:last-child').css('background', 'red');
+        // $('ul :nth-child(even)').css('background', 'blue')
+        // $('ul :nth-child(odd)').css('background', 'pink');
+        // $('ul :nth-child(3n)').css('background', 'orange');
+        // $('ul :nth-last-child(6)').css('background', 'red')
+
+        // $('div h1:first-of-type').css('background', 'red');
+        // $('div h1:last-of-type').css('background', 'red');
+        // $('div h1:nth-of-type(3)').css('background', 'purple')
+        // $('div h1:nth-last-of-type(3)').css('background', 'yellow');
+
+        // $(':input').css('background', 'red');
+        // $(':text').css('background', 'red');
+        // $(':password').css('background', 'red');
+        // console.log($(':radio'));
+        // console.log($(':checkbox'));
+        // console.log($(':submit'));
+        // console.log($(':reset'));
+        // console.log($(':button'));
+        // console.log($(':checked'))
+        console.log($(':selected').text())
+    </script>
+</body>
+</html>

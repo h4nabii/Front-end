@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/vue.js"></script>
+    <!-- <script src="https://unpkg.com/vue@2.5.17/dist/vue.js"></script> -->
+</head>
+<body>
+<div class="app" id="app">
+    {{ msg }}
+</div>
+
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "welcome to 计量大学",
+            count: 0
+        },
+        methods: {
+            handle: function () {
+                console.log("aaaa");
+            }
+        },
+
+        computed: {},
+        watch: {},
+        filters: {},
+        components: {}
+    });
+
+    // console.log(vm.$el);
+    // console.log('------------------');
+    // console.log(vm.count);
+    // console.log(vm.$data.msg)
+    // console.log(vm);
+    // console.log(vm.$options)
+    console.log(vm.$children); // 返回一个空数组
+</script>
+</body>
+</html>

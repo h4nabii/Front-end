@@ -1,0 +1,1 @@
+http://iwenwiki.com/api/blueberrypai/getIndexBanner.php

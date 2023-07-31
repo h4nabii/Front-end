@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <title>修复运动叠加的BUG</title>
+    <style>
+        body {
+            --box-size: 100px;
+        }
+
+        #target {
+            /* appearance */
+            background: red;
+            position: absolute; /* position 必须为 absolute 才能使用 HTMLElement.style.left 控制移动 */
+            width: var(--box-size);
+            height: var(--box-size);
+
+            /* default position */
+            left: 0;
+            top: 50px;
+        }
+
+        .line {
+            height: 1000px;
+            width: 0;
+            border: 1px solid green;
+
+            position: absolute;
+            top: 0;
+            left: calc(300px + var(--box-size));
+        }
+    </style>
+</head>
+<body>
+<input type="button" value="运动" onclick="moveRight(11, 300)"/>
+<input type="button" value="重置" onclick="moveRight(-1, 0)"/>
+<div id="target"></div>
+<div class="line"></div>
+</body>
+<script>
+    let oBox = document.querySelector("#target");
+    let tid = null;
+
+    function moveRight(speed, destination) {
+
+        // 创建新的全局定时器前，清除当前定时器，保证定时器只有一个
+        clearInterval(tid);
+
+        tid = setInterval(function () {
+            if (oBox.offsetLeft >= destination) {
+                oBox.style.left = destination + "px";
+                clearInterval(tid);
+            } else oBox.style.left = oBox.offsetLeft + speed + "px";
+        }, 30);
+    }
+</script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+        }
+        .sty1 {
+            background-color: red;
+        }
+        .sty2 {
+            color: blue;
+            font-size: 100px;
+        }
+    </style>
+</head>
+<body>
+    <button>toggleClass方法</button>
+    <div>我是div的内容</div>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // $('div').addClass('sty1');
+        // $('div').addClass('sty2');
+        // $('div').addClass('sty1 sty2');
+        // $('div').removeClass('sty1');
+
+        $('button').click(function() {
+            $('div').toggleClass('sty1');
+        });
+    </script>
+</body>
+</html>

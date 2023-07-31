@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get 和 set</title>
+</head>
+<body>
+    <script>
+        // get 和 set
+        class HelloWorld {
+            constructor() {
+                this.name_ = ''
+            }
+            get name() {
+                return 'get name: '+this.name_;
+            }
+            set name(value) {
+                console.log('set name: ' + value);
+                this.name_ = value;
+            }
+        }
+
+        let hw = new HelloWorld();
+
+        //'set name:'
+        hw.name = 'HuaWei pro';
+
+        // 'get name'
+        console.log(hw.name)
+
+
+    </script>
+</body>
+</html>

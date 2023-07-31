@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        jquery的ajax:
+            $.ajax({
+                type:'get/post',
+                url:'地址',
+                data:{
+                    key:value
+                },
+                success:callback,
+                error:callback
+            })
+
+        原生的ajax:
+            var xhr=new XMLHttpRequest()
+            //发送 get请求参数
+            var str='username=qq&mima=123'
+            xhr.open('get','urlxxx?'+str,true);
+            xhr.send()
+            xhr.onreadystatechange=callback;
+     -->
+     <h2>get请求的方式</h2>
+     <input type="text" id='uname'>
+     <input type="text" id='mima'>
+     <button id='btn'>点击查看数据</button>
+
+
+     <h2>post请求的方式</h2>
+     <input type="text" id='inp'>
+     <button id='btn2'>点击查看数据</button>
+
+     <h2>get物流信息 9971121346085</h2>
+     <input type="text" id='code'>
+     <button id='btn3'>点击查看数据</button>
+
+
+
+     <script src='js/ajax.js'></script>
+     <script>
+         //点击按钮 触发事件
+         document.getElementById('btn').onclick=function(){
+             //获取用户输入的值
+             var uname=document.getElementById('uname').value;
+             var mima=document.getElementById('mima').value;
+            //创建xhr对象ajax  请求后台
+            //封装成一个方法 名字：myAjax()   参数：
+            myAjax({
+                method:'get',
+                url:'09ajax.php',
+                data:{
+                    username:uname,
+                    password:mima
+                },
+                success:function(res){
+                    console.log(res);
+                }
+            });
+
+         }
+
+         //post参数
+         document.getElementById('btn2').onclick=function(){
+             var inp=document.getElementById('inp').value;
+             //请求php文件
+             myAjax({
+                 method:'post',
+                 url:'11test.php',
+                 data:{
+                     code:inp
+                 },
+                 success:function(res){
+                     console.log(res);
+
+                 }
+             })
+         }
+
+
+         //物流信息
+         document.getElementById('btn3').onclick=function(){
+             var code=document.getElementById('code').value;
+            //请求07ems.php文件
+            myAjax({
+                method:'get',
+                url:'01homeWork/07ems.php',
+                data:{
+                    code:code
+                },
+                success:function(res){
+                    console.log(JSON.parse(res));
+                    //
+
+                }
+
+            })
+         }
+
+
+     </script>
+
+</body>
+</html>

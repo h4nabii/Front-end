@@ -1,0 +1,115 @@
+<!--
+ * @Description:
+ * @Author: front end cabbage
+ * @Date: 2023-07-13 23:07:44
+ * @LastEditTime: 2023-07-14 11:11:15
+ * @LastEditors: front end cabbage
+ * @FilePath: \day17\ES6\06-let-实践案例.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>点击 DIV 换色</title>
+    <link crossorigin="anonymous" href="https://cdn.bootcss.com/twitter-bootstrap/3.3.7/css/bootstrap.min.css"
+        rel="stylesheet">
+    <style>
+        .item {
+            width: 100px;
+            height: 50px;
+            border: solid 1px rgb(42, 156, 156);
+            float: left;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="page-header">点击切换颜色</h2>
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+    </div>
+    <script>
+        // 事件监听与事件委托
+        //  var oC = document.querySelector('.container')
+        //  var oDivs = document.querySelectorAll('.item')
+        //  oC.addEventListener('click',function(e){
+        //          var ev = e||event;
+        //          var obj = ev.srcElement||ev.target
+        //          if(obj.className ==='item'){
+        //             for(var i=0;i<oDivs.length;i++)oDivs[i].style.background=''
+        //             obj.style.background = 'pink'
+        //          }
+        //  })
+    </script>
+    <script>
+        //获取div元素对象
+        var items = document.getElementsByClassName('item');
+
+        //遍历并绑定事件
+        // for(var i = 0;i<items.length;i++){
+        //     items[i].onclick = function(){
+        //         console.log(i);
+        //         items[i].style.background = 'pink';
+        //     }
+            // (function(t){
+            //        items[t].onclick = function(){
+            //                 for(var i=0;i<items.length;i++)items[i].style.background=''
+            //                 items[t].style.background = 'pink';
+            //          }
+            // })(i)
+
+            // for(var i=0;i<items.length;i++){
+            //      items[i].onclick = function(){
+            //         for(var i=0;i<items.length;i++)items[i].style.background=''
+            //      this.style.background = 'pink'
+            //    }
+            // }
+
+
+
+        // closure 闭包
+
+        // 1.函数中有函数
+        // 2.内部函数被外部函数返回
+        // 3.内部函数调用外部函数的变量值
+
+
+        // es6 提供块级作用域,可以在块级作域内，保存变量的状态值
+
+        // for(let i=0;i<items.length;i++){
+        //     items[i].onclick = function () {
+        //         console.log(i);
+        //         items[i].style.background = 'pink';
+        //      }
+        // }
+
+
+        // 闭包 在函数内部的函数，维持着一种调用关系
+
+
+        function outer(){
+            var i=0
+             return function(){
+                   i++;
+                  return i;
+             }
+        }
+
+
+        var re = outer()
+
+        console.log(re());
+        console.log(re());
+        console.log(re());
+        console.log(re());
+        console.log(re());
+
+    </script>
+</body>
+
+</html>

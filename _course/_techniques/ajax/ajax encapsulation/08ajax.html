@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        $.ajax({
+            type:'',
+            url:'',
+            data:{},
+            suceess:callback,
+            error:callback
+        })
+     -->
+    <input type="text" id='uname'>
+    <input type="text" id='mima'>
+    <button id='look'>点击查看 发送的数据</button>
+
+    <script src='js/myAjax.js'></script>
+    <script>
+        //点击事件---获取内容  ----请求ajax---响应数据
+        document.getElementById('look').onclick=function(){
+            //获取用户值
+            var uname=document.getElementById('uname').value;
+            var mima=document.getElementById('mima').value;
+            //创建XMLHttpRequest对象
+            //调用自己封装的方法 ：myAjax() 参数是object {}
+            myAjax({
+                method:'get',
+                url:'09ajax.php',
+                data:{
+                    username:uname,
+                    password:mima
+                },
+                success:function(res){//回调函数--返回的结果
+                    console.log(res);
+                },
+                error:function(err){
+                    console.log(err);
+                }
+            });
+        }
+
+
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>体验rem适配</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        li {
+            list-style-type: none;
+        }
+
+        .box {
+            /* width: 10px; */
+            width: 9rem;
+            height: 3rem;
+            background-color: pink;
+            margin: 0 auto;
+        }
+
+        .box ul {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .box ul li {
+            text-align: center;
+            font-size: 0.2rem;
+            margin-left: 10px;
+            background-color: cyan;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <ul>
+            <li>我们一起学前端</li>
+            <li>我们一起学前端</li>
+            <li>我们一起学前端</li>
+            <li>我们一起学前端</li>
+            <li>我们一起学前端</li>
+        </ul>
+    </div>
+
+    <script src="./js/flexible.js"></script>
+</body>
+
+</html>

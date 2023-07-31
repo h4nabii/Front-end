@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+        <h3>资源共享：</h3>
+        http://iwenwiki.com/api/blueberrypai/getIndexBanner.php
+    </div>
+
+
+    <script src='js/jquery.min.js'></script>
+
+    <script>
+
+        $.get('http://iwenwiki.com/api/blueberrypai/getIndexBanner.php',function(res){
+
+            console.log(res);
+
+        })
+
+    </script>
+
+</body>
+</html>

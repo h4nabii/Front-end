@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+/* 向上的三角 */
+/*向下的三角*/
+/*向左的三角*/
+/*向右的三角*/
+#sanjiao1 {
+  border-width: 50px;
+  border-color: transparent transparent deeppink transparent;
+  border-style: dashed dashed solid dashed  ;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+#sanjiao2 {
+  border-width: 10px;
+  border-color: pink transparent transparent transparent;
+  border-style: solid dashed dashed  dashed  ;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+#sanjiao3 {
+  border-width: 10px;
+  border-color: transparent pink transparent transparent;
+  border-style: dashed solid dashed  dashed  ;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+#sanjiao4 {
+  border-width: 10px;
+  border-color: transparent transparent transparent pink;
+  border-style: dashed  dashed  dashed  solid;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+/*# sourceMappingURL=index7.css.map */

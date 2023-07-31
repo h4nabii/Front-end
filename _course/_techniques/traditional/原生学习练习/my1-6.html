@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>图片红</title>
+    <style>
+        body,div,ul,li{margin:0;padding:0;}
+    </style>
+    <script type="text/javascript">
+        window.onload = function ()
+        {
+            var oBox = document.getElementById("box");
+            var oList = oBox.getElementsByTagName("ul")[0];
+            var aImg = oBox.getElementsByTagName("img");
+            var timer = playTimer = null;
+            var index = i = 0;
+            var bOrder = true
+            var aTmp = [];
+            var aBtn = null;
+
+            //生成数字按钮
+            for (i = 0; i < aImg.length; i++) aTmp.push("<li>" + (i+1) + "</li>");
+
+            //插入元素
+            var oCount = document.createElement("ul");
+            oCount.className = "count";
+            oBox.appendChild(oCount);
+            aBtn = oBox.getElementsByTagName("ul")[1].getElementsByTagName("li");
+
+            //初始化状态
+
+            cutover();
+      //按钮点击切换
+
+            for (i = 0; i < aBtn.length; i++)
+            {
+                aBtn[i].index = i;
+                aBtn[i].onmouseover = function ()
+                {
+                    index = this.index;
+                    cutover();
+                }
+
+            }
+
+
+            function cutover ()
+            {
+                for (i = 0; i < aBtn.length; i++) aBtn[i].className = "";
+                aBtn[index].className = "current";
+                startMove ( -(index * aImg[0]).offsetHeight))
+            }
+
+            function next ()
+            {
+                bOrder ? index++ : index--;
+                index <=0 && ()            }
+
+ }
+
+
+    </script>
+</head>
+<body>
+  <div id="box">
+      <div class="list">
+          <ul>
+              <li><img src="01-1.jpg" width="490" height="170" /> </li>
+              <li><img src="02-1.jpg" width="490" height="170" /> </li>
+              <li><img src="03-1.jpg" width="490" height="170" /> </li>
+              <li><img src="04-1.jpg" width="490" height="170" /> </li>
+              <li><img src="05-1.jpg" width="490" height="170" /> </li>
+          </ul>
+      </div>
+  </div>
+</body>
+</html>

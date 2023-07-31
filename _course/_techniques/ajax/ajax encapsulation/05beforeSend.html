@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .info img{
+            width: 200px;
+            height: 200px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button id='look'>查看最新数据</button>
+    <div class="xinxi"></div>
+    <div class='info'>
+        <img src="img/timg.gif" alt="">
+    </div>
+
+    <script src='js/jquery.min.js'></script>
+    <script>
+        $("#look").click(function(){
+            $(".xinxi").html(''); //清空显示的数据
+              $.ajax({
+                  type:'get',
+                  url:'06sleep.php',
+                  success:function(res){
+                      //方法1：隐藏loading在success
+                      //成功了 获取数据后 隐藏loading加载
+                    //   $(".info img").css('display','none');
+                      $(".xinxi").html(res);
+                  },
+                  error:function(){
+                      console.log('请求失败');
+                  },
+                  beforeSend:function(){//请求成功之前
+                    $(".info img").css('display','block');
+                  },
+                  complete:function(){//成功还是失败都会执行
+                    console.log('compete--------');
+                    //方法2：隐藏loading
+                    $(".info img").css('display','none');
+                  }
+
+              })
+        })
+
+    </script>
+
+</body>
+</html>

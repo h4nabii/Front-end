@@ -1,0 +1,64 @@
+*{margin:0;padding:0;}
+ul,li{list-style:none;}
+
+
+// 变量
+
+@wid: 1000px;
+@hi: 100px;
+@center: 0 auto;
+
+@bg: blue;
+@fg: color;
+@h: #eee;
+
+
+@m: #aaa;
+@f: #000;
+
+body {
+  background-color: @bg+111;
+  color: @fg;
+
+}
+
+.header {
+  width: @wid;
+  height: @hi;
+  margin: @center;
+  background-color: @h;
+
+  // 嵌套
+
+  .menu{
+       width:@wid;
+      ul{
+        li{
+          width:100px;height:30px;line-height:30px;
+          text-align:center;
+          float:left;
+           a{color:red;
+            &:hover{
+                 color:orange;
+             }
+           }
+         }
+      }
+  }
+}
+
+
+.main {
+  width: @wid;
+  margin: @center;
+  background-color: @m;
+  height: @hi+600;
+
+}
+
+.footer {
+  width: @wid;
+  margin: @center;
+  background-color: @f;
+  height: @hi+50;
+}

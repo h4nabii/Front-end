@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>http://iwenwiki.com/api/blueberrypai/getIndexBanner.php</div>
+
+    <button id='btn'>查看数据</button>
+
+    <script src='js/jquery.min.js'></script>
+    <script>
+        //1.ajax()方法
+            $.ajax({
+                type:'get',
+                url:'http://iwenwiki.com/api/blueberrypai/getIndexBanner.php',
+                // data:{}
+                dataType:'json',
+                success:function(res){
+                    console.log(res);
+                }
+            })
+
+        //2.$.get() 方法
+        //语法：$.get('url地址',{key:value,....},callback,type返回的数据类型)
+        // $.get('http://iwenwiki.com/api/blueberrypai/getIndexBanner.php',{},function(res){
+        //     console.log('$.get()请求的数据：',res);
+        // },'json')
+
+        $.get('http://iwenwiki.com/api/blueberrypai/getIndexBanner.php',function(res){
+            console.log('$.get()请求的数据：',res);
+
+        },'json');
+
+        //3. $.getJSON()方法
+        //语法：$.getJSON('url地址',{key:value,....},callback)
+        $.getJSON('http://iwenwiki.com/api/blueberrypai/getIndexBanner.php',{},function(res){
+            console.log('$.getJSON()请求的数据：',res);
+        });
+
+        //4.$.post()方法
+        //语法：$.post('url地址',{参数},callback,type返回的数据类型)
+
+
+
+
+    </script>
+
+</body>
+</html>

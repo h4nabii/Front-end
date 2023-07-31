@@ -1,0 +1,119 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{width:100px;height:100px;background:red;}
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <p>22222222222</p>
+    <p>22222222222</p>
+    <p>22222222222</p>
+    <p>22222222222</p>
+    <ul>
+        <li>1111111111111111111111</li>
+        <li>1111111111111111111111</li>
+        <li>1111111111111111111111</li>
+        <li>1111111111111111111111</li>
+        <li>1111111111111111111111</li>
+        <li>1111111111111111111111</li>
+    </ul>
+    <p title="aa">3333333333333333333</p>
+    <p myTitle="bb">3333333333333333333</p>
+    <p myTitle="444">3333333333333333333</p>
+
+    <div class="box"></div>
+    <p>444444444444</p>
+
+    <label for="china"><input type="checkbox" id="china">中国人</label>
+
+    <input type="checkbox" checked>
+    <input type="checkbox" checked>
+    <input type="checkbox">
+    <input type="radio" name="r1">
+    <input type="radio" name="r1">
+    <input type="radio" name="r1">
+    <input type="radio" name="r1">
+
+    <select name="s1" id="s1">
+         <option value="11">11</option>
+         <option value="11">11</option>
+         <option value="55" selected>55</option>
+         <option value="11">11</option>
+         <option value="11">11</option>
+    </select>
+</body>
+</html>
+<script src="./jquery-1.12.4.js"></script>
+<script>
+    // jquery对象与原生对象的转换
+
+    // var oLis = document.querySelectorAll('ul li')
+    // for(var i=0;i<oLis.length;i++){
+    //     oLis[i].onmouseover = function(){
+    //          this.style.background='red'
+    //     }
+
+    //     oLis[i].onmouseout = function(){
+    //          this.style.background=''
+    //     }
+
+    // }
+
+
+    $('ul li').hover(function(){
+        //    $('ul li:eq(1)').html('2222222222222222')
+    //   $('ul li:eq(1)').get(0).innerHTML='232323232323'
+    // $('ul li:eq(1)')[0].innerHTML='9999999999999999999'
+
+    // 原生对象转成jquery对象，直接用美元包裹一下就ok
+
+    },function(){
+
+    })
+
+</script>
+
+<script>
+
+    // $('.box').toggle(function(){
+    //     $(this).show(600);
+
+    // })
+
+    // $(document).click(function(){
+    //     $(':animated').css("backgroundColor",'cyan')
+    // })
+
+
+//   $('ul li:odd').css('backgroundColor','red')
+//   $('ul li:even').css('backgroundColor','orange')
+//   $('ul li:nth-child(1)').css('backgroundColor','blue')
+// $('ul>li:eq(0)').css('backgroundColor','blue')
+
+    // $('ul+p').css('backgroundColor','orange')
+
+    // $('ul').next().css('backgroundColor','orange') // 只选中一个元素
+
+    // $('p[myTitle="444"]').css('backgroundColor','pink')
+
+   $('ul li:gt(1):lt(3)').css('backgroundColor','red')
+
+
+  // 1. 加载外部的jquery库
+  // 2. 选择器
+  // 3.
+
+//   $(document).click(function(){
+//       console.log('aaa');
+//       $('input:checked').hide();
+//   })
+
+alert($("select option:selected").val())
+
+</script>

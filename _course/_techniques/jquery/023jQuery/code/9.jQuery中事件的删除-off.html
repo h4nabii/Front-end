@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: #f00;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+
+    <script src="jquery-1.12.4.js"></script>
+    <script>
+        // $('div').on({
+        //     mouseover: function() {
+        //         console.log('hello');
+        //     },
+        //     mouseout: function() {
+        //         console.log('world');
+        //     }
+        // });
+
+        // $('div').off();//删除所有事件
+        // $('div').off('mouseout');
+
+
+
+        $('div').click(function() {
+            console.log('hello');
+        });
+
+        $('div').off();
+    </script>
+</body>
+</html>
