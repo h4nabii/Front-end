@@ -14,16 +14,16 @@
                 v-bind:key="item.id"
         ></todo-item>
     </ol>
-    <button v-on:click="reverse">{{ message }}</button>
+    <button v-on:click="reverse">{{ message | mySlice }}</button>
 
-    <div style="height: 50px">{{ inputTest}}</div>
+    <div style="height: 50px">{{ inputTest }}</div>
     <input type="text" class="input" v-model="inputTest">
 </div>
 <script>
     Vue.component("todo-item", {
         props: ["todo"],
         template: "<li>{{ todo.text }}</li>"
-    })
+    });
 
     let app = new Vue({
         el: "#app",
@@ -38,10 +38,17 @@
         },
         methods: {
             reverse() {
-                console.log(2)
+                console.log(this);
                 this.message = this.message.split("").reverse().join("");
             }
-        }
+        },
+        filters: {
+            mySlice(value) {
+                console.log(this);
+                console.log(this.message);
+                return value;
+            }
+        },
     });
 </script>
 </body>
