@@ -5,6 +5,9 @@
       <option name="FORCE_QUOTE_STYlE" value="true" />
     </JSCodeStyleSettings>
     <codeStyleSettings language="JavaScript">
+      <option name="BLOCK_COMMENT_AT_FIRST_COLUMN" value="false" />
+      <option name="BLOCK_COMMENT_ADD_SPACE" value="true" />
+      <option name="KEEP_FIRST_COLUMN_COMMENT" value="false" />
       <option name="INDENT_CASE_FROM_SWITCH" value="false" />
       <option name="ALIGN_MULTILINE_PARAMETERS" value="false" />
       <option name="ALIGN_MULTILINE_FOR" value="false" />
