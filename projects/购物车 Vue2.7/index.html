@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车</title>
+
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/list.css">
+    <link rel="stylesheet" href="./css/cart.css">
+    <link rel="stylesheet" href="./css/sum.css">
+
+    <script src="./js/vue2.7.14.js"></script>
+    <script src="./js/vue-router3.6.5.js"></script>
+
+    <script src="./js/Item.js"></script>
+    <script defer src="./js/list.js"></script>
+    <script defer src="./js/cart.js"></script>
+    <script defer src="./js/sum.js"></script>
+    <script defer src="./js/main.js"></script>
+</head>
+<body>
+<div id="app">
+    <div class="main" id="main">
+        <list class="list" id="list" @add-to-cart="addToCart($event)"></list>
+        <cart class="cart" id="cart" @update="sum=$event" ref="cart"></cart>
+        <sum-comp :sum="sum"></sum-comp>
+    </div>
+</div>
+</body>
+</html>

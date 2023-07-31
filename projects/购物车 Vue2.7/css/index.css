@@ -1,0 +1,37 @@
+.main {
+    --main-width: min(100%, 1260px);
+    position: relative;
+    width: var(--main-width);
+    margin: 0 auto;
+}
+
+.main .list {
+    overflow: hidden;
+    width: 50%;
+    max-width: 600px;
+    min-height: 846px;
+    height: 100%;
+    margin-top: 70px;
+    background: #e5e5e5;
+    box-sizing: border-box;
+}
+
+.main .cart {
+    position: fixed;
+    top: 70px;
+    left: 50%;
+    margin-left: 30px;
+    width: 600px;
+    height: calc(100% - 364px);
+    background: #e5e5e5;
+}
+
+.main .sum {
+    position: fixed;
+    bottom: 54px;
+    left: 50%;
+    margin-left: 30px;
+    width: 600px;
+    height: 210px;
+    background: #e5e5e5;
+}

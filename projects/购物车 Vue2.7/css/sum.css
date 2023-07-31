@@ -1,0 +1,26 @@
+.sum h2 {
+    height: 44px;
+    line-height: 44px;
+    font-size: 30px;
+    margin-top: 19px;
+    margin-left: 27px;
+    margin-bottom: 18px;
+}
+
+.sum .total {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 50px;
+    height: 30px;
+    font-size: 20px;
+}
+
+.sum button {
+    position: absolute;
+    right: 50px;
+    bottom: 30px;
+    width: 150px;
+    height: 31px;
+    background: #ccc;
+    border: none;
+}

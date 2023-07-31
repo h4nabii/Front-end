@@ -1,0 +1,5 @@
+[![badgeTest](https://img.shields.io/badge/badge-test-brightgreen.svg?style=flat)]()
+[![badgeTest](https://img.shields.io/badge/badge-test-brightgreen.svg?style=flat-square)]()
+[![badgeTest](https://img.shields.io/badge/badge-test-brightgreen.svg?style=plastic)]()
+[![badgeTest](https://img.shields.io/badge/badge-test-brightgreen.svg?style=for-the-badge)]()
+[![badgeTest](https://img.shields.io/badge/badge-test-brightgreen.svg?style=social)]()

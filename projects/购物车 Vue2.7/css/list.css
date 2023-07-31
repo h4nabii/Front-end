@@ -1,0 +1,57 @@
+.list h2 {
+    height: 44px;
+    line-height: 44px;
+    font-size: 30px;
+    margin-top: 19px;
+    margin-left: 27px;
+}
+
+.list ul {
+    margin: 26px 50px 0;
+}
+
+.list .list-item {
+    width: 100%;
+    height: 135px;
+    padding: 25px;
+    box-sizing: border-box;
+    background: #a6a6a6;
+    position: relative;
+
+    margin-bottom: 26px;
+
+    font-size: 20px;
+    line-height: 31px;
+}
+
+.list .list-item img {
+    width: 85px;
+    height: 85px;
+    background: #808080;
+    display: block;
+    float: left;
+    margin-right: 25px;
+}
+
+.list .list-item .list-item-name {
+    width: 340px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 12px;
+}
+
+.list .list-item .list-item-price {
+    width: 170px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.list .list-item button {
+    position: absolute;
+    right: 25px;
+    bottom: 25px;
+    width: 153px;
+    height: 31px;
+    background: #ccc;
+    border: none;
+}
