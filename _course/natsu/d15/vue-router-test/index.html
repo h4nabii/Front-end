@@ -9,7 +9,7 @@
 <script src="https://unpkg.com/vue-router@4"></script>
 
 <div id="app">
-    <h1>Hello App!</h1>
+    <h1>{{ hello }}</h1>
     <p>
         <!--使用 router-link 组件进行导航 -->
         <!--通过传递 `to` 来指定链接 -->
@@ -46,7 +46,13 @@
     });
 
     // 5. 创建并挂载根实例
-    const app = Vue.createApp({});
+    const app = Vue.createApp({
+        data() {
+            return {
+                hello: "hello",
+            };
+        }
+    });
     //确保 _use_ 路由实例使
     //整个应用支持路由。
     app.use(router);
