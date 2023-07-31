@@ -1,6 +1,13 @@
-# Front-End
+[![badgeTest](https://img.shields.io/badge/badge-test-test-brightgreen.svg?style=flat-square)]()
 
-This is a repository of my learning in being a ~~front-end~~ JavaScript developer.
+## 前端学习
 
-Learning RPG Maker MV and node.js and front-end dev knowledge. (2023/6/4)
+此仓库为个人前端学习的代码仓库
+
+### 个人项目
+已开始或完成的项目存放在[`/projects`](/projects)目录下，
+待开始的项目存放在[`/projects/TODO`](/projects/TODO)目录下
+
+### 工具及函数库
+工具与函数库存放在[`/tools`](/tools)目录下
 
