@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <div class="app" id="app">
+          <input type="text" ref="box" v-model="msg">
+          <h1 ref="test">111111</h1>
+          <div class="box" ref="mybox">222222222222</div>
+    </div>
+    <script>
+         vm = new Vue({
+            el:'#app',
+            data:{
+                msg:'nihao'
+            }
+         })
+
+         console.log(vm.$refs) // {box: input, test: h1, mybox: div.box}
+         console.log(vm.$refs.box);
+         console.log(typeof vm.$refs.box);
+          vm.$refs.box.style.border = "10px solid red"
+
+
+ /*   
+    1-  vm.$refs		
+    //获取vue实例中所有含有ref属性的dom元素，如果有多个，只返回最后一个。
+	2-  vm.$ref 		
+    // ref 被用来给元素或子组件注册引用信息， 引用信息将会注册在父组件的 $refs 对象上，如果是在普通的DOM元素上使用，引用指向的就是 DOM 元素，如果是在子组件上，引用就指向组件的实例
+	
+    ref加载普通元素上，this.$refs.  获取到的就是dom元素
+	ref记载在子组件上，this.$refs.  获取到的就是组件实例，可使用组件的所有方法
+
+*/
+
+    </script>
+</body>
+</html>

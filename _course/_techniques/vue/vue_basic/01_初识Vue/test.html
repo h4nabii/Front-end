@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <div class="root" id="root">
+             {{msg}}
+
+             <button @click="study">点击</button>
+    </div>
+</body>
+</html>
+<script>
+    
+
+    //    console.log(Vue instanceof Object);  // true
+
+
+    // data 与 options 的集合
+
+       let vm = new Vue({
+           el:'#root',
+           data:{
+               name:'test',
+               msg:'welcome to china',
+               
+           },
+           methods:{
+                study(){
+                    // return 'good study!'
+                    // alert('try my best')
+                    vm.msg = '100分'
+                },
+                eatfan(){
+                    return '吃饭'
+                }
+           },
+           computed:{},
+           watch:{},
+           filters:{},
+           components:{
+
+           }
+           
+       })
+       console.log(vm);
+
+
+       function Person(name,age){ // 构造函数
+           this.name = name;
+           this.age = age;
+       }
+
+       var p1 = new Person('tom',18)
+
+       console.log(p1);
+
+    //    console.log(Person instanceof Object);  // true
+</script>
