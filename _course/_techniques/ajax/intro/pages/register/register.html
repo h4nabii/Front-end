@@ -14,7 +14,7 @@
     <button type='button' id="register">注册</button>
 </form>
 
-<script src='js/jquery-1.12.4.js'></script>
+<script src='./jquery-1.12.4.js'></script>
 <script>
     // 点击按钮 获取用户输入的值
     $("#register").click(function () {
@@ -23,14 +23,12 @@
         // console.log("用户输入", username, password);
         // 创建ajax方法
         $.ajax({
-            // 请求方式get/post 看你后端怎么定义接受变量
             type: "get",
             url: "http://localhost:5000/intro/server/register.php",
             data: {
                 username: username,
                 password: password,
             },
-            // 成功的回调函数 res形参
             success: function (res) {
                 console.log(res);
                 // 方法1：

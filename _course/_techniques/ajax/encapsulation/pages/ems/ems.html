@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            border: 1px solid #999;
+            padding: 10px;
+            min-height: 400px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .emsInfo {
+            margin-top: 20px;
+        }
+
+        .emsInfo li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+<h2>9971121346085</h2>
+<div class='box'>
+    <input type="text" id='inp'>
+    <button type="button" id='search'>查询</button>
+    <ul class='emsInfo'>
+        <!-- <li>
+            <strong>标题：时间</strong>
+            <p>内容：哈哈哈哈付或付或付或付若若女</p>
+        </li> -->
+    </ul>
+</div>
+
+<script>
+    document.getElementById("search").onclick = function () {
+        //获取值
+        let inp = document.getElementById("inp").value;
+        // console.log(inp);
+        if (!inp) {
+            document.querySelector(".emsInfo").innerHTML = "输入的内容不能为空";
+        } else {
+            //创建ajax对象
+            let xhr = new XMLHttpRequest();
+            xhr.open("get", "http://localhost:5000/encapsulation/server/ems.php?code=" + inp, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        console.log(xhr.responseText);
+                        let obj = JSON.parse(xhr.responseText);
+                        getData(obj);
+                    }
+                }
+            };
+            xhr.send();
+        }
+    };
+
+    //处理物流信息的方法--------------------------------------------------
+    function getData(obj) {
+        if (obj.status === "-2") {
+            document.querySelector(".emsInfo").innerHTML = obj.msg;
+        } else {
+            //成功查询到物流信息
+            let arr = obj.data.info.context;
+            let str = "";
+            for (let i = 0; i < arr.length; i++) {
+                str += `
+                    <li>
+                        <strong>${times(arr[i].time)}</strong>
+                        <p>${arr[i].desc}</p>
+                    </li>
+                `;
+            }
+            document.querySelector(".emsInfo").innerHTML = str;
+        }
+    }
+
+
+    //时间处理函数---------------------------------------------------------
+    function times(num) {//num 总的秒数 --转毫秒数--转当前的年月日
+        let date = new Date(num * 1000);
+        // console.log(date);
+        let y = date.getFullYear();
+        let m = date.getMonth() + 1;
+        let day = date.getDate();
+        m = m > 9 ? m : "0" + m;
+        day = day > 9 ? day : "0" + day;
+
+        return y + "年" + m + "月" + day + "日";
+    }
+</script>
+</body>
+</html>
