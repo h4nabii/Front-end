@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DTZ</title>
+</head>
+<body>
+</body>
+<script>
+    /* "var", "let", "const" and temporal death zone (TDZ) */
+
+    // "var" in loop
+    for (var i = 0; i < 5; i++) {
+        console.log(" in loop:", i); // Inner loop: 0 1 2 3 4
+    }
+    console.log("       i:", i); // Outer loop: 5
+    console.log("window.i:", window.i); // "i" is a global variable.
+
+    console.log("------------------ divider");
+
+    // "var" in function
+    var a = 10;
+    console.log("             a:", a);
+
+    function f() {
+        console.log("in function, a:", a); // undefined, "a" is overwritten but not assigned
+        var a = 10;
+        console.log("in function, a:", a); // 10, "a" is overwritten and assigned
+    }
+    /* As same as code below */
+    // function f() {
+    //     var a;
+    //     console.log("in function, a:", a); // undefined, "a" is overwritten but not assigned
+    //     a = 10;
+    //     console.log("in function, a:", a); // 10, "a" is overwritten and assigned
+    // }
+    f();
+</script>
+</html>
