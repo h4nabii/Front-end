@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: black;
+    color: #666;
+    text-align: center;
+}
+
+audio {
+    width: 450px;
+    margin: 30px 0;
+}
+
+.container {
+    height: 420px;
+    overflow: hidden;
+    /*border: 1px solid white;*/
+}
+
+.container ul {
+    transition: 0.2s; /* 只针对数值类的属性的变化 */
+}
+
+.container ul li {
+    height: 30px;
+    line-height: 30px;
+    transition: 0.2s;
+}
+
+.container ul li.active {
+    color: white;
+    transform: scale(1.2);
+}
+
+

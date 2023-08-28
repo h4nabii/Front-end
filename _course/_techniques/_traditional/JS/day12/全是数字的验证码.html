@@ -1,0 +1,44 @@
+<!--
+ * @Description: 
+ * @Author: front end cabbage
+ * @Date: 2023-05-07 10:24:46
+ * @LastEditTime: 2023-05-07 10:33:14
+ * @LastEditors: front end cabbage
+ * @FilePath: \web2023\day12\全是数字的验证码.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+
+    
+
+     console.log(parseInt(Math.random()*10));   
+
+
+    function testNumCode(n){
+        var arr=[];
+        for(var i=0;i<n;i++){
+             num = parseInt(Math.random()*10)
+             if(arr.includes(num)){
+                i--;
+             }else{
+                arr.push(num);
+             }
+             
+        }
+        return arr.join('');
+    }
+
+    console.log(testNumCode(6));
+
+</script>

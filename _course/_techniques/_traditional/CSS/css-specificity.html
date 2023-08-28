@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* See MDN: https://developer.mozilla.org/zh-CN/docs/Web/CSS/Specificity */
+
+        * {
+            color: red;
+        }
+
+        /* (0, 0, 1) */
+        li {
+            color: blue
+        }
+
+        /* (0, 0, 1) */
+        span {
+            color: yellow;
+        }
+
+        /* (0, 1, 1) */
+        .myLi li {
+            color: green;
+        }
+
+        /* (1, 0, 0) */
+        #first {
+            color: cyan
+        }
+
+        /* (0, 2, 2) */
+        div .myLi li:nth-child(4) {
+            color: red;
+        }
+
+        /* (0, 0, 3) */
+        div span > em {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <ul class="myLi">
+        <li id="first" style="color:purple">aaa</li>
+        <li>aaa</li>
+        <li>aaa</li>
+        <li>aaa</li>
+    </ul>
+    <p>AAA</p>
+    <span>1</span>
+    <span><em>999999999999</em></span>
+    <span>1</span>
+    <span>1</span>
+    <span>1</span>
+    <em>2222222222222222222222</em>
+    <form action="">
+        <label><input type="text"></label>
+    </form>
+</div>
+</body>
+</html>

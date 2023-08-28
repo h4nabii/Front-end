@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script defer src="lib.js"></script>
+    <style>
+        .c {
+            border: none;
+        }
+    </style>
+</head>
+<body>
+<call-back class="c" clicked="f">1</call-back>
+<call-back clicked="e">2</call-back>
+<call-back>3</call-back>
+<div onclick="e()"></div>
+</body>
+<script>
+    function f(target) {
+        console.log(target);
+    }
+
+    function e() {
+        console.log(1);
+    }
+</script>
+</html>

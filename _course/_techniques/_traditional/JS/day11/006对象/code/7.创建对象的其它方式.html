@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 常用
+        var obj = {
+            name: 'Tom',
+            age: 10,
+            gender: '男'
+        };
+
+        // 创建对象的其它方式：利用Object构造方法创建对象，格式：var  对象名称 = new  Object();
+        var obj = new Object();
+        console.log(obj);
+
+        var obj = new Object({
+            name: 'Tom',
+            age: 10,
+            gender: '男'
+        });
+        console.log(obj);
+
+        // 利用Object.create(null);方法创建对象
+        var obj = Object.create(null);
+        console.log(obj);
+    </script>
+</body>
+</html>

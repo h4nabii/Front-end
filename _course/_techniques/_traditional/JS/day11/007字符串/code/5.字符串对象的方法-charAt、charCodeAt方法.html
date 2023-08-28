@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            charAt方法
+            1.作用：根据下标获取字符串中某个字符，功能类似于字符串名称[下标]。但是要注意字符串名称[下标]的形式不是W3C推荐用法，在某些浏览器中不支持，而charAt方法是通用方法
+            2.格式：字符串.charAt(下标);
+        */
+        var str = 'helloworld';
+        console.log(str.charAt(4));
+        console.log(str[4]);
+        
+        /* 
+            charCodeAt方法
+            1.作用：返回字符串中下标对应的字符的ASCII码值
+            2.格式：字符串.charCodeAt(下标);
+        */
+        var str = 'helloworld';
+        console.log(str.charCodeAt(0));
+    </script>
+</body>
+</html>

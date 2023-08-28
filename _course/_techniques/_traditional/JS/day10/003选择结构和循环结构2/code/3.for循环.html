@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            for循环：先判断循环条件，如果条件成立，则执行循环体
+
+            for (表达式1；表达式2；表达式3) {
+                循环体；
+            }
+         */
+
+        //  打印5个hello
+        for (var i=1; i<=5; i++) {//6
+            console.log('hello');
+        }
+
+        // 打印1-10这10个数
+        for (var i=1; i<=20; i++) {
+            console.log(i);
+        }
+
+        // 打印10以内的偶数
+        for (var i=1; i<=10; i++) {
+            if (i%2 == 0) {
+                console.log(i);
+            }
+        }
+        for (var i=2; i<=10; i+=2) {
+            console.log(i);
+        }
+
+        /* 
+            1.累加（求和）：求1-10的和
+        */
+        var sum = 0;
+
+        for (var i=1; i<=10; i++) {//4
+            sum = sum + i;//0+1+2+3+4....+7+8+9+10
+        }
+        console.log(sum);
+        
+
+        /* 
+            2.求1-100之间能被3和7同时整除的数据的和
+        */
+        var sum = 0;
+
+        for (var i=1; i<=100; i++) {
+            if (i%3==0 && i%7==0) {
+                console.log(i)
+                sum = sum + i;
+            }
+        }
+        console.log(sum);
+
+        /*  2.计数：利用循环统计符合条件的数据的个数，如统计10以内偶数的个数 */
+        var count = 0;
+
+        for (var i=1; i<=10; i++) {
+            if (i%2 == 0) {
+                count++;
+            }
+        }
+        console.log(count);
+    </script>
+</body>
+</html>

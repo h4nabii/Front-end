@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='js/myAjax.js'></script>
+</head>
+<body>
+<input type="text" id='inp'>
+<button id="test">测试post</button>
+<script>
+    //1.测试获取书本信息
+    myAjax({
+        method: "get",
+        url: "./data/data.json",
+        success: function (res) {
+            console.log(JSON.parse(res));
+        }
+    });
+
+    document.getElementById("test").onclick = function () {
+        let inp = document.getElementById("inp").value;
+        myAjax({
+            method: "post",
+            url: "http://localhost:5000/encapsulation/server/03.php",
+            data: {
+                code: inp
+            },
+            success: function (res) {
+                console.log("post数据：", res);
+            }
+        });
+    };
+
+    myAjax({
+        method: "GET",
+        url: "./data/data.json",
+        success: function (res) {
+            console.log("第二个数据：", JSON.parse(res));
+            //解析对象
+        }
+    });
+</script>
+</body>
+</html>

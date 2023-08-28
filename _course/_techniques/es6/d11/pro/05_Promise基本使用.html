@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promise基本使用</title>
+</head>
+<body>
+<script type="text/javascript">
+    const p = new Promise((resolve, reject) => {
+        //真正开启一个异步任务
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = () => {
+            if (xhr.readyState === 4) {
+                //readyState 为 4 代表接收完毕，接收的可能是：服务器返回的成功数据、服务器返回的错误
+                if (xhr.status === 200) resolve(xhr.response);
+                else reject("请求出错");
+            }
+        };
+        xhr.open("GET", "http://localhost:3000/posts");
+        xhr.responseType = "json";
+        xhr.send();
+    });
+
+    p.then(
+        (value) => {
+            let arr = value;
+            for (let i in arr) {
+                console.log(arr[i].id);
+            }
+        },
+        (reason) => {
+            console.log("失败了1", reason);//失败的回调-异步
+            console.log(p);
+        }
+    );
+</script>
+</body>
+</html>

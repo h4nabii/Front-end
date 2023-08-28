@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td {
+            border: 1px solid;
+        }
+        table {
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+    <!-- 图1：
+        *****
+        *****
+        *****
+     -->
+    <script>
+        // 外层循环表示行数
+        for (var j=1; j<=3; j++) {//4
+            // 打印一行星号
+            for (var i=1; i<=5; i++) {//6
+                document.write('*');
+            }
+            // 换行
+            document.write('<br>');
+        }
+    </script>
+
+    <!-- 图2：
+        *       1-1
+        **      2-2
+        ***     3-3
+        ****    4-4
+        *****   5-5
+     -->
+    <script>
+        for (var i=1; i<=5; i++) {//行
+            for (var j=1; j<=i; j++) {//列
+                document.write('*');
+            }
+
+            document.write('<br>');
+        }
+    </script>
+
+    <!--图3：九九乘法表 
+        1*1=1
+        1*2=2   2*2=4
+        1*3=3   2*3=6   3*3=9
+        ...
+     -->
+     <script>
+        // for (var i=1; i<=9; i++) {// 行
+        //     for (var j=1; j<=i; j++) {
+        //         document.write(`${j}*${i}=${i*j}&nbsp;&nbsp;&nbsp;&nbsp;`);
+        //     }
+        //     document.write('<br>');
+        // }
+        document.write('<table>');
+        for (var i=1; i<=9; i++) {
+            document.write('<tr>');
+                for (var j=1; j<=i; j++) {
+                    document.write(`<td>${j}*${i}=${i*j}</td>`);
+                }
+            document.write('</tr>');
+        }
+        document.write('</table>');
+     </script>
+
+     <!-- 图4
+         *****  1-5
+         ****   2-4
+         ***    3-3
+         **     4-2
+         *      5-1
+      -->
+    <script>
+        for (var i=1; i<=5; i++) {
+            for (var j=1; j<=6-i; j++) {
+                document.write('*');
+            }
+            document.write('<br>');
+        }
+    </script>
+
+    <!-- 图5：
+   *        1-1         1-3
+  ***       2-3         2-2
+ *****      3-5         3-1
+*******     4-7         4-0
+            列数 = 2*行号-1
+     -->
+    <script>
+        for (var i=1; i<=4; i++) {//行数
+            // 打印占位的符号
+            for (var k=1; k<=4-i; k++) {
+                document.write('<span style="visibility:hidden">*</span>');
+            }
+            // 打印星号
+            for (var j=1; j<=2*i-1; j++) { //列数
+                document.write('*');
+            }
+            document.write('<br>');
+        }
+    </script>
+
+
+<!-- 图6:
+   *        
+  ***      
+ ***** 
+*******
+ *****   3-5  1
+  ***    2-3  2
+   *     1-1   3
+ -->
+    <script>
+        // 上半部分
+        for (var i=1; i<=4; i++) {
+            // 打印占位的符号
+            for (var k=1; k<=4-i; k++) {
+                document.write('<span style="visibility:hidden">*</span>');
+            }
+            for (var j=1; j<=2*i-1; j++) {
+                document.write('*');
+            }
+            document.write('<br>');
+        }
+
+        // 下半部分
+        for (var i=3; i>=1; i--) {//行
+            for (var k=1; k<=4-i; k++) {
+                document.write('<span style="visibility:hidden">*</span>');
+            }
+            for (var j=1; j<=2*i-1; j++) {
+                document.write('*');
+            }
+            document.write('<br>');
+        }
+    </script>
+</body>
+</html>
+
+
+

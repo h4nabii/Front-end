@@ -1,0 +1,60 @@
+<!--
+ * @Description: 
+ * @Author: front end cabbage
+ * @Date: 2023-07-10 14:36:05
+ * @LastEditTime: 2023-07-10 14:52:15
+ * @LastEditors: front end cabbage
+ * @FilePath: \web2023\day13\08.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <a href="##" alt="日本人" title="好人">中国人</a>
+
+
+     <div class="box" id="box" title="">
+          <h1>1111</h1>
+           <ul>
+                <li>中国1</li>
+                <li>中国2</li>
+                <li>中国3</li>
+                <li>中国4</li>
+                <li>中国5</li>
+           </ul>
+    </div>
+</body>
+</html>
+<script>
+    // Ecmascript
+    // DOM
+
+    // obj.tagName
+    // obj.nodeName
+    // obj.nodeValue
+    // obj.nodeType
+
+    var oBox = document.querySelector('.box');
+    console.log(oBox.tagName.toLowerCase());
+    console.log(oBox.nodeName.toLowerCase())
+    console.log(oBox.childNodes.length);
+    console.log(oBox.childNodes);
+    console.log(oBox.children);
+
+
+    var obj=[];
+    for(var i=0;i<oBox.childNodes.length;i++){
+        if(oBox.childNodes[i].nodeType==3)continue
+        obj.push(oBox.childNodes[i]);
+    }
+
+    console.log('obj:',obj);
+    
+
+    // BOM
+</script>

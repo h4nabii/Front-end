@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // typeof运算符：用来测试某个数据的数据类型，格式：typeof 数据；
+        var num = 100;
+        console.log(typeof num); // number
+
+        var str = 'hello';
+        console.log(typeof str); // string
+
+        var bool = true;
+        console.log(typeof bool); // boolean
+
+        var data = undefined;
+        console.log(typeof data); // undefiend
+        
+        var data = null;
+        console.log(typeof data); // object
+
+
+        var arr = [10, 20, 30];
+        console.log(typeof arr); // object
+
+        var obj = {
+            a: 1,
+            b: 2
+        };
+        console.log(typeof obj); // object
+
+        function fn() {}
+        console.log(typeof fn); // function
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+     var a=1;
+     var b;
+     b=a;    // 赋值
+     b=3;
+    //  console.log(a,b)    // a 1 b 3
+
+     var  arr=[1,2,3];
+     var arrb = arr;   // 赋址,arr与arrb中的元素是同一个地址上的数据
+     arrb.push(8);
+
+     console.log("arr:",arr)  // [1,2,3]
+     console.log(arrb)     // [1,2,3,8]
+     arr.push('0');
+     console.log(arrb)
+
+
+</script>

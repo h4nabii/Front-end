@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var arr = [1, 0, 17, 3, 19, 5];
+        // arr.sort();
+        // console.log(arr);//如果不传参，那么数值型数据在排序时会错误
+        // arr.sort(function(a, b) {
+        //     return b - a;
+        // });
+        // console.log(arr);
+
+
+        var arr = [
+            {
+                name: 'Tom',
+                age: 20,
+                salary: 3000
+            },
+            {
+                name: 'Jack',
+                age: 32,
+                salary: 5000
+            },
+            {
+                name: 'Lucy',
+                age: 3,
+                salary: 3000
+            },
+            {
+                name: 'Peter',
+                age: 40,
+                salary: 10000
+            },
+            {
+                name: 'Lily',
+                age: 18,
+                salary: 3000
+            }
+        ];
+
+
+        // arr.sort();
+        // console.log(arr);//如果数组中的元素是对象，那么需要在调用sort方法时指定排序的依据
+        
+        // arr.sort(function(a, b) {
+        //     return a.age - b.age; //按对象中年龄的升序排序
+        // });
+        // arr.sort(function(a, b) {
+        //     return b.age - a.age;
+        // });
+
+        
+        // 按照对象中工资的升序排序，如果工资相等，那么按照年龄的升序排序
+        arr.sort(function(a, b) {
+            // 判断工资是否相等，如果相等，则按照年龄的升序排序
+            if (a.salary == b.salary) {
+                return b.age - a.age;
+            }
+            return a.salary - b.salary;
+        });
+
+        console.log(arr);
+    </script>
+</body>
+</html>

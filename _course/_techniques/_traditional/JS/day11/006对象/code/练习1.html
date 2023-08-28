@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [
+            {
+                name: 'Tom',
+                age: 20,
+                salary: 3000
+            },
+            {
+                name: 'Jack',
+                age: 32,
+                salary: 5000
+            },
+            {
+                name: 'Lucy',
+                age: 3,
+                salary: 3700
+            },
+            {
+                name: 'Peter',
+                age: 40,
+                salary: 10000
+            },
+            {
+                name: 'Lily',
+                age: 18,
+                salary: 4000
+            }
+        ];
+
+        // 求工资中的最大值与最小值
+
+        var salary = [];
+
+        for (var i=0; i<arr.length; i++) {
+            salary.push(arr[i].salary);
+        }
+
+        // 求salary中的最大值和最小值
+        var max = salary[0];
+        var min = salary[0];
+
+        for (var i=0; i<salary.length; i++) {
+            if (salary[i] > max) {
+                max = salary[i];
+            }
+            if (salary[i] < min) {
+                min = salary[i];
+            }
+        }
+        
+        console.log(max, min);
+        
+        
+    </script>
+</body>
+</html>

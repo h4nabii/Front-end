@@ -1,0 +1,99 @@
+1. text-shadow:
+    文字的阴影
+    x y blur color 
+
+    注：阴影的默认颜色是跟文字样色相同
+    注：通过逗号的方式进行分割，可以设置多阴影
+
+2. box-shadow：
+	x
+	y
+	blur
+	spread
+	color
+	inset
+	多阴影
+
+    注：盒子阴影的默认样色是黑色。
+    注：默认就是外阴影，如果设置outset不起作用，可选的值只有inset表示内阴影。
+
+3. mask 遮罩
+
+    url
+	repeat
+	x
+	y
+	w
+	h
+	多遮罩
+
+    注：mask目前还没有标准化，所以需要添加浏览器前缀。
+
+    注：默认是x、y都平铺。
+
+4. box-reflect
+	above   上
+	below   下
+	left    左
+	right   右
+	距离
+	遮罩 | 渐变 
+
+    渐变：只是针对透明度的渐变，不能支持颜色的渐变。
+
+5.   blur模糊
+	    filter : blur()
+
+6. calc计算
+        四则运算
+
+7. 分栏布局
+
+      column-count : 分栏的个数
+      column-width : 分栏的宽度 
+      column-gap : 分栏的间距   
+      column-rule : 分栏的边线
+      column-span : 合并分栏
+
+    注：column-width和column-count不要一起去设置。
+
+8. 伪元素：
+        伪元素本质上是创建了一个有内容的虚拟容器。这个容器不包含任何DOM元素，但是可以包含内容。另外，开发者还可以为伪元素定制样式。
+        :: selection
+        :: first-line   /    first-letter
+        :: before     /     after 
+        …	
+
+9. CSS  Hack分类
+	1. CSS属性前缀法
+        .elem{ _background:red; }
+
+	2. 选择器前缀法
+
+        *html .elem{ }
+
+	3. IE条件注释法
+
+        IE10以上已经不支持注释法
+
+10. IE低版本常见BUG
+    1. 透明度
+	2. 双边距
+	3. 最小高度
+	4. 图片边框
+
+11. 布局扩展
+
+    1. 等高布局
+        利用margin-bottom负值与padding-bottom配合实现。
+
+    2. 三列布局，左右固定，中间自适应
+
+        1. BFC方式 
+        2. 定位
+        3. 浮动 ( 双飞翼布局、圣杯布局 )
+            margin负值
+
+        4. flex弹性
+
+

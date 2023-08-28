@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* break、continue
+            break
+                使用范围：switch、循环语句
+                作用：
+                    1）如果位于switch中，那么它的作用是跳出switch结构
+                    2) 如果位于循环中，那么它的作用就是终止循环（break后面无论剩多少语句没有执行到都不执行，而且也不需要执行修正表达式）
+
+            continue
+                使用范围：循环语句
+                作用：结束当次循环，继续下一次循环
+        */
+
+        switch (1) {
+            case 1:
+                console.log('a');
+            case 2:
+                console.log('b');
+                break;
+            case 3:
+                console.log('c');
+        }
+
+        console.log('-----------------break---------------------')
+        for (var i=1; i<=10; i++) {//3
+            if (i == 3) {
+                break;
+            }
+            console.log(i);//1  2
+        }
+
+        console.log('------------------continue--------------------')
+        for (var i=1; i<=10; i++) {//5
+            if (i == 3) {
+                continue;
+            }
+            console.log(i);//1  2   4  5...10
+        }
+    </script>
+
+    
+</body>
+</html>

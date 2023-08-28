@@ -1,0 +1,13 @@
+{
+  "name": "php",
+  "version": "1.0.0",
+  "description": "",
+  "directories": {
+    "doc": "README.md"
+  },
+  "scripts": {
+    "php-server": "php -S localhost:5000"
+  },
+  "author": "h4nabii <leon_xenos.xu@foxmail.com>",
+  "license": "ISC"
+}

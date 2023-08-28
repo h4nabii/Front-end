@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var str = window.prompt('请输入任意字符')
+        //统计字符中输入了哪几类英文字符
+        /*
+            asdasdaaa11212 =>   ['a', 's', 'd']
+        */
+        var includeChar = 'abcdefghijklmnopqrstuvwxyz';
+        includeChar += includeChar.toUpperCase(); //所有的大小写英文字符
+        var strGetEnChar = ''; // 实际输入字符串得到的英文字符
+
+        for(var i = 0; i < str.length; i++){
+            var everyChar = str.charAt(i); // 当前i位置的字符
+            if(includeChar.indexOf(everyChar) != -1 && strGetEnChar.indexOf(everyChar) == -1){
+                //表示存在大小写字母中 并且 不存在strGetEnChar变量中的英文字符
+                strGetEnChar += everyChar;
+            }
+        }  
+        console.log(str, strGetEnChar);
+        var arr = [];
+        for(var j = 0; j < strGetEnChar.length; j++){
+            arr[j] = strGetEnChar.charAt(j)
+        }
+        console.log(arr, strGetEnChar.split(''));
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 求2+22+222+2222+22222之和
+        var sum = 0;
+        var num = 2;
+
+        for (var i=1; i<=5; i++) {//6
+            sum = sum + num;// 0+2+22+222+2222+22222
+
+            num = num * 10 + 2;//222222
+        }
+
+        console.log(sum);
+        
+    </script>
+</body>
+</html>

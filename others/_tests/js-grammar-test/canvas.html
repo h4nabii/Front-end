@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+    <style>
+        #canvas {
+            background-color: #66ccff;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<canvas width="480" height="480" id="canvas"></canvas>
+<script>
+    const canvas = document.querySelector("#canvas");
+    const context = canvas.getContext("2d");
+    const blockWidth = canvas.width / 16;
+    const chessRadius = 0.4 * blockWidth;
+
+    /**
+     * Draw the chessboard
+     * @param {CanvasRenderingContext2D} ctx the context used to draw
+     */
+    function drawBoard(ctx) {
+        ctx.save();
+        ctx.strokeStyle = "black";
+        for (let i = 1; i <= 15; i++) {
+            // vertical
+            ctx.beginPath();
+            // noinspection JSSuspiciousNameCombination
+            ctx.moveTo(i * blockWidth, blockWidth);
+            ctx.lineTo(i * blockWidth, 15 * blockWidth);
+            ctx.closePath();
+            ctx.stroke();
+            // horizontal
+            ctx.beginPath();
+            ctx.moveTo(blockWidth, i * blockWidth);
+            ctx.lineTo(15 * blockWidth, i * blockWidth);
+            ctx.closePath();
+            ctx.stroke();
+        }
+        ctx.restore();
+    }
+
+    /**
+     * Draw a chess on the board
+     * @param {CanvasRenderingContext2D} ctx the context used to draw
+     * @param {number} x the horizontal position on the board
+     * @param {number} y the vertical position on the board
+     * @param {"white"|"black"} color the chess color to be drawn
+     */
+    function drawChess(ctx, x, y, color) {
+        ctx.save();
+        ctx.beginPath();
+        let radial = ctx.createRadialGradient(x - 0.3 * chessRadius, y - 0.3 * chessRadius, 0, x, y, chessRadius);
+        radial.addColorStop(0, color === "white" ? "#fff" : "#bbb");
+        radial.addColorStop(1, color === "white" ? "#bbb" : "#000");
+        ctx.fillStyle = radial;
+        ctx.arc(x, y, chessRadius, 0, 2 * Math.PI);
+        ctx.closePath();
+        ctx.fill();
+        ctx.restore();
+    }
+
+    /**
+     * check if a position is valid to put chess
+     * @param {number} x horizontal position to check
+     * @param {number} y vertical position to check
+     * @return {boolean} whether position [x, y] is a valid click area
+     */
+    function checkClickPosition(x, y) {
+        return x > blockWidth / 2
+            && x < canvas.width - blockWidth / 2
+            && y > blockWidth / 2
+            && y < canvas.height - blockWidth / 2;
+    }
+
+    /**
+     * round a position to proper value
+     * @param {number} x horizontal position
+     * @param {number} y vertical position
+     * @return {[number, number]} rounded position
+     */
+    function roundPosition(x, y) {
+        return [
+            Math.floor((x + blockWidth / 2) / blockWidth) * blockWidth,
+            Math.floor((y + blockWidth / 2) / blockWidth) * blockWidth
+        ];
+    }
+
+    // Game logics
+    drawBoard(context);
+    let currentColor = "white";
+    canvas.addEventListener("click", ({offsetX: x, offsetY: y}) => {
+        if (checkClickPosition(x, y)) {
+            console.log(roundPosition(x, y));
+            drawChess(context, ...roundPosition(x, y), currentColor);
+        }
+        if (currentColor === "white") currentColor = "black";
+        else currentColor = "white";
+    });
+
+</script>
+</body>
+</html>

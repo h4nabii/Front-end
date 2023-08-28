@@ -1,0 +1,49 @@
+<!--
+ * @Description: 
+ * @Author: front end cabbage
+ * @Date: 2023-07-10 16:50:45
+ * @LastEditTime: 2023-07-10 17:06:44
+ * @LastEditors: front end cabbage
+ * @FilePath: \web2023\day13\12.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <div class="box" id="box">
+           <h1>111111111111</h1>
+           <p>2222222222222</p>
+      </div>
+</body>
+</html>
+<script>
+    // appendChild
+    // insertBefore
+    // insertAfter()
+
+    function insertAfter(newNode,refNode){ // 工具函数
+         var parent = refNode.parentNode;
+         if(parent.lastChild==refNode){
+            parent.appendChild(newNode)
+         }else{
+            parent.insertBefore(newNode,refNode.nextSibling)
+         }
+    }
+
+
+    var myH2 = document.createElement('h2');
+    var oT = document.createTextNode('new新的')
+    var oBox = document.getElementById('box')
+    myH2.appendChild(oT);
+    document.onclick = function(){
+        var myH1 = document.querySelector('h1') // 这是参考的节点
+        insertAfter(myH2,myH1)
+
+    }
+
+
+</script>

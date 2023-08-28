@@ -1,0 +1,58 @@
+<!--
+ * @Description: 
+ * @Author: front end cabbage
+ * @Date: 2023-05-07 09:03:46
+ * @LastEditTime: 2023-05-07 09:14:35
+ * @LastEditors: front end cabbage
+ * @FilePath: \web2023\day12\001.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    // javascript
+    // string,number,boolean,object,array,null,undefined
+
+    // 对象
+    var obj = new Object();
+    obj.name='tom';
+    obj.age=18;
+    obj.talk = function () {
+         return this.name;
+      }
+    console.log(obj);
+
+    Object.prototype.country='china'
+    Object.prototype.sayHello = function(){
+             alert('计量大学')
+    }
+
+
+    // 数组
+    var arr = new Array();
+    arr[0]='1';
+    arr[1]='a';
+    arr[2]='b'
+    console.log(arr);
+    // 字符串
+    var str = new String('hello')
+    var num = new Number(123)
+    console.log(str);
+    console.log(num);
+    // 以下全部都能正常执行
+
+    arr.sayHello();
+    str.sayHello();
+    num.sayHello();
+    console.log(arr.country);
+    
+</script>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/marked@6.0.0/marked.min.js"></script>
+</head>
+<body>
+<div id="main"></div>
+</body>
+<script>
+    let xhr = new XMLHttpRequest();
+    xhr.open("get","./README.md");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            console.log(xhr.responseText);
+            document.querySelector("#main").innerHTML = marked.parse(xhr.responseText);
+        }
+    }
+    xhr.send();
+</script>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+<button type="button" id='look'>点击查看数据</button>
+<ul class='list'>
+    <!--
+    <li>
+        <strong>书名：XXX</strong>
+        <p>简介：XXX</p>
+    </li>
+    -->
+</ul>
+
+<script>
+    //1.点击按钮
+    document.getElementById("look").onclick = function () {
+
+        //多次点击---都是追加一次内容---ul里面点击的时候--清空之前内容
+        document.querySelector(".list").innerHTML = "";
+
+        //获取书本信息
+        let xhr = new XMLHttpRequest();
+        xhr.open("get", "./data/data.json", true);
+        xhr.send();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    // console.log(xhr.responseText); // 字符串
+                    //把字符串转对象 JSON.parse()   '{}' --> {}对象
+                    let obj = JSON.parse(xhr.responseText);
+                    // console.log(obj);
+                    console.log(obj.data);
+                    let arr = obj.data;
+                    //遍历数组--获取数组的每一项数据 ---数组每一项-对象 打点调用属性
+                    for (let i = 0; i < arr.length; i++) {
+                        // console.log(arr[i].name);
+                        let lis = document.createElement("li");
+                        lis.innerHTML = `<strong>${arr[i].name}</strong><p>${arr[i].desc}</p>`;
+                        //追加到ul里面去
+                        document.querySelector(".list").appendChild(lis);
+                    }
+                }
+            }
+        };
+    };
+</script>
+</body>
+</html>

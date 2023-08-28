@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>1942</title>
+		<meta name="nille" content="lenovo" />
+		<link rel="shortcut icon" href="favicon.ico">
+		<!-- Date: 2016-11-15 -->
+	</head>
+	<body>
+		<canvas id="canvas" width="400" height="400"></canvas>
+		
+		<script src = "https://code.jquery.com/jquery-2.1.0.js"></script>
+		
+		<script>
+			var canv = document.getElementById("canvas");
+			var ctx =canv.getContext("2d");
+			
+			var img = new Image();
+			img.src = "\plane.png";
+			
+			var plane = {
+				x : 200,
+				y : 330,
+				xSize : 50,
+				ySize : 50
+			};
+			
+			var bullet = {
+				x : plane.x + plane.xSize /2,
+				y : plane.y,
+				xSize : 4,
+				ySize : 8,
+				xSpeed : 0,
+				ySpeed : -2
+			};
+			
+			bullet.draw = function()
+			{
+				ctx.fillRect(this.x - this.xSize/2,this.y,this.xSize,this.ySize);
+			};
+			
+			bullet.move = function()
+			{
+				this.x = this.x + this.xSpeed;
+				this.y = this.y + this.ySpeed;
+				if(this.y < 0)
+				{
+					console.log(plane.x);
+					this.x = plane.x + plane.xSize /2;
+					this.y = plane.y;
+				}
+			};
+			
+			plane.draw = function()
+			{
+				ctx.drawImage(img, this.x, this.y,this.xSize,this.ySize);
+				//ctx.fillRect(this.x,this.y,this.xSize,this.ySize);
+			};
+			
+			setInterval(function()
+			{
+				ctx.clearRect(0,0,400,400);
+				
+				bullet.draw();
+				plane.draw();
+				bullet.move();
+				
+				ctx.strokeRect(0,0,400,400);
+			},30
+			);
+			
+			$("body").keydown(function(event)
+			{
+				console.log(event.keyCode);
+				if(event.keyCode == 37)
+				{
+					plane.x = plane.x - 5;
+					if(plane.x<0)
+					plane.x = 0;
+				}
+				
+				if(event.keyCode == 39)
+				{
+					plane.x = plane.x + 5;
+					if(plane.x > 400 - plane.xSize)
+					plane.x = 400-plane.xSize;
+				}
+				
+			});
+			
+		</script>
+	</body>
+</html>
+

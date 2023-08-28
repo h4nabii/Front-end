@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        header, footer {
+            height: 100px;
+            background-color: #ccc;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: row;
+            height: 500px;
+        }
+
+        .left, .right {
+            width: 200px;
+            background-color: #eee;
+        }
+
+        .main {
+            flex-grow: 1;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+<header></header>
+<div class="content">
+    <div class="left"></div>
+    <div class="main"></div>
+    <div class="right"></div>
+</div>
+<footer></footer>
+</body>
+</html>

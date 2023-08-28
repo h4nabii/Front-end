@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 方式1 -->
+    <h1 onclick="alert('helloworld')">JS的应用方式</h1>
+    
+    
+    <!-- 方式2 -->
+    <div>我是一个div</div>
+    <script>
+        window.onload = function() {
+            var div = document.querySelector('div');
+            
+            div.onclick = function() {
+                console.log(100);
+            };
+        };
+    </script>
+
+    <!-- 
+    <script>
+        console.log('ok');
+        console.log('123');
+    </script> 
+    -->
+
+
+    <!-- 方式3 -->
+    <script src="test.js">
+        console.log(400);//不要再写其它的JS代码，因为执行不到
+    </script>
+</body>
+</html>
+
+<!-- 
+    JS的应用方式
+    1.将JS代码嵌入到开始标签中，通常结合事件
+    2.在HTML文档中嵌入script标签，在script标签间写JS代码，script的位置通常在被操作元素的后面，如果要放在前面，可以结合window.onload使用
+    3.将JS代码写在一个独立的js文件中，文件的后缀为.js，然后使用script的src属性将js文件加载到当前页面
+ -->

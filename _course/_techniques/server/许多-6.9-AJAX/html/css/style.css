@@ -1,0 +1,395 @@
+/* 初始化样式 */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    vertical-align: top;
+}
+
+/* 垂直对齐，一般行块元素才有用 */
+li {
+    list-style: none; /* 列表样式 */
+}
+
+a {
+    color: #006699;
+    text-decoration: none; /* 去除下划线*/
+}
+
+/*鼠标移上去的效果， 伪类选择器:hover*/
+a:hover { /* a标签鼠标移上去的效果 */
+    color: #444;
+    text-decoration: underline;
+}
+
+body {
+    font-family: '微软雅黑', serif;
+    font-size: 12px;
+    color: #444;
+    background: #e7e7e7;
+}
+
+/* clearfix可以清浮动，也可以解决margin垂直方向重叠问题 */
+.clearfix:before, .clearfix:after {
+    content: '';
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/* 头部 */
+.header {
+    width: 100%; /* ke省略 */
+    height: 58px;
+    border-bottom: #f0f0f0 1px solid;
+}
+
+.header-wrap {
+    height: 57px;
+    border-bottom: #dbdbdb 1px solid;
+}
+
+.header-warp-content {
+    height: 56px;
+    border-bottom: #ebebeb 1px solid;
+    background: #f7f7f7;
+}
+
+.header-main {
+    width: 960px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.header-main .logo {
+    float: left;
+    margin-top: 15px;
+    width: 80px;
+    height: 30px;
+}
+
+.header-main .logo img {
+    width: 80px;
+    height: 30px;
+}
+
+.header-main .nav {
+    float: left;
+    margin-left: 20px;
+    margin-top: 22px;
+}
+
+.header-main .nav a {
+    float: left;
+    margin-left: 35px;
+    font-size: 18px;
+    line-height: 1;
+    color: #666;
+}
+
+.header-main .nav a:hover {
+    text-decoration: none;
+    color: #006699;
+}
+
+.header-main .login-reg {
+    float: right;
+    width: 347px;
+}
+
+.header-main .search {
+    float: left;
+    margin-top: 13px;
+    width: 200px;
+    height: 30px;
+    background: url(../imgs/search-bg.png);
+}
+
+.header-main .search .text {
+    float: left;
+    width: 160px;
+    height: 30px;
+    padding: 0 5px;
+    border: 0 none; /* 去除边框 */
+    background: none; /* 去除背景*/
+}
+
+.header-main .search .btn {
+    float: left;
+    width: 30px;
+    height: 30px;
+    border: 0 none; /* 去除边框 */
+    background: none; /* 去除背景*/
+    cursor: pointer; /* 鼠标指针样式，pointer手指 */
+}
+
+/* 内容 */
+.main {
+    width: 820px;
+    padding: 0 26px 0 32px;
+    border: 1px solid #cfdfe0;
+    margin: 18px auto 0;
+    background: #f7f7f7;
+}
+
+.title {
+    font-size: 18px;
+    line-height: 1;
+    margin-top: 21px;
+    font-weight: normal;
+}
+
+.article-info {
+    line-height: 1;
+    margin-top: 12px;
+}
+
+.article-info .commit, .article-info .hot {
+    color: #444;
+    margin-left: 6px;
+}
+
+.article-info .commit:hover, .article-info .hot:hover {
+    color: red;
+}
+
+.article-detail {
+    margin: 8px 30px 0 8px;
+    padding: 2px;
+    background-color: #dddddd;
+}
+
+.article {
+    padding-top: 6px;
+    padding-bottom: 76px;
+}
+
+.article p {
+    margin-top: 9px;
+    line-height: 24px;
+    font-size: 14px;
+}
+
+.links {
+    height: 40px;
+    line-height: 1;
+    border-bottom: 1px dashed #d2dada;
+}
+
+.module-title {
+    line-height: 58px;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.textarea {
+    display: block;
+    width: 802px;
+    height: 89px;
+    padding: 8px;
+    border: #999999 1px solid;
+    background: #fff;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.textarea-btn {
+    border: none;
+    display: block;
+    width: 55px;
+    height: 30px;
+    margin-top: 11px;
+    background: url(../imgs/btn.png) no-repeat;
+}
+
+.textarea-btn:hover {
+    opacity: 0.6; /*鼠标移上去时，不透明度变为60% */
+}
+
+.commit {
+    border-top: 1px dashed #d2dada;
+    padding-bottom: 30px;
+}
+
+.commit dl {
+    width: 800px;
+    padding: 18px 0 10px;
+    font-size: 13px;
+    color: #797979;
+}
+
+.commit dl dt {
+    height: 31px;
+    line-height: 1;
+}
+
+.commit dl dd {
+    margin-left: 34px;
+    border-left: #d5d5d5 2px solid;
+    padding-left: 9px;
+    line-height: 17px;
+}
+
+.copyright {
+    text-align: center;
+    line-height: 25px;
+    padding: 20px 0 23px;
+}
+
+/*弹框*/
+.dialog {
+    position: fixed; /*参考的可视窗口*/
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.24); /*rgb(0,0,0); rgb色彩值*/
+}
+
+.dialog-main {
+    position: absolute;
+    left: calc(50% - 651px / 2); /* 百分比参考的是父级定位元素 */ /* calc() 计算, 运算符左右两端必须添加空格*/
+    top: calc(50% - 215px / 2);
+    width: 651px;
+    height: 215px;
+    background-color: #fff;
+    border: #3694d7 5px solid;
+}
+
+.dialog-header .title {
+    float: left;
+    height: 24px;
+    line-height: 24px;
+    padding-left: 8px;
+    margin-top: 0;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.dialog-header .close {
+    float: right;
+    margin-right: 3px;
+    height: 24px;
+    line-height: 24px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #238fdb;
+}
+
+.dialog-header .close span {
+    margin-left: 3px;
+}
+
+.dialog-header .close:hover {
+    text-decoration: none;
+    color: #999999;
+}
+
+.dialog-content .left {
+    float: left;
+    width: 407px;
+    height: 169px;
+    border-right: #cccccc 1px solid;
+}
+
+.dialog-content .left .input {
+    display: block;
+    width: 294px;
+    height: 26px;
+}
+
+.dialog-content .left .input .label {
+    float: left;
+    width: 92px;
+    height: 26px;
+    line-height: 26px;
+    text-align: right;
+    margin-right: 14px;
+    font-weight: bold;
+    color: #444444;
+    font-size: 12px;
+}
+
+.dialog-content .left .input .text {
+    float: left;
+    width: 176px;
+    height: 14px;
+    border: #aaaaaa 1px solid;
+    padding: 5px;
+}
+
+.dialog-content .left .radio {
+    height: 36px;
+    margin-left: 104px;
+    margin-top: 7px;
+}
+
+.dialog-content .left .radio label {
+    float: left;
+    margin-right: 6px;
+}
+
+.dialog-content .left .radio label input {
+    margin-right: 2px;
+    /*vertical-align: middle;*/ /*垂直对齐，display:inline-block;才有效 */
+}
+
+.dialog-content .left .radio label span {
+    /*
+    display: inline-block;
+    transform: translate(0, -2px);*/ /* transform 转换，值translate偏移 */
+    position: relative;
+    top: -2px;
+}
+
+.dialog-content .left .submit {
+    margin-left: 104px;
+}
+
+.dialog-content .left .submit .btn {
+    float: left;
+    margin-top: 0;
+    background: url(../imgs/login-btn.png);
+}
+
+.dialog-content .left .submit .forget {
+    float: left;
+    margin: 4px 0 0 10px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #006699;
+    text-decoration: underline;
+}
+
+.dialog-content .left .submit .forget:hover {
+    color: #444;
+}
+
+.dialog-content .right {
+    float: left;
+    margin-left: 33px;
+}
+
+.dialog-content .right .text {
+    color: #444;
+    font-size: 12px;
+    line-height: 43px;
+}
+
+.dialog-content .right .btn {
+    margin-top: 0;
+    background: url(../imgs/reg-btn.png);
+}
+
+/* 快捷样式 */
+.mt-9 {
+    margin-top: 9px;
+}
+
+.mt-22 {
+    margin-top: 22px;
+}

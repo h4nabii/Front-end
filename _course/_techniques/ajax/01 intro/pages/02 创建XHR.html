@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<h2>进入页面--直接获取后台内容</h2>
+<script>
+    // 1. 创建 XMLHttpRequest 对象
+    let xhr = new XMLHttpRequest(); // IE7+
+    console.log("创建：", xhr.readyState); // 0
+
+    // 2. 准备发送
+    // xhr.open(method: string, url: string, async: boolean)
+    // 默认 async = true
+    xhr.open("get", "http://localhost:5000/intro/server/02.php", true);
+
+    // 3. 发送 send()
+    // get 请求：send() 内容空
+    // get 参数传递：地址栏传递
+    xhr.send();
+    console.log("发送:", xhr.readyState); // 1
+
+    // 4. 监听函数
+    // 函数功能：监听当前的ajax请求
+    // 进行到哪一步
+    // 监听的时候只有响应数据才能渲染数据
+    xhr.onreadystatechange = function () {
+
+        //状态改变函数 执行多次
+        console.log("函数", xhr.readyState); //2 3 4
+
+        // 响应数据
+        if (xhr.readyState === XMLHttpRequest.DONE /*4*/) {
+
+            //http协议状态 200成功 404资源不存在
+            if (xhr.status === 200) {
+
+                //返回的数据字符串格式
+                console.log(xhr.responseText);
+
+            }
+        }
+    };
+
+    /**
+     *  xhr.readyState
+     *  0: 初始化xhr对象 未请求
+     *  1：发送请求服务器
+     *  2：服务器接受请求
+     *  3：服务器处理请求
+     *  4：服务器处理完毕，响应数据
+     *
+     *  注意：request 请求  response 响应
+     *  http协议状态码：
+     *  xhr.status 表示当前的http请求协议 知否请求成功
+     *      2xx 表示成功   200
+     *      3xx 重定向     304   307 jd.com -> www.jd.com
+     *      4xx 资源不存在 404
+     *      5xx 服务器错误 500 505
+     */
+</script>
+</body>
+</html>

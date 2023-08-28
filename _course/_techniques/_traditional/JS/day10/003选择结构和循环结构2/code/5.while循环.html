@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            while循环
+            1.先判断循环条件，如果条件成立，则执行循环体
+            2.格式
+            while (循环条件) {
+                循环体
+            }
+        */
+
+        // 打印5个hello
+        for (var i=1; i<=5; i++) {
+            console.log('hello')
+        }
+
+        
+        var i = 1;
+
+        while (i <= 5) {//
+            console.log('hello');
+
+            i++; //6
+        }
+
+
+        // 打印1-10这10个数
+        var i = 1;
+
+        while (i <= 10) {
+            console.log(i);
+
+            i++;
+        }
+
+        // 打印1-100间能被3和7同时整除的数值
+        var i = 1;
+
+        while (i <= 100) {
+            if (i%3==0 && i%7==0) {
+                console.log(i);
+            }
+
+            i++;
+        }
+
+        // 定义10以内奇数的个数
+        var i = 1;
+        var count = 0;
+
+        while (i <= 10) {
+            if (i%2 != 0) {
+                count++;
+            }
+
+            i++;
+        }
+
+        console.log(count);
+    </script>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!--
+ * @Description:
+ * @Author: front end cabbage
+ * @Date: 2023-07-13 13:32:27
+ * @LastEditTime: 2023-07-13 14:35:30
+ * @LastEditors: front end cabbage
+ * @FilePath: \day16\轮播图2.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body,
+        ul,
+        li {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        .content {
+            width: 500px;
+            height: 3000px;
+            background-color: #eee;
+            margin: 0 auto;
+        }
+
+        .login {
+            width: 500px;
+            height: 400px;
+            line-height: 60px;
+            position: absolute;
+            top: 100px;
+            background-color: pink;
+
+        }
+        ul {width:2500px;position: absolute;}
+        ul li {
+            width: 480px;
+            height: 380px;
+            border: 10px solid red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="content">
+
+        <div class="login">
+            <ul style="display: flex;">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+
+</html>
+<script>
+   var oUl = document.querySelector('ul')
+   var oLis = document.querySelectorAll('ul li');
+   var liWid = oLis[0].offsetWidth
+//    console.log(liWid);
+   var tid = null;
+   var iNow=0;
+   var imgIndex=0;
+
+   function clone(){
+    oClone = oLis[0].cloneNode(true);
+    oUl.appendChild(oClone);
+    oUl.style.width = liWid*(oLis.length+1)+'px';
+}
+
+   function autoPlay(){
+      tid = setInterval(function(){
+        if(iNow>oLis.length-1){
+            iNow=0;
+            oUl.style.left = 0;
+        }else{
+            iNow++;
+        }
+        imgIndex++;
+
+        console.log(iNow,imgIndex);
+        if(imgIndex==oLis.length){
+             clone()
+             imgIndex=0;
+        }
+          oUl.style.left = -liWid *iNow+'px'
+      },1000)
+   }
+
+   autoPlay();
+
+
+
+
+</script>

@@ -1,0 +1,31 @@
+body {
+    height: 2300px;
+    background: linear-gradient(to bottom, white, black 100%);
+}
+
+.box {
+    height: 300px;
+    width: 300px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    background-color: green;
+}
+
+.content {
+
+}
+
+.content span {
+    display: flow-root inline;
+    width: 40px;
+    height: 40px;
+    background-color: green;
+}
+
+.content div {
+    display: inline flow-root;
+    width: 40px;
+    height: 40px;
+    background-color: green;
+}

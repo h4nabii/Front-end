@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<input type="text" id="username">
+<input type="text" id="password">
+<button id="login">发送</button>
+<script>
+    //post传递参数----
+    document.getElementById("login").onclick = function () {
+        //获取用户输入的值
+        let uname = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
+
+        //创建ajax
+        let xhr = new XMLHttpRequest();
+        xhr.open("post", "http://localhost:5000/intro/server/04.php", true);
+
+        // post传递参数在send()里面发送数据
+        // 但是注意：发送之前设置请求配置
+        // 发送参数比较多 可以先用变量存储 send(存储变量)
+
+        // 配置请求
+        let data = `username=${uname}&password=${password}`;
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded;charset=utf-8");
+        xhr.send(data);
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === (XMLHttpRequest.DONE || 4)) {
+                if (xhr.status === 200) {
+                    console.log(xhr.responseText);
+                }
+            }
+        };
+    };
+
+    /**
+     *  get传递参数：url地址栏传递参数   xhr.open("get","xxx?参数1=参数值&...")  xhr.send()
+     *  post传递参数：不是url地址栏  是send(发送数据) 注意：发送前必须配置请求头
+     *  xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded;charset=utf-8");
+     *  xhr.send(data)
+     */
+</script>
+</body>
+</html>

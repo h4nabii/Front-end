@@ -1,0 +1,56 @@
+<!--
+ * @Description:
+ * @Author: front end cabbage
+ * @Date: 2023-07-13 14:41:44
+ * @LastEditTime: 2023-07-13 14:59:30
+ * @LastEditors: front end cabbage
+ * @FilePath: \day16\固定侧边栏0.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position:absolute;
+            top:300px;
+            right:30px;
+            /* position: fixed; */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="box">
+
+    </div>
+</body>
+
+</html>
+<script>
+    document.body.style.height = '2000px'
+    var oBox=document.querySelector('.box');
+    var t = oBox.offsetTop;
+    console.log(t);
+
+    // window.onscroll = function(){
+
+    // //    var sc = document.documentElement.scrollTop;
+    //    var sc = window.pageYOffset // 获取文档在Y方向的移动距离
+    //    oBox.style.top = t+ parseInt(sc)+ 'px'
+
+
+    // }
+
+    document.addEventListener('scroll',function(){
+        var sc = window.pageYOffset // 获取文档在Y方向的移动距离
+        oBox.style.top = t+ parseInt(sc)+ 'px'
+    })
+
+</script>

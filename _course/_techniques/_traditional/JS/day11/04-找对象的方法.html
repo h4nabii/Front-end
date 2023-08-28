@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .myBox{width: 1000px;border:1px solid red;}
+    </style>
+</head>
+<body>
+     <div class="myBox"  id="box" xiaoMing="shuaige" title="中国人是强大的">
+         <ul>
+            <li name="zs">111111</li>
+            <li>222222</li>
+            <li class="test">testtest</li>
+            <li>333333</li>
+            <li name="zs">333333</li>
+            <li class="test">test</li>
+            <li name="zs">333333</li>
+         </ul>
+
+     </div>
+     <div class="test"></div>
+     <div class="try"></div>
+</body>
+</html>
+<script>
+    // Ecmascript   -> Object
+    // nodejs
+
+    //
+    // BOM  -> 子集 ->DOM
+    // 找对象
+    // var oBox = document.getElementById('box');
+    // var oBox = document.getElementsByTagName('div') //返回一个数组
+
+    // console.log(oBox[0].id);
+    // console.log(oBox[0].xiMing); // undefined
+    // console.log(oBox[0].getAttribute('xiaoMing')); //
+
+    // h5  querySelector 找到第一个元素
+    //       querySelectorAll
+
+    // var oBox = document.querySelector('div')
+    // var oBox = document.querySelector('.myBox')
+    // var oBox = document.querySelector('#box')
+    var myLis = document.querySelectorAll('.myBox ul li:nth-child(2)')
+
+    document.onclick = function(){
+
+         // myLis是数组
+
+        //  for(var i=0;i<myLis.length;i++){
+        //       myLis[i].style.backgroundColor = 'pink'
+        //  }
+           myLis[0].style.backgroundColor = 'cyan'
+
+    }
+    // console.log(oBox.length);
+
+
+    // 非标准的  document.getElementSByName,  --> NodeList
+
+    var oDiv = document.getElementById('box');
+    // var myLis = document.getElementsByName('zs')
+    // console.log(myLis);
+
+    // 以前ie不支持这种写法   document.getElementsByClassName
+
+    var myList = oDiv.getElementsByClassName('test') // --> HTMLCollection
+
+    console.log(myList);
+    console.log(myList.length);
+
+
+
+ /*  找浏览器对象的方法
+
+    getElementById
+    getElementsByTagName  // 返回数组
+
+    querySelector
+    querySelectorAll    // 返回数组
+
+    document.getElementsByName  // 返回数组
+    document.getElementsByClassName // 返回数组
+
+
+ */
+</script>

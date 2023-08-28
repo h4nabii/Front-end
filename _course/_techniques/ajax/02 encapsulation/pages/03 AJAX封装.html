@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src='js/myAjax.js'></script>
+</head>
+<body>
+<input type="text" id='username'>
+<input type="text" id='password'>
+<button id='look'>点击查看 发送的数据</button>
+
+<script>
+    document.getElementById("look").onclick = function () {
+        let username = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
+        myAjax({
+            method: "get",
+            url: "http://localhost:5000/encapsulation/server/03.php",
+            data: {
+                username,
+                password,
+            },
+            success: function (res) {
+                console.log(res);
+            },
+            error: function (err) {
+                console.log(err);
+            }
+        });
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .time {
+            width: 300px;
+            height: 60px;
+            font-size: 22px;
+            border: 10px darkcyan double;
+            line-height: 60px;
+            text-align: center;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+<div class="time" id="time"></div>
+</body>
+</html>
+<script>
+    var oT = document.getElementById('time');
+    showTime();
+
+    function showTime() {
+        let date = new Date()
+        oT.innerHTML = new Intl.DateTimeFormat("zh", {
+            year: "numeric",
+            month: "2-digit",
+            day: "2-digit"
+        }).format(date);
+    }
+
+    setInterval(function () {
+        showTime();
+    }, 1000)
+
+
+    // 2 开定时器的方法:
+
+    // var i=0;
+    //  var tid = setInterval(function(){
+    //     console.log(i++);
+    //  },2000)
+
+    // oT.onclick = function(){
+    //     clearInterval(tid)
+    //     console.log("结束了");
+    // }
+
+    // var tid = null;
+    // function box(){
+    //       alert('回家了')
+    //       tid = setTimeout(box,2000)
+    // }
+    // box();
+
+    // document.onclick = function(){
+    //     clearTimeout(tid)
+    //     console.log('终止了');
+    // }
+
+
+    // 开一个定时器 ,每过一段时间就得到一次新的时间
+    // setTimeout(1,ms) clearTimeout() 只能执行一次
+    // 1s =  1000ms
+
+    // setInterval() clearInterval()  可以反复多次执行
+    // 可以根椐定时器的返回值 实现清除
+</script>

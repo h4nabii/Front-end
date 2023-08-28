@@ -1,0 +1,53 @@
+<!--
+ * @Description: 
+ * @Author: front end cabbage
+ * @Date: 2023-07-10 16:19:20
+ * @LastEditTime: 2023-07-10 16:37:51
+ * @LastEditors: front end cabbage
+ * @FilePath: \web2023\day13\11.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul li:hover{cursor:pointer;}
+    </style>
+</head>
+<body>
+    <ul>
+        <li>apple</li>
+        <li>pear</li>
+        <li>orange</li>
+    </ul>
+</body>
+</html>
+<script>
+    var oUl = document.querySelector('ul');
+    var oLis = oUl.querySelectorAll('li');
+    
+    // for(let i=0;i<oLis.length;i++){
+    //     oLis[i].onclick = function(){
+    //         //    console.log(this.cloneNode(true)); 
+            
+    //            oUl.appendChild(this.cloneNode(true))
+    //            oLis = oUl.querySelectorAll('li');
+    //            console.log(oLis);
+    //     }
+    // }
+
+     // 1. 事件监听
+     // 2. 找到事件源对象
+     // 3. 你点击了谁？事件委托
+
+     oUl.onclick = function(e){
+        var ev = e||window.event;
+        var obj = ev.srcElement||ev.target // 事件源对象
+        if(obj.tagName.toLowerCase()==="li"){
+            oUl.appendChild(obj.cloneNode(true))
+        }
+     }
+
+</script>
