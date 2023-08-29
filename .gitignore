@@ -1,5 +1,7 @@
 # not update the source code of Byakuya Museum
 /others/_tests/Byakuya/
+# bilibili item test
+/others/_tests/bilibiliTest/
 
 # ignore all the node_modules
 **/node_modules
