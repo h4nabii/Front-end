@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>圣杯布局</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .border-box {
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+
+        .content {
+            width: 1200px;
+            margin: 0 auto; /* align center */
+        }
+
+        .header {
+            height: 150px;
+        }
+
+        /* 可以使用“float”也可以使用“display: flex” */
+        .main * {
+            float: left;
+            height: 750px;
+        }
+
+        .main .left,
+        .main .right {
+            width: 200px;
+            background-color: pink;
+        }
+
+        .main .center {
+            width: 800px;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <header class="header border-box">
+        头部
+    </header>
+    <div class="main red-back">
+        <div class="left border-box">
+            左侧部分
+        </div>
+        <div class="center border-box">
+            中间内容
+        </div>
+        <div class="right border-box">
+            右侧部分
+        </div>
+    </div>
+</div>
+</body>
+</html>
