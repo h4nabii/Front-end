@@ -15,3 +15,24 @@
 
 其他代码存放于[`/others`](/others)目录下
 
+------
+
+## Front-end Learning
+This repository is for personal Front-end Learning
+
+### Personal Projects
+
+Projects completed are placed in 
+directory [`\projects`](/projects), 
+projects scheduled are placed in 
+directory [`\projects\TODO`](/projects/TODO).
+
+### Tools and Libraries
+
+Tools and Libraries are placed in 
+directory [`/tools`](/tools).
+
+### Other Codes
+
+Other codes are placed in 
+directory [`/others`](/others).

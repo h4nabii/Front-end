@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            background-color: red;
+            width: 400px;
+            height: 400px;
+            margin-top: 50px;
+
+            /* 解决击穿问题 Solution 1 */
+            border: 0;
+        }
+
+        .box2 {
+            background-color: blue;
+            width: 100px;
+            height: 100px;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+<div>
+    <div class="box1">
+        &nbsp box 1
+        <div class="box2">
+            &nbsp box 2
+        </div>
+    </div>
+</div>
+
+<div>
+    <style>
+        ._box1 {
+            background-color: red;
+            width: 400px;
+            height: 400px;
+            margin-top: 50px;
+
+            /* 解决击穿问题 Solution 2 */
+            /* 如果标签内没内容 设置为0 依旧无效 */
+            padding: 0;
+        }
+
+        ._box2 {
+            background-color: blue;
+            width: 100px;
+            height: 100px;
+            margin-top: 100px;
+        }
+    </style>
+    <div class="_box1">
+        <!-- 空白内容 + 0 padding 解决击穿问题 -->
+        &nbsp
+        <div class="_box2">
+            box 2
+        </div>
+    </div>
+</div>
+
+
+</body>
+
+</html>

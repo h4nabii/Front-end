@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script defer>
+    function loopLock(time) {
+        let cur = Date.now();
+        // noinspection StatementWithEmptyBodyJS
+        while (Date.now() - cur < time) ;
+    }
+
+    function addMicroTask() {
+        Promise.resolve().then(function microTask() {
+            console.log("MicroTask");
+            loopLock(2000);
+        });
+    }
+
+    document.addEventListener("click", function interactionTask() {
+        console.log("InteractionTask");
+        loopLock(2000);
+    });
+
+
+    document.addEventListener("click", function interactionTask() {
+        addMicroTask()
+    });
+</script>
+</html>

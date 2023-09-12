@@ -1362,16 +1362,16 @@ h1, h2, h3, h4, h5 {
     border-radius:4px;
     overflow:hidden
 }
-.qq-main .m-todayhot .bd .item {
+.qq-main .m-todayhot .border-box .item {
     clear:both
 }
-.qq-main .m-todayhot .bd .video-item {
+.qq-main .m-todayhot .border-box .video-item {
     width:214px;
     padding:15px 0 10px;
     font-size:14px;
     cursor:pointer
 }
-.qq-main .m-todayhot .bd .video-item .pic {
+.qq-main .m-todayhot .border-box .video-item .pic {
     position:relative;
     height:120px;
     margin-bottom:10px;
@@ -1383,7 +1383,7 @@ h1, h2, h3, h4, h5 {
     -o-border-radius:4px;
     border-radius:4px
 }
-.qq-main .m-todayhot .bd .video-item .pic>img {
+.qq-main .m-todayhot .border-box .video-item .pic>img {
     width:100%;
     -webkit-border-radius:4px;
     -moz-border-radius:4px;
@@ -1391,10 +1391,10 @@ h1, h2, h3, h4, h5 {
     -o-border-radius:4px;
     border-radius:4px
 }
-.qq-main .m-todayhot .bd .video-item .icon-play2 {
+.qq-main .m-todayhot .border-box .video-item .icon-play2 {
     bottom:33px
 }
-.qq-main .m-todayhot .bd .video-item .txt {
+.qq-main .m-todayhot .border-box .video-item .txt {
     position:absolute;
     left:0;
     bottom:0;
@@ -1455,44 +1455,44 @@ h1, h2, h3, h4, h5 {
 .mod .hd-2 .active a {
     color:#1479d7
 }
-.mod .bd {
+.mod .border-box {
     line-height:36px
 }
-.mod .bd .news-list li, .mod .bd .yw-list li {
+.mod .border-box .news-list li, .mod .border-box .yw-list li {
     white-space:nowrap;
     text-overflow:ellipsis;
     overflow:hidden
 }
-.mod .bd .news-list li.video-item, .mod .bd .news-list li.news-pic-txt, .mod .bd .yw-list li.video-item, .mod .bd .yw-list li.news-pic-txt {
+.mod .border-box .news-list li.video-item, .mod .border-box .news-list li.news-pic-txt, .mod .border-box .yw-list li.video-item, .mod .border-box .yw-list li.news-pic-txt {
     white-space:normal
 }
-.mod .bd .cate {
+.mod .border-box .cate {
     color:#253e6d;
     font-weight:bold
 }
-.mod .bd .cate:hover {
+.mod .border-box .cate:hover {
     color:#0c82ff
 }
-.mod .bd .line {
+.mod .border-box .line {
     padding:0 5px;
     color:#e9e9e9
 }
-.mod .bd .news-top {
+.mod .border-box .news-top {
     width:100%;
     font-size:18px;
     padding:14px 0 7px;
     font-weight:bold
 }
-.mod .bd .news-pic-txt {
+.mod .border-box .news-pic-txt {
     padding:20px 0
 }
-.mod .bd .news-pic-txt .pic {
+.mod .border-box .news-pic-txt .pic {
     position:relative;
     width:214px;
     height:120px;
     overflow:hidden
 }
-.mod .bd .news-pic-txt .pic a>img, .mod .bd .news-pic-txt .pic>img {
+.mod .border-box .news-pic-txt .pic a>img, .mod .border-box .news-pic-txt .pic>img {
     width:100%;
     min-height:120px;
     background:url(//inews.gtimg.com/newsapp_bt/0/092318271974_3018/0) center no-repeat;
@@ -1502,18 +1502,18 @@ h1, h2, h3, h4, h5 {
     -o-border-radius:4px;
     border-radius:4px
 }
-.mod .bd .news-pic-txt .txt {
+.mod .border-box .news-pic-txt .txt {
     margin-left:15px;
     position:relative;
     width:211px;
     height:120px;
     line-height:30px
 }
-.mod .bd .news-pic-txt .txt>a {
+.mod .border-box .news-pic-txt .txt>a {
     position:relative;
     top:-7px
 }
-.mod .bd .news-pic-txt .txt .info {
+.mod .border-box .news-pic-txt .txt .info {
     position:absolute;
     left:0;
     bottom:-8px;
@@ -1521,19 +1521,19 @@ h1, h2, h3, h4, h5 {
     font-size:14px;
     width:100%
 }
-.mod .bd .news-pic-txt .txt .info a {
+.mod .border-box .news-pic-txt .txt .info a {
     color:#64788c
 }
-.mod .bd .news-pic-txt .txt .info a:hover {
+.mod .border-box .news-pic-txt .txt .info a:hover {
     color:#2291f7
 }
-.mod .bd .news-pic-txt .txt .info .source {
+.mod .border-box .news-pic-txt .txt .info .source {
     display:block;
     white-space:nowrap;
     text-overflow:ellipsis;
     overflow:hidden
 }
-.mod .bd .video-box .click-layer {
+.mod .border-box .video-box .click-layer {
     position:absolute;
     left:0;
     top:-40px;
@@ -1718,7 +1718,7 @@ h1, h2, h3, h4, h5 {
 .olympic_wrap .medal_con .medal_list ul:last-child li {
     font-weight:bold
 }
-.olympic_wrap .bd {
+.olympic_wrap .border-box {
     clear:both
 }
 @font-face {
@@ -2542,7 +2542,7 @@ h1, h2, h3, h4, h5 {
     position:absolute;
     left:0
 }
-.col-2 .bdwrap .bd {
+.col-2 .bdwrap .border-box {
     position:absolute;
     width:100%
 }
@@ -2662,7 +2662,7 @@ h1, h2, h3, h4, h5 {
     position:absolute;
     height:248px
 }
-.qq-videos .bd {
+.qq-videos .border-box {
     position:absolute
 }
 .qq-videos .title {
@@ -2984,7 +2984,7 @@ h1, h2, h3, h4, h5 {
 .channel-num6 .col-2 .bdwrap {
     height:356px
 }
-.channel-num6 .mod-recommend .bd {
+.channel-num6 .mod-recommend .border-box {
     height:838px
 }
 .g-news-num .channel-num6 .col-2 .bdwrap {
@@ -2994,7 +2994,7 @@ h1, h2, h3, h4, h5 {
     height:140px;
     overflow:hidden
 }
-.g-news-num .mod-recommend .bd {
+.g-news-num .mod-recommend .border-box {
     height:690px
 }
 .qq-channel2col, .qq-pics, .qq-channel3col, .qq-videos {
@@ -3403,14 +3403,14 @@ h1, h2, h3, h4, h5 {
     color:#0c82ff;
     background-color:#F8FBFF
 }
-.mod-recommend .bd {
+.mod-recommend .border-box {
     height:1062px;
     overflow:hidden
 }
-.mod-recommend .bd .list {
+.mod-recommend .border-box .list {
     position:relative
 }
-.mod-recommend .bd .list li {
+.mod-recommend .border-box .list li {
     padding-left:29px;
     position:relative;
     left:-4px;
@@ -3419,7 +3419,7 @@ h1, h2, h3, h4, h5 {
     text-overflow:ellipsis;
     overflow:hidden
 }
-.mod-recommend .bd .list .icon-dot {
+.mod-recommend .border-box .list .icon-dot {
     position:absolute;
     left:0;
     top:10px;
@@ -3434,7 +3434,7 @@ h1, h2, h3, h4, h5 {
     -o-border-radius:10px;
     border-radius:10px
 }
-.mod-recommend .bd .list .icon-dot::after {
+.mod-recommend .border-box .list .icon-dot::after {
     content:'';
     position:absolute;
     left:2px;
@@ -3448,16 +3448,16 @@ h1, h2, h3, h4, h5 {
     -o-border-radius:4px;
     border-radius:4px
 }
-.mod-recommend .bd .list .news-pic-txt {
+.mod-recommend .border-box .list .news-pic-txt {
     padding:22px 0 20px 29px
 }
-.mod-recommend .bd .list .news-pic-txt .txt {
+.mod-recommend .border-box .list .news-pic-txt .txt {
     width:185px
 }
-.mod-recommend .bd .list .news-pic-txt a {
+.mod-recommend .border-box .list .news-pic-txt a {
     white-space:normal
 }
-.mod-recommend .bd .list .news-pic-txt .icon-dot {
+.mod-recommend .border-box .list .news-pic-txt .icon-dot {
     top:37px
 }
 .qq-pics .mainbody, .qq-videos .mainbody {
@@ -4308,7 +4308,7 @@ h1, h2, h3, h4, h5 {
     .channel-num6 .col-2 .bdwrap {
         height:318px
     }
-    .channel-num6 .mod-recommend .bd {
+    .channel-num6 .mod-recommend .border-box {
         height:757px
     }
     .g-news-num .channel-num6 .col-2 .bdwrap {
@@ -4318,7 +4318,7 @@ h1, h2, h3, h4, h5 {
         height:128px;
         overflow:hidden
     }
-    .g-news-num .mod-recommend .bd {
+    .g-news-num .mod-recommend .border-box {
         height:635px
     }
     .layout {
@@ -4341,24 +4341,24 @@ h1, h2, h3, h4, h5 {
         height:22px;
         background-position:0 -1150px
     }
-    .mod .bd {
+    .mod .border-box {
         line-height:32px
     }
-    .mod .bd .news-top {
+    .mod .border-box .news-top {
         font-size:16px;
         padding:13px 0 5px
     }
-    .mod .bd .news-pic-txt {
+    .mod .border-box .news-pic-txt {
         padding:21px 0
     }
-    .mod .bd .news-pic-txt .pic {
+    .mod .border-box .news-pic-txt .pic {
         width:188px;
         height:106px
     }
-    .mod .bd .news-pic-txt .pic a>img, .mod .bd .news-pic-txt .pic>img {
+    .mod .border-box .news-pic-txt .pic a>img, .mod .border-box .news-pic-txt .pic>img {
         min-height:106px
     }
-    .mod .bd .news-pic-txt .txt {
+    .mod .border-box .news-pic-txt .txt {
         width:187px;
         height:106px
     }
@@ -4507,11 +4507,11 @@ h1, h2, h3, h4, h5 {
     .qq-main .m-match .video-box .txt .info {
         font-size:12px
     }
-    .qq-main .m-todayhot .bd .video-item {
+    .qq-main .m-todayhot .border-box .video-item {
         width:188px;
         padding:10px 0 12px
     }
-    .qq-main .m-todayhot .bd .video-item .pic {
+    .qq-main .m-todayhot .border-box .video-item .pic {
         height:106px
     }
     .m-weather .weather-more {
@@ -4529,28 +4529,28 @@ h1, h2, h3, h4, h5 {
         width:268px;
         margin-top:12px
     }
-    .mod-recommend .bd {
+    .mod-recommend .border-box {
         height:983px;
         font-size:14px
     }
-    .mod-recommend .bd .list {
+    .mod-recommend .border-box .list {
         padding-top:1px
     }
-    .mod-recommend .bd .list .news-pic-txt {
+    .mod-recommend .border-box .list .news-pic-txt {
         padding:30px 0 20px 29px
     }
-    .mod-recommend .bd .list .news-pic-txt .txt {
+    .mod-recommend .border-box .list .news-pic-txt .txt {
         width:162px;
         line-height:26px
     }
-    .mod-recommend .bd .list .news-pic-txt .txt>a {
+    .mod-recommend .border-box .list .news-pic-txt .txt>a {
         top:-6px
     }
-    .mod-recommend .bd .list .news-pic-txt .txt .info {
+    .mod-recommend .border-box .list .news-pic-txt .txt .info {
         font-size:12px;
         bottom:-6px
     }
-    .mod-recommend .bd .list .news-pic-txt .icon-dot {
+    .mod-recommend .border-box .list .news-pic-txt .icon-dot {
         top:46px
     }
     .gg-1 {
@@ -4587,7 +4587,7 @@ h1, h2, h3, h4, h5 {
     .channel-num6 .col-2 .bdwrap {
         height:273px
     }
-    .channel-num6 .mod-recommend .bd {
+    .channel-num6 .mod-recommend .border-box {
         height:650px
     }
     .g-news-num .channel-num6 .col-2 .bdwrap {
@@ -4597,7 +4597,7 @@ h1, h2, h3, h4, h5 {
         height:112px;
         overflow:hidden
     }
-    .g-news-num .mod-recommend .bd {
+    .g-news-num .mod-recommend .border-box {
         height:535px
     }
     .icon-video {
@@ -4658,37 +4658,37 @@ h1, h2, h3, h4, h5 {
     .mod .hd-2 .tit {
         font-size:16px
     }
-    .mod .bd {
+    .mod .border-box {
         line-height:28px
     }
-    .mod .bd .news-top {
+    .mod .border-box .news-top {
         font-size:14px;
         padding:13px 0 4px
     }
-    .mod .bd .news-pic-txt {
+    .mod .border-box .news-pic-txt {
         padding:18px 0 16px
     }
-    .mod .bd .news-pic-txt .pic {
+    .mod .border-box .news-pic-txt .pic {
         width:158px;
         height:89px
     }
-    .mod .bd .news-pic-txt .pic a>img, .mod .bd .news-pic-txt .pic>img {
+    .mod .border-box .news-pic-txt .pic a>img, .mod .border-box .news-pic-txt .pic>img {
         min-height:89px
     }
-    .mod .bd .news-pic-txt .txt {
+    .mod .border-box .news-pic-txt .txt {
         width:158px;
         height:89px;
         margin-left:10px;
         line-height:20px
     }
-    .mod .bd .news-pic-txt .txt>a {
+    .mod .border-box .news-pic-txt .txt>a {
         top:-4px
     }
-    .mod .bd .news-pic-txt .txt .info {
+    .mod .border-box .news-pic-txt .txt .info {
         font-size:12px;
         bottom:-4px
     }
-    .mod .bd .news-pic-txt .txt .info .source {
+    .mod .border-box .news-pic-txt .txt .info .source {
         max-width:110px
     }
     .qq-top {
@@ -4949,18 +4949,18 @@ h1, h2, h3, h4, h5 {
     .qq-main .m-match .video-box .icon-play {
         bottom:37px
     }
-    .qq-main .m-todayhot .bd .video-item {
+    .qq-main .m-todayhot .border-box .video-item {
         width:158px;
         padding:3px 0 6px
     }
-    .qq-main .m-todayhot .bd .video-item .pic {
+    .qq-main .m-todayhot .border-box .video-item .pic {
         height:89px
     }
-    .qq-main .m-todayhot .bd .video-item .txt {
+    .qq-main .m-todayhot .border-box .video-item .txt {
         font-size:12px;
         padding:0 0 2px 10px
     }
-    .qq-main .m-todayhot .bd .video-item .icon-play2 {
+    .qq-main .m-todayhot .border-box .video-item .icon-play2 {
         bottom:30px
     }
     .m-weather .weather-more {
@@ -5019,36 +5019,36 @@ h1, h2, h3, h4, h5 {
         line-height:22px;
         margin:15px 4px 0 0
     }
-    .mod-recommend .bd {
+    .mod-recommend .border-box {
         height:826px;
         font-size:12px
     }
-    .mod-recommend .bd .list {
+    .mod-recommend .border-box .list {
         padding-top:1px
     }
-    .mod-recommend .bd .list .icon-dot {
+    .mod-recommend .border-box .list .icon-dot {
         top:5px;
         width:3px;
         height:3px
     }
-    .mod-recommend .bd .list .icon-dot::after {
+    .mod-recommend .border-box .list .icon-dot::after {
         width:3px;
         height:3px
     }
-    .mod-recommend .bd .list li {
+    .mod-recommend .border-box .list li {
         padding-left:25px
     }
-    .mod-recommend .bd .list .news-pic-txt {
+    .mod-recommend .border-box .list .news-pic-txt {
         padding:21px 0 17px 25px
     }
-    .mod-recommend .bd .list .news-pic-txt .txt {
+    .mod-recommend .border-box .list .news-pic-txt .txt {
         width:133px;
         line-height:20px
     }
-    .mod-recommend .bd .list .news-pic-txt .txt .info {
+    .mod-recommend .border-box .list .news-pic-txt .txt .info {
         font-size:12px
     }
-    .mod-recommend .bd .list .news-pic-txt .icon-dot {
+    .mod-recommend .border-box .list .news-pic-txt .icon-dot {
         top:25px
     }
     .layout .title .txt {
@@ -5185,7 +5185,7 @@ h1, h2, h3, h4, h5 {
 .structure .shell-i {
     height:95px
 }
-.mod-recommend .bd .list .shell-content {
+.mod-recommend .border-box .list .shell-content {
     padding:10px 0 0 20px !important
 }
 .structure .shell-i .shell-text {
