@@ -35,3 +35,8 @@
    （例如使用`overflow: hidden`）
 
 2. 弹性盒 `display: flex`
+
+> 注意`inline-black`会将空白节点一并显示出来导致元素间出现空白， 
+> 一般不使用`inline-block`进行水平布局。
+> 通过使用`font-size: 0`可以解决问题，但是会限制`html`的编写，
+> 不能有需要显示的直接子文本节点，必须要用其他标签（如`span`）包裹）
